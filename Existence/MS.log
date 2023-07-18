@@ -4,8 +4,10 @@ Starting preprocessing of the model file ...
 Substitution of exo lags: added 1 auxiliary variables and equations.
 Found 7 equation(s).
 Evaluating expressions...done
-Computing static model derivatives (order 1).
+Computing static model derivatives (order 2).
+Computing static model derivatives w.r.t. parameters (order 2).
 Computing dynamic model derivatives (order 2).
+Computing dynamic model derivatives w.r.t. parameters (order 2).
 Processing outputs ...
 done
 Preprocessing completed.
@@ -110,6 +112,65 @@ iH                89.68             21.14            110.82
 iL                89.68             21.14            110.82
 Note: numbers do not add up to 100 due to non-zero correlation of simulated shocks in small samples
 
-All parameter values in the specified ranges give unique saddle-path solution,
-and match prior IRF/moment restriction(s) if any!
-Total computing time : 0h00m24s
+
+======== Identification Analysis ========
+
+Testing all current stderr and model parameter values
+Evaluating simulated moment uncertainty ... please wait
+Doing 100 replicas of length 300 periods.
+Simulated moment uncertainty ... done!
+  
+Note that differences in the criteria could be due to numerical settings,
+numerical errors or the method used to find problematic parameter sets.
+Settings:
+    Derivation mode for Jacobians:                         Analytic using sylvester equations
+    Method to find problematic parameters:                 Nullspace and multicorrelation coefficients
+    Normalize Jacobians:                                   Yes
+    Tolerance level for rank computations:                 robust
+    Tolerance level for selecting nonzero columns:         1e-08
+    Tolerance level for selecting nonzero singular values: 1e-03
+
+REDUCED-FORM:
+    !!!WARNING!!!
+    The rank of Tau (Jacobian of steady state and reduced-form solution matrices) is deficient!
+
+    sigma is not identified!
+    pitH is not identified!
+    pitL is not identified!
+    [kappa,SE_mkpsh] are PAIRWISE collinear!
+
+MINIMAL SYSTEM (KOMUNJER AND NG, 2011):
+    !!!WARNING!!!
+    The rank of Deltabar (Jacobian of steady state and minimal system) is deficient!
+
+    sigma is not identified!
+    pitH is not identified!
+    pitL is not identified!
+    [kappa,SE_mkpsh] are PAIRWISE collinear!
+
+SPECTRUM (QU AND TKACHENKO, 2012):
+    !!!WARNING!!!
+    The rank of Gbar (Jacobian of mean and spectrum) is deficient!
+
+    sigma is not identified!
+    pH is not identified!
+    pL is not identified!
+    pitH is not identified!
+    pitL is not identified!
+    [kappa,SE_mkpsh] are PAIRWISE collinear!
+
+MOMENTS (ISKREV, 2010):
+    !!!WARNING!!!
+    The rank of J (Jacobian of first two moments) is deficient!
+
+    sigma is not identified!
+    pH is not identified!
+    pL is not identified!
+    pitH is not identified!
+    pitL is not identified!
+    [kappa,SE_mkpsh] are PAIRWISE collinear!
+
+==== Identification analysis completed ====
+
+Total computing time : 0h00m03s
+Note: warning(s) encountered in MATLAB/Octave code

@@ -22,7 +22,7 @@ block HIGHREGIME
 {
     definitions
     {
-        uH[] =-1/2* ( piH[]*piH[] + kappa/theta * yH[]*yH[]);
+        uH[] =-1/2* ( (piH[]-pitCB)^2 + kappa/theta * yH[]*yH[]);
     };
     controls
     {
@@ -45,13 +45,14 @@ block HIGHREGIME
         sigma = 1;
         pH = 0.99;
         pL = 0.99;
+        pitCB = 0;
     };
 };
 block LOWREGIME
 {
     definitions
     {
-        uL[] = -1/2* (piL[]*piL[] + kappa/theta * yL[]*yL[]);
+        uL[] = -1/2* ((piL[]-pitCB)^2 + kappa/theta * yL[]*yL[]);
     };
     controls
     {

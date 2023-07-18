@@ -96,11 +96,6 @@ options_.rplottype=2;
 options_.TeX = 1;
 rplot piH piL yH yL iH iL;
 
-
-
-%varobs piH piL yH yL iH iL;
-%identification;
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% The Determinacy Region 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,11 +106,13 @@ rplot piH piL yH yL iH iL;
 // Moreover, many draws (nsam) are required to get a mapping figure of the type obtained above.
 //         
 %specify parameters for which to map sensitivity
-estimated_params;
-kappa,uniform_pdf,(0+0.5)/2,sqrt(12)^(-1)*(0.5-0);
-sigma,uniform_pdf,((1)+10)/2,sqrt(12)^(-1)*(10-(1));      
-end;
+//estimated_params;
+//kappa,uniform_pdf,(0+0.5)/2,sqrt(12)^(-1)*(0.5-0);
+//sigma,uniform_pdf,((1)+10)/2,sqrt(12)^(-1)*(10-(1));      
+//end;
  
 varobs piH piL yH yL iH iL;
-options_.nograph=0; 
-dynare_sensitivity(prior_range=0,stab=1,nsam=5000);
+identification;
+
+//options_.nograph=0; 
+//dynare_sensitivity(prior_range=0,stab=1,nsam=5000);

@@ -226,19 +226,8 @@ options_.rplottype=2;
 options_.TeX = 1;
 var_list_ = {'piH';'piL';'yH';'yL';'iH';'iL'};
 rplot(var_list_);
-estim_params_.var_exo = zeros(0, 10);
-estim_params_.var_endo = zeros(0, 10);
-estim_params_.corrx = zeros(0, 11);
-estim_params_.corrn = zeros(0, 11);
-estim_params_.param_vals = zeros(0, 10);
-estim_params_.param_vals = [estim_params_.param_vals; 1, NaN, (-Inf), Inf, 5, 0.25, 0.1443375672974065, NaN, NaN, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 4, NaN, (-Inf), Inf, 5, 5.5, 2.598076211353316, NaN, NaN, NaN ];
-options_.nograph=0; 
-options_gsa = struct();
-options_gsa.Nsam = 5000;
-options_gsa.prior_range = 0;
-options_gsa.stab = 1;
-dynare_sensitivity(options_gsa);
+options_ident = struct();
+dynare_identification(options_ident);
 
 
 oo_.time = toc(tic0);
