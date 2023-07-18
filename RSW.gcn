@@ -1,0 +1,85 @@
+# ############################################################################
+# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+#                                                                            #
+# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# ############################################################################
+# Constant probability case
+# ############################################################################
+
+options
+{
+    output logfile = TRUE;
+    output LaTeX = TRUE;
+    output LaTeX landscape = TRUE;
+};
+
+#tryreduce
+# {
+#    piH[], piL[], yH[], yL[];
+# };
+
+block HIGHREGIME
+{
+    definitions
+    {
+        uH[] =-1/2* ( piH[]*piH[] + kappa/theta * yH[]*yH[]);
+    };
+    controls
+    {
+         piH[], yH[], iH[];
+    };
+    objective
+    {
+            UH[] = uH[] + beta * (pH*E[][UH[1]]+ (1-pH)*E[][UL[1]]);
+    };
+    constraints
+    {
+        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[]);
+        yH[-1] = (pH*yH[]+ (1-pH)*yL[]) - sigma* ((iH[-1] - (pH*piH[] + (1-pH)*piL[])) - rn[-1]);
+    };
+    calibration
+    {
+        kappa =  0.2465; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=6
+        beta = 0.99;
+        theta = 6;
+        sigma = 1;
+        pH = 0.99;
+        pL = 0.99;
+    };
+};
+block LOWREGIME
+{
+    definitions
+    {
+        uL[] = -1/2* (piL[]*piL[] + kappa/theta * yL[]*yL[]);
+    };
+    controls
+    {
+        piL[],  yL[], iL[];
+    };
+    objective
+    {
+        UL[] = uL[] + beta * (pL*E[][UL[1]]+ (1-pL)*E[][UH[1]]);
+    };
+    constraints
+    {
+        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]);
+        yL[-1] = (pL*yL[]+ (1-pL)*yH[]) - sigma* ((iL[-1] - (pL*piL[]+ (1-pL)*piH[])) - rn[-1]);
+    };
+};
+
+block EXOG 
+{
+    identities
+    {
+        rn[] = exp(phi * log(rn[-1]) + epsilon_Z[]);
+    };
+    shocks
+    {
+        epsilon_Z[];
+    };
+    calibration
+    {
+        phi = 0.95;
+    };
+};

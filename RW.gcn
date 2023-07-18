@@ -1,0 +1,58 @@
+# ############################################################################
+# (c) 3Eq NK model a la Rotember Woodford model                              #
+#                                                                            #
+# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# ############################################################################
+
+options
+{
+    output logfile = TRUE;
+    output LaTeX = TRUE;
+    output LaTeX landscape = TRUE;
+};
+
+block RW
+{
+    definitions
+    {
+        u[] =-1/2* ( (pi[]-pistar)^2 + kappa/theta * y[]*y[]);
+    };
+    controls
+    {
+         pi[], y[], i[];
+    };
+    objective
+    {
+            U[] = u[] + beta * (E[][U[1]]);
+    };
+    constraints
+    {
+        pi[-1]= kappa* y[-1] + beta* pi[];
+        y[-1] = y[] - sigma* (i[-1] - (pi[] ) - rn[-1]);
+    };
+    calibration
+    {
+        kappa =  0.2465; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=6
+        beta = 0.99;
+        theta = 6;
+        sigma = 1;
+        pistar = 0;
+    };
+};
+
+
+block EXOG 
+{
+    identities
+    {
+        rn[] = exp(phi * log(rn[-1]) + epsilon_Z[]);
+    };
+    shocks
+    {
+        epsilon_Z[];
+    };
+    calibration
+    {
+        phi = 0.95;
+    };
+};

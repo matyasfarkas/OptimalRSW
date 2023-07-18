@@ -1,0 +1,94 @@
+# ############################################################################
+# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+#                                                                            #
+# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# ############################################################################
+# Constant probability case
+# ############################################################################
+
+options
+{
+    output logfile = TRUE;
+    output LaTeX = TRUE;
+    output LaTeX landscape = TRUE;
+};
+
+tryreduce
+{
+    piH[], piD[], yH[], yD[], rH[], rL[], iH[], iL[];
+};
+
+block HIGHREGIME
+{
+    definitions
+    {
+        uH[] = piH[]*piH[] + kappa/theta * yH[]*yH[];
+    };
+    controls
+    {
+         piH[], yH[], iH[];
+    };
+    objective
+    {
+            UH[] = -1/2* (uH[] + beta * (pH*E[][UH[1]]+ (1-pH)*E[][UL[1]]));
+    };
+    constraints
+    {
+        piH[]= kappa* yH[] + beta* (pH*E[][piH[1]]+ (1-pH)*E[][piL[1]]);
+        yH[] = (pH*E[][yH[1]]+ (1-pH)*E[][yL[1]]) - sigma* ((iH[] - (pH*E[][piH[1]]+ (1-pH)*E[][piL[1]])) - rn[]);
+    };
+    calibration
+    {
+        kappa = 0.6835; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=2
+        beta = 0.99;
+        theta = 2;
+        sigma = 2;
+        pH = 0.99;
+        pL =0.99;
+    };
+};
+block LOWREGIME
+{
+    definitions
+    {
+        uL[] = piL[]*piL[] + kappa/theta * yL[]*yL[];
+    };
+    controls
+    {
+        piL[],  yL[], iL[];
+    };
+    objective
+    {
+        UL[] = -1/2* (uL[] + beta * (pL*E[][UL[1]]+ (1-pL)*E[][UH[1]]));
+    };
+    constraints
+    {
+        piL[]= kappa* yL[] + beta* (pL*E[][piL[1]]+ (1-pL)*E[][piH[1]]);
+        yL[] = (pL*E[][yL[1]]+ (1-pL)*E[][yH[1]]) - sigma* ((iL[] - (pL*E[][piL[1]]+ (1-pL)*E[][piH[1]])) - rn[]);
+    };
+    calibration
+    {
+        kappa = 0.6835; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=2
+        beta = 0.99;
+        theta = 2;
+        sigma = 2;
+        pH = 0.99;
+        pL =0.99;
+    };
+};
+
+block EXOG 
+{
+    identities
+    {
+        rn[] = exp(phi * log(rn[-1]) + epsilon_Z[]);
+    };
+    shocks
+    {
+        epsilon_Z[];
+    };
+    calibration
+    {
+        phi = 0.95;
+    };
+};

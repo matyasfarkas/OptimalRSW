@@ -1,0 +1,45 @@
+Generated on 2023-04-14 15:48:25 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RS_MPE_const
+
+6 ERRORS, see bottom of this logfile
+
+
+Variables selected for reduction:
+    piH[], piD[], yH[], yD[], rH[], rL[], iH[], iL[]
+
+Block: HIGHREGIME
+ Definitions:
+    uH[] = piH[]^2 + kappa * theta^-1 * yH[]^2
+ Controls:
+    piH[], yH[], iH[]
+ Objective:
+    UH[] = -0.5 * piH[]^2 - 0.5 * beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) - 0.5 * kappa * theta^-1 * yH[]^2    (lambda__HIGHREGIME_UH[])
+ Constraints:
+    -piH[] + beta * (pH * E[][piH[1]] + (1 - pH) * E[][piL[1]]) + kappa * yH[] = 0    (lambda__HIGHREGIME_1[])
+    -yH[] + pH * E[][yH[1]] - sigma * (iH[] - rn[] - pH * E[][piH[1]] - (1 - pH) * E[][piL[1]]) + (1 - pH) * E[][yL[1]] = 0    (lambda__HIGHREGIME_2[])
+
+Block: LOWREGIME
+ Definitions:
+    uL[] = piL[]^2 + kappa * theta^-1 * yL[]^2
+ Controls:
+    piL[], yL[], iL[]
+ Objective:
+    UL[] = -0.5 * piL[]^2 - 0.5 * beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) - 0.5 * kappa * theta^-1 * yL[]^2    (lambda__LOWREGIME_UL[])
+ Constraints:
+    -piL[] + beta * (pL * E[][piL[1]] + (1 - pL) * E[][piH[1]]) + kappa * yL[] = 0    (lambda__LOWREGIME_1[])
+    -yL[] + pL * E[][yL[1]] - sigma * (iL[] - rn[] - pL * E[][piL[1]] - (1 - pL) * E[][piH[1]]) + (1 - pL) * E[][yH[1]] = 0    (lambda__LOWREGIME_2[])
+
+Block: EXOG
+ Identities:
+    -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+
+
+6 ERRORS
+(gEcon model error 1): control variable "piH[]" in HIGHREGIME's problem is in lead; error near line 37
+(gEcon model error 2): control variable "piH[]" in HIGHREGIME's problem is in lead; error near line 38
+(gEcon model error 3): control variable "yH[]" in HIGHREGIME's problem is in lead; error near line 38
+(gEcon model error 4): control variable "piL[]" in LOWREGIME's problem is in lead; error near line 66
+(gEcon model error 5): control variable "piL[]" in LOWREGIME's problem is in lead; error near line 67
+(gEcon model error 6): control variable "yL[]" in LOWREGIME's problem is in lead; error near line 67

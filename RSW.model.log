@@ -1,0 +1,90 @@
+Generated on 2023-07-17 16:54:29 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RSW
+
+Block: HIGHREGIME
+ Definitions:
+    uH[] = -0.5 * piH[]^2 - 0.5 * kappa * theta^-1 * yH[]^2
+ Controls:
+    piH[], yH[], iH[]
+ Objective:
+    UH[] = -0.5 * piH[]^2 + beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) - 0.5 * kappa * theta^-1 * yH[]^2
+ Constraints:
+    -piH[-1] + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0    (lambda__HIGHREGIME_1[])
+    -yH[-1] + pH * yH[] - sigma * (iH[-1] - rn[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0    (lambda__HIGHREGIME_2[])
+ First order conditions:
+    -piH[] + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[] = 0    (piH[])
+    pH * lambda__HIGHREGIME_2[] + beta * pH * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0    (yH[])
+    -beta * pH * sigma * E[][lambda__HIGHREGIME_2[1]] = 0    (iH[])
+
+Block: LOWREGIME
+ Definitions:
+    uL[] = -0.5 * piL[]^2 - 0.5 * kappa * theta^-1 * yL[]^2
+ Controls:
+    piL[], yL[], iL[]
+ Objective:
+    UL[] = -0.5 * piL[]^2 + beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) - 0.5 * kappa * theta^-1 * yL[]^2
+ Constraints:
+    -piL[-1] + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0    (lambda__LOWREGIME_1[])
+    -yL[-1] + pL * yL[] - sigma * (iL[-1] - rn[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0    (lambda__LOWREGIME_2[])
+ First order conditions:
+    -piL[] + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[] = 0    (piL[])
+    pL * lambda__LOWREGIME_2[] + beta * pL * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0    (yL[])
+    -beta * pL * sigma * E[][lambda__LOWREGIME_2[1]] = 0    (iL[])
+
+Block: EXOG
+ Identities:
+    -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+
+Variables (13):
+    iH[], iL[], lambda__HIGHREGIME_1[], lambda__HIGHREGIME_2[], lambda__LOWREGIME_1[], lambda__LOWREGIME_2[], piH[], piL[], rn[], yH[], yL[], UH[], UL[]
+
+Shocks (1):
+    epsilon_Z[]
+
+Parameters (7):
+    beta, kappa, phi, pH, pL, sigma, theta
+
+Free parameters (7):
+    beta, kappa, phi, pH, pL, sigma, theta
+
+Equations (13):
+ (1)  -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+ (2)  -piH[-1] + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0
+ (3)  -piL[-1] + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0
+ (4)  pH * lambda__HIGHREGIME_2[] + beta * pH * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0
+ (5)  pL * lambda__LOWREGIME_2[] + beta * pL * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0
+ (6)  -yH[-1] + pH * yH[] - sigma * (iH[-1] - rn[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0
+ (7)  -yL[-1] + pL * yL[] - sigma * (iL[-1] - rn[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0
+ (8)  -piH[] + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[] = 0
+ (9)  -piL[] + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[] = 0
+ (10)  UH[] + 0.5 * piH[]^2 - beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
+ (11)  UL[] + 0.5 * piL[]^2 - beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
+ (12)  -beta * pH * sigma * E[][lambda__HIGHREGIME_2[1]] = 0
+ (13)  -beta * pL * sigma * E[][lambda__LOWREGIME_2[1]] = 0
+
+Steady state equations (13):
+ (1)  -rn[ss] + exp(phi * log(rn[ss])) = 0
+ (2)  -piH[ss] + beta * (pH * piH[ss] + piL[ss] * (1 - pH)) + kappa * yH[ss] = 0
+ (3)  -piL[ss] + beta * (pL * piL[ss] + piH[ss] * (1 - pL)) + kappa * yL[ss] = 0
+ (4)  pH * lambda__HIGHREGIME_2[ss] + beta * pH * (-lambda__HIGHREGIME_2[ss] + kappa * lambda__HIGHREGIME_1[ss]) - kappa * theta^-1 * yH[ss] = 0
+ (5)  pL * lambda__LOWREGIME_2[ss] + beta * pL * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
+ (6)  -yH[ss] + pH * yH[ss] - sigma * (iH[ss] - rn[ss] - pH * piH[ss] - piL[ss] * (1 - pH)) + yL[ss] * (1 - pH) = 0
+ (7)  -yL[ss] + pL * yL[ss] - sigma * (iL[ss] - rn[ss] - pL * piL[ss] - piH[ss] * (1 - pL)) + yH[ss] * (1 - pL) = 0
+ (8)  -piH[ss] + pH * sigma * lambda__HIGHREGIME_2[ss] = 0
+ (9)  -piL[ss] + pL * sigma * lambda__LOWREGIME_2[ss] = 0
+ (10)  UH[ss] + 0.5 * piH[ss]^2 - beta * (pH * UH[ss] + UL[ss] * (1 - pH)) + 0.5 * kappa * theta^-1 * yH[ss]^2 = 0
+ (11)  UL[ss] + 0.5 * piL[ss]^2 - beta * (pL * UL[ss] + UH[ss] * (1 - pL)) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
+ (12)  -beta * pH * sigma * lambda__HIGHREGIME_2[ss] = 0
+ (13)  -beta * pL * sigma * lambda__LOWREGIME_2[ss] = 0
+
+Parameter settings (7):
+ (1)  beta = 0.99
+ (2)  kappa = 0.2465
+ (3)  phi = 0.95
+ (4)  pH = 0.99
+ (5)  pL = 0.99
+ (6)  sigma = 1
+ (7)  theta = 6
+

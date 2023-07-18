@@ -1,0 +1,94 @@
+Generated on 2023-04-17 10:14:53 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RSWTV
+
+Block: HIGHREGIME
+ Definitions:
+    uH[] = -0.5 * piH[]^2 - 0.5 * kappa * theta^-1 * yH[]^2
+    pH[] = (1 + exp(-pHc - piH[] + piL[]))^-1
+ Controls:
+    piH[], yH[], iH[]
+ Objective:
+    UH[] = -0.5 * piH[]^2 + beta * ((1 + exp(-pHc - piH[] + piL[]))^-1 * E[][UH[1]] + (1 - (1 + exp(-pHc - piH[] + piL[]))^-1) * E[][UL[1]]) - 0.5 * kappa * theta^-1 * yH[]^2    (lambda__HIGHREGIME_UH[])
+ Constraints:
+    -piH[-1] + beta * (piH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 + piL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1)) + kappa * yH[-1] = 0    (lambda__HIGHREGIME_1[])
+    -yH[-1] - sigma * (iH[-1] - rn[-1] - piH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 - piL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1)) + yH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 + yL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1) = 0    (lambda__HIGHREGIME_2[])
+ First order conditions:
+    -lambda__HIGHREGIME_UH[] + beta * (1 + exp(-pHc - piH[-1] + piL[-1]))^-1 = 0    (UH[])
+    -piH[] + beta * (exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 * E[][UH[1]] - exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 * E[][UL[1]]) + lambda__HIGHREGIME_2[] * (-sigma * (-(1 + exp(-pHc - piH[] + piL[]))^-1 - piH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 + piL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) + yH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 - yL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) + beta * lambda__HIGHREGIME_1[] * ((1 + exp(-pHc - piH[] + piL[]))^-1 + piH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 - piL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) - E[][lambda__HIGHREGIME_UH[1] * lambda__HIGHREGIME_1[1]] = 0    (piH[])
+    lambda__HIGHREGIME_2[] * (1 + exp(-pHc - piH[] + piL[]))^-1 - kappa * theta^-1 * yH[] + E[][lambda__HIGHREGIME_UH[1] * (-lambda__HIGHREGIME_2[1] + kappa * lambda__HIGHREGIME_1[1])] = 0    (yH[])
+    -sigma * E[][lambda__HIGHREGIME_UH[1] * lambda__HIGHREGIME_2[1]] = 0    (iH[])
+
+Block: LOWREGIME
+ Definitions:
+    uL[] = -0.5 * piL[]^2 - 0.5 * kappa * theta^-1 * yL[]^2
+    pL[] = (1 + exp(-pLc + piH[] - piL[]))^-1
+ Controls:
+    piL[], yL[], iL[]
+ Objective:
+    UL[] = -0.5 * piL[]^2 + beta * ((1 + exp(-pLc + piH[] - piL[]))^-1 * E[][UL[1]] + (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) * E[][UH[1]]) - 0.5 * kappa * theta^-1 * yL[]^2    (lambda__LOWREGIME_UL[])
+ Constraints:
+    -piL[-1] + beta * (piH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) + piL[] * (1 + exp(-pLc + piH[] - piL[]))^-1) + kappa * yL[-1] = 0    (lambda__LOWREGIME_1[])
+    -yL[-1] - sigma * (iL[-1] - rn[-1] - piH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) - piL[] * (1 + exp(-pLc + piH[] - piL[]))^-1) + yH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) + yL[] * (1 + exp(-pLc + piH[] - piL[]))^-1 = 0    (lambda__LOWREGIME_2[])
+ First order conditions:
+    -lambda__LOWREGIME_UL[] + beta * (1 + exp(-pLc + piH[-1] - piL[-1]))^-1 = 0    (UL[])
+    -piL[] + beta * (exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 * E[][UL[1]] - exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 * E[][UH[1]]) + lambda__LOWREGIME_2[] * (-sigma * (-(1 + exp(-pLc + piH[] - piL[]))^-1 + piH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 - piL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) - yH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 + yL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) + beta * lambda__LOWREGIME_1[] * ((1 + exp(-pLc + piH[] - piL[]))^-1 + piL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 - piH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) - E[][lambda__LOWREGIME_UL[1] * lambda__LOWREGIME_1[1]] = 0    (piL[])
+    lambda__LOWREGIME_2[] * (1 + exp(-pLc + piH[] - piL[]))^-1 - kappa * theta^-1 * yL[] + E[][lambda__LOWREGIME_UL[1] * (-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1])] = 0    (yL[])
+    -sigma * E[][lambda__LOWREGIME_UL[1] * lambda__LOWREGIME_2[1]] = 0    (iL[])
+
+Block: EXOG
+ Identities:
+    -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+
+Variables (13):
+    iH[], iL[], lambda__HIGHREGIME_1[], lambda__LOWREGIME_1[], lambda__HIGHREGIME_2[], lambda__LOWREGIME_2[], piH[], piL[], rn[], yH[], yL[], UH[], UL[]
+
+Shocks (1):
+    epsilon_Z[]
+
+Parameters (7):
+    beta, kappa, phi, pHc, pLc, sigma, theta
+
+Free parameters (7):
+    beta, kappa, phi, pHc, pLc, sigma, theta
+
+Equations (13):
+ (1)  -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+ (2)  -piH[-1] + beta * (piH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 + piL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1)) + kappa * yH[-1] = 0
+ (3)  -piL[-1] + beta * (piH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) + piL[] * (1 + exp(-pLc + piH[] - piL[]))^-1) + kappa * yL[-1] = 0
+ (4)  lambda__HIGHREGIME_2[] * (1 + exp(-pHc - piH[] + piL[]))^-1 + beta * (1 + exp(-pHc - piH[] + piL[]))^-1 * E[][-lambda__HIGHREGIME_2[1] + kappa * lambda__HIGHREGIME_1[1]] - kappa * theta^-1 * yH[] = 0
+ (5)  lambda__LOWREGIME_2[] * (1 + exp(-pLc + piH[] - piL[]))^-1 + beta * (1 + exp(-pLc + piH[] - piL[]))^-1 * E[][-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1]] - kappa * theta^-1 * yL[] = 0
+ (6)  -yH[-1] - sigma * (iH[-1] - rn[-1] - piH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 - piL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1)) + yH[] * (1 + exp(-pHc - piH[] + piL[]))^-1 + yL[] * (1 - (1 + exp(-pHc - piH[] + piL[]))^-1) = 0
+ (7)  -yL[-1] - sigma * (iL[-1] - rn[-1] - piH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) - piL[] * (1 + exp(-pLc + piH[] - piL[]))^-1) + yH[] * (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) + yL[] * (1 + exp(-pLc + piH[] - piL[]))^-1 = 0
+ (8)  UH[] + 0.5 * piH[]^2 - beta * ((1 + exp(-pHc - piH[] + piL[]))^-1 * E[][UH[1]] + (1 - (1 + exp(-pHc - piH[] + piL[]))^-1) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
+ (9)  UL[] + 0.5 * piL[]^2 - beta * ((1 + exp(-pLc + piH[] - piL[]))^-1 * E[][UL[1]] + (1 - (1 + exp(-pLc + piH[] - piL[]))^-1) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
+ (10)  -piH[] + beta * (exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 * E[][UH[1]] - exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 * E[][UL[1]]) + lambda__HIGHREGIME_2[] * (-sigma * (-(1 + exp(-pHc - piH[] + piL[]))^-1 - piH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 + piL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) + yH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 - yL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) + beta * lambda__HIGHREGIME_1[] * ((1 + exp(-pHc - piH[] + piL[]))^-1 + piH[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2 - piL[] * exp(-pHc - piH[] + piL[]) * (1 + exp(-pHc - piH[] + piL[]))^-2) - beta * (1 + exp(-pHc - piH[] + piL[]))^-1 * E[][lambda__HIGHREGIME_1[1]] = 0
+ (11)  -piL[] + beta * (exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 * E[][UL[1]] - exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 * E[][UH[1]]) + lambda__LOWREGIME_2[] * (-sigma * (-(1 + exp(-pLc + piH[] - piL[]))^-1 + piH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 - piL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) - yH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 + yL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) + beta * lambda__LOWREGIME_1[] * ((1 + exp(-pLc + piH[] - piL[]))^-1 + piL[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2 - piH[] * exp(-pLc + piH[] - piL[]) * (1 + exp(-pLc + piH[] - piL[]))^-2) - beta * (1 + exp(-pLc + piH[] - piL[]))^-1 * E[][lambda__LOWREGIME_1[1]] = 0
+ (12)  -beta * sigma * (1 + exp(-pHc - piH[] + piL[]))^-1 * E[][lambda__HIGHREGIME_2[1]] = 0
+ (13)  -beta * sigma * (1 + exp(-pLc + piH[] - piL[]))^-1 * E[][lambda__LOWREGIME_2[1]] = 0
+
+Steady state equations (13):
+ (1)  -rn[ss] + exp(phi * log(rn[ss])) = 0
+ (2)  -piH[ss] + beta * (piH[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + piL[ss] * (1 - (1 + exp(-pHc - piH[ss] + piL[ss]))^-1)) + kappa * yH[ss] = 0
+ (3)  -piL[ss] + beta * (piH[ss] * (1 - (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + piL[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + kappa * yL[ss] = 0
+ (4)  lambda__HIGHREGIME_2[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + beta * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 * (-lambda__HIGHREGIME_2[ss] + kappa * lambda__HIGHREGIME_1[ss]) - kappa * theta^-1 * yH[ss] = 0
+ (5)  lambda__LOWREGIME_2[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1 + beta * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1 * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
+ (6)  -yH[ss] - sigma * (iH[ss] - rn[ss] - piH[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 - piL[ss] * (1 - (1 + exp(-pHc - piH[ss] + piL[ss]))^-1)) + yH[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + yL[ss] * (1 - (1 + exp(-pHc - piH[ss] + piL[ss]))^-1) = 0
+ (7)  -yL[ss] - sigma * (iL[ss] - rn[ss] - piH[ss] * (1 - (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) - piL[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + yH[ss] * (1 - (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + yL[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1 = 0
+ (8)  UH[ss] + 0.5 * piH[ss]^2 - beta * (UH[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + UL[ss] * (1 - (1 + exp(-pHc - piH[ss] + piL[ss]))^-1)) + 0.5 * kappa * theta^-1 * yH[ss]^2 = 0
+ (9)  UL[ss] + 0.5 * piL[ss]^2 - beta * (UH[ss] * (1 - (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + UL[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
+ (10)  -piH[ss] + beta * (UH[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2 - UL[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2) + lambda__HIGHREGIME_2[ss] * (-sigma * (-(1 + exp(-pHc - piH[ss] + piL[ss]))^-1 - piH[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2 + piL[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2) + yH[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2 - yL[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2) - beta * lambda__HIGHREGIME_1[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + beta * lambda__HIGHREGIME_1[ss] * ((1 + exp(-pHc - piH[ss] + piL[ss]))^-1 + piH[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2 - piL[ss] * exp(-pHc - piH[ss] + piL[ss]) * (1 + exp(-pHc - piH[ss] + piL[ss]))^-2) = 0
+ (11)  -piL[ss] + beta * (UL[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2 - UH[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2) + lambda__LOWREGIME_2[ss] * (-sigma * (-(1 + exp(-pLc + piH[ss] - piL[ss]))^-1 + piH[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2 - piL[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2) - yH[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2 + yL[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2) - beta * lambda__LOWREGIME_1[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1 + beta * lambda__LOWREGIME_1[ss] * ((1 + exp(-pLc + piH[ss] - piL[ss]))^-1 + piL[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2 - piH[ss] * exp(-pLc + piH[ss] - piL[ss]) * (1 + exp(-pLc + piH[ss] - piL[ss]))^-2) = 0
+ (12)  -beta * sigma * lambda__HIGHREGIME_2[ss] * (1 + exp(-pHc - piH[ss] + piL[ss]))^-1 = 0
+ (13)  -beta * sigma * lambda__LOWREGIME_2[ss] * (1 + exp(-pLc + piH[ss] - piL[ss]))^-1 = 0
+
+Parameter settings (7):
+ (1)  beta = 0.99
+ (2)  kappa = 0.2465
+ (3)  phi = 0.95
+ (4)  pHc = 0.99
+ (5)  pLc = 0.99
+ (6)  sigma = 1
+ (7)  theta = 6
+

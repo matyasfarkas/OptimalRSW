@@ -1,0 +1,124 @@
+% Generated on 2023-07-18 11:23:23 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: RW
+
+\section{RW}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{\pi_{t}, y_{t}, i_{t}
+} U_{t} = -0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - 0.5{\kappa} {\theta}^{-1} {y_{t}}^{2}\\
+&\mathrm{s.t.:}\nonumber\\
+& \pi_{t-1} = {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} \quad \left(\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}\right)\\
+& y_{t-1} = y_{t} - {\sigma} \left(i_{t-1} - {r\!n}_{t-1} - \pi_{t}\right) \quad \left(\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t}\right)
+\end{align}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+{p\!i\!s\!t\!a\!r} - \pi_{t} + {\beta} {\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t+1}\right]} + {\sigma} {\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t}} = 0
+ \quad \left(\pi_{t}\right)
+\end{equation}
+\begin{equation}
+\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t} + {\beta} \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {y_{t}} = 0
+ \quad \left(y_{t}\right)
+\end{equation}
+\begin{equation}
+-{\beta} {\sigma} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t+1}\right]} = 0
+ \quad \left(i_{t}\right)
+\end{equation}
+
+
+
+
+\section{EXOG}
+
+\subsection{Identities}
+
+\begin{equation}
+{r\!n}_{t} = e^{\epsilon^{\mathrm{Z}}_{t} + {\phi} {\log{{r\!n}_{t-1}}}}
+\end{equation}
+
+
+
+
+\section{Equilibrium relationships (after reduction)}
+
+\begin{equation}
+-{r\!n}_{t} + e^{\epsilon^{\mathrm{Z}}_{t} + {\phi} {\log{{r\!n}_{t-1}}}} = 0
+\end{equation}
+\begin{equation}
+-\pi_{t-1} + {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} = 0
+\end{equation}
+\begin{equation}
+-y_{t-1} + y_{t} - {\sigma} \left(i_{t-1} - {r\!n}_{t-1} - \pi_{t}\right) = 0
+\end{equation}
+\begin{equation}
+\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t} + {\beta} \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {y_{t}} = 0
+\end{equation}
+\begin{equation}
+U_{t} + 0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} + 0.5{\kappa} {\theta}^{-1} {y_{t}}^{2} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!s\!t\!a\!r} - \pi_{t} + {\beta} {\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t+1}\right]} + {\sigma} {\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t}} = 0
+\end{equation}
+\begin{equation}
+-{\beta} {\sigma} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t+1}\right]} = 0
+\end{equation}
+
+
+
+\section{Steady state relationships (after reduction)}
+
+\begin{equation}
+-{r\!n}_\mathrm{ss} + e^{{\phi} {\log{{r\!n}_\mathrm{ss}}}} = 0
+\end{equation}
+\begin{equation}
+-\pi_\mathrm{ss} + {\beta} {\pi_\mathrm{ss}} + {\kappa} {y_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-{\sigma} \left(i_\mathrm{ss} - \pi_\mathrm{ss} - {r\!n}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+\lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss} + {\beta} \left(-\lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{RW}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {y_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+U_\mathrm{ss} + 0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_\mathrm{ss}\right)^{2} - {\beta} {U_\mathrm{ss}} + 0.5{\kappa} {\theta}^{-1} {y_\mathrm{ss}}^{2} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!s\!t\!a\!r} - \pi_\mathrm{ss} + {\sigma} {\lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-{\beta} {\sigma} {\lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss}} = 0
+\end{equation}
+
+
+
+
+
+
+\section{Parameter settings}
+
+\begin{equation}
+\beta = 0.99
+\end{equation}
+\begin{equation}
+\kappa = 0.2465
+\end{equation}
+\begin{equation}
+\phi = 0.95
+\end{equation}
+\begin{equation}
+{p\!i\!s\!t\!a\!r} = 0
+\end{equation}
+\begin{equation}
+\sigma = 1
+\end{equation}
+\begin{equation}
+\theta = 6
+\end{equation}
+
+

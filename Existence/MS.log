@@ -1,0 +1,115 @@
+Starting Dynare (version 5.1).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Substitution of exo lags: added 1 auxiliary variables and equations.
+Found 7 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 2).
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+STEADY-STATE RESULTS:
+
+yH              		 0
+yL              		 0
+piH             		 0
+piL             		 0
+iH              		 0.010101
+iL              		 0.010101
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0 : High Regime - IS
+Equation number 2 : 0 : High Regime - PC
+Equation number 3 : 0 : High Regime - Optimal MP
+Equation number 4 : 0 : Low Regime - IS
+Equation number 5 : 0 : Low Regime - PC
+Equation number 6 : 0 : Low Regime - Optimal MP
+
+
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+               0                0                0
+
+
+There are 0 eigenvalue(s) larger than 1 in modulus 
+for 0 forward-looking variable(s)
+
+The rank condition is verified.
+
+MODEL_DIAGNOSTICS:  No obvious problems with this mod-file were detected.
+
+MODEL SUMMARY
+
+  Number of variables:         7
+  Number of stochastic shocks: 2
+  Number of state variables:   1
+  Number of jumpers:           0
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables        rnsh     mkpsh
+rnsh         1.000000  0.000000
+mkpsh        0.000000  1.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                  yH              yL             piH             piL              iH              iL
+Constant                           0               0               0               0        0.010101        0.010101
+rnsh(-1)                           0               0               0               0        0.900000        0.900000
+rnsh                               0               0               0               0        1.000000        1.000000
+mkpsh                      -4.029550       -4.029550        0.671592        0.671592        0.671592        0.671592
+
+
+MOMENTS OF SIMULATED VARIABLES
+VARIABLE              MEAN       STD. DEV.        VARIANCE        SKEWNESS        KURTOSIS
+yH                0.662520        4.028726       16.230635        0.256897        0.128243
+yL                0.662520        4.028726       16.230635        0.256897        0.128243
+piH              -0.110420        0.671454        0.450851       -0.256897        0.128243
+piL              -0.110420        0.671454        0.450851       -0.256897        0.128243
+iH               -0.120750        1.467560        2.153734       -0.308331        2.075246
+iL               -0.120750        1.467560        2.153734       -0.308331        2.075246
+
+
+CORRELATION OF SIMULATED VARIABLES
+VARIABLE         yH       yL      piH      piL       iH       iL
+yH           1.0000   1.0000  -1.0000  -1.0000  -0.3514  -0.3514
+yL           1.0000   1.0000  -1.0000  -1.0000  -0.3514  -0.3514
+piH         -1.0000  -1.0000   1.0000   1.0000   0.3514   0.3514
+piL         -1.0000  -1.0000   1.0000   1.0000   0.3514   0.3514
+iH          -0.3514  -0.3514   0.3514   0.3514   1.0000   1.0000
+iL          -0.3514  -0.3514   0.3514   0.3514   1.0000   1.0000
+
+
+AUTOCORRELATION OF SIMULATED VARIABLES
+VARIABLE          1        2        3        4        5
+yH          -0.0418  -0.1380   0.1094  -0.0019  -0.0627
+yL          -0.0418  -0.1380   0.1094  -0.0019  -0.0627
+piH         -0.0418  -0.1380   0.1094  -0.0019  -0.0627
+piL         -0.0418  -0.1380   0.1094  -0.0019  -0.0627
+iH           0.4684  -0.0104  -0.0048   0.1072   0.1344
+iL           0.4684  -0.0104  -0.0048   0.1072   0.1344
+
+
+
+VARIANCE DECOMPOSITION SIMULATING ONE SHOCK AT A TIME (in percent)
+                   rnsh             mkpsh  Tot. lin. contr.
+yH                 0.00            101.01            101.01
+yL                 0.00            101.01            101.01
+piH                0.00            101.01            101.01
+piL                0.00            101.01            101.01
+iH                89.68             21.14            110.82
+iL                89.68             21.14            110.82
+Note: numbers do not add up to 100 due to non-zero correlation of simulated shocks in small samples
+
+All parameter values in the specified ranges give unique saddle-path solution,
+and match prior IRF/moment restriction(s) if any!
+Total computing time : 0h00m24s
