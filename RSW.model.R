@@ -1,16 +1,17 @@
-# Generated on 2023-07-18 15:03:02 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2023-10-06 13:09:15 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: RSW
 
 # info
-info__ <- c("RSW", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW.gcn", "2023-07-18 15:03:02", "false")
+info__ <- c("RSW", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW.gcn", "2023-10-06 13:09:15", "false")
 
 # index sets
 index_sets__ <- list()
 
 # variables
-variables__ <- c("iH",
+variables__ <- c("etapi",
+                 "iH",
                  "iL",
                  "lambda__HIGHREGIME_1",
                  "lambda__HIGHREGIME_2",
@@ -18,13 +19,13 @@ variables__ <- c("iH",
                  "lambda__LOWREGIME_2",
                  "piH",
                  "piL",
-                 "rn",
                  "yH",
                  "yL",
                  "UH",
                  "UL")
 
-variables_tex__ <- c("{i\\!H}",
+variables_tex__ <- c("{e\\!t\\!a\\!p\\!i}",
+                     "{i\\!H}",
                      "{i\\!L}",
                      "\\lambda^{\\mathrm{HIGHREGIME}^{\\mathrm{1}}}",
                      "\\lambda^{\\mathrm{HIGHREGIME}^{\\mathrm{2}}}",
@@ -32,22 +33,23 @@ variables_tex__ <- c("{i\\!H}",
                      "\\lambda^{\\mathrm{LOWREGIME}^{\\mathrm{2}}}",
                      "{p\\!i\\!H}",
                      "{p\\!i\\!L}",
-                     "{r\\!n}",
                      "{y\\!H}",
                      "{y\\!L}",
                      "{U\\!H}",
                      "{U\\!L}")
 
 # shocks
-shocks__ <- c("epsilon_Z")
+shocks__ <- c("epsilon_pi")
 
-shocks_tex__ <- c("\\epsilon^{\\mathrm{Z}}")
+shocks_tex__ <- c("\\epsilon^{\\pi}")
 
 # parameters
 parameters__ <- c("beta",
                   "kappa",
                   "phi",
+                  "pitH",
                   "pitCB",
+                  "pitL",
                   "pH",
                   "pL",
                   "sigma",
@@ -56,7 +58,9 @@ parameters__ <- c("beta",
 parameters_tex__ <- c("\\beta",
                      "\\kappa",
                      "\\phi",
+                     "{p\\!i\\!t\\!H}",
                      "{p\\!i\\!t\\!C\\!B}",
+                     "{p\\!i\\!t\\!L}",
                      "{p\\!H}",
                      "{p\\!L}",
                      "\\sigma",
@@ -66,7 +70,9 @@ parameters_tex__ <- c("\\beta",
 parameters_free__ <- c("beta",
                        "kappa",
                        "phi",
+                       "pitH",
                        "pitCB",
+                       "pitL",
                        "pH",
                        "pL",
                        "sigma",
@@ -76,24 +82,26 @@ parameters_free__ <- c("beta",
 parameters_free_val__ <- c(0.99,
                            0.2465,
                            0.95,
+                           2,
                            0,
+                           -2,
                            0.99,
                            0.99,
                            1,
                            6)
 
 # equations
-equations__ <- c("-rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0",
-                 "-piH[-1] + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0",
-                 "-piL[-1] + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0",
+equations__ <- c("-etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0",
                  "pH * lambda__HIGHREGIME_2[] + beta * pH * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0",
                  "pL * lambda__LOWREGIME_2[] + beta * pL * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0",
-                 "-yH[-1] + pH * yH[] - sigma * (iH[-1] - rn[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0",
-                 "-yL[-1] + pL * yL[] - sigma * (iL[-1] - rn[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0",
-                 "UH[] + 0.5 * (-pitCB + piH[])^2 - beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0",
-                 "UL[] + 0.5 * (-pitCB + piL[])^2 - beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0",
-                 "pitCB - piH[] + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[] = 0",
-                 "pitCB - piL[] + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[] = 0",
+                 "etapi[-1] - piH[-1] + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0",
+                 "etapi[-1] - piL[-1] + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0",
+                 "-yH[-1] + pH * yH[] - sigma * (iH[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0",
+                 "-yL[-1] + pL * yL[] - sigma * (iL[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0",
+                 "UH[] + 0.5 * (pitH - pitCB + piH[])^2 - beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0",
+                 "UL[] + 0.5 * (-pitCB + pitL + piL[])^2 - beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0",
+                 "-pitH + pitCB - piH[] + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[] = 0",
+                 "pitCB - pitL - piL[] + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[] = 0",
                  "-beta * pH * sigma * E[][lambda__HIGHREGIME_2[1]] = 0",
                  "-beta * pL * sigma * E[][lambda__LOWREGIME_2[1]] = 0")
 
@@ -102,18 +110,18 @@ calibr_equations__ <- character(0)
 
 # variables / equations map
 vareqmap__ <- sparseMatrix(i = c(1, 2, 2, 2, 3, 3, 3, 4, 4, 4,
-                                 5, 5, 5, 6, 6, 6, 6, 6, 6, 7,
+                                 4, 5, 5, 5, 5, 6, 6, 6, 6, 6,
                                  7, 7, 7, 7, 7, 8, 8, 8, 8, 9,
                                  9, 9, 9, 10, 10, 10, 11, 11, 11, 12,
                                  13),
-                           j = c(9, 7, 8, 10, 7, 8, 11, 3, 4, 10,
-                                 5, 6, 11, 1, 7, 8, 9, 10, 11, 2,
-                                 7, 8, 9, 10, 11, 7, 10, 12, 13, 8,
-                                 11, 12, 13, 3, 4, 7, 5, 6, 8, 4,
-                                 6),
-                           x = c(3, 3, 2, 1, 2, 3, 1, 4, 6, 2,
-                                 4, 6, 2, 1, 2, 2, 1, 3, 2, 1,
-                                 2, 2, 1, 2, 3, 2, 2, 6, 4, 2,
+                           j = c(1, 4, 5, 10, 6, 7, 11, 1, 8, 9,
+                                 10, 1, 8, 9, 11, 2, 8, 9, 10, 11,
+                                 3, 8, 9, 10, 11, 8, 10, 12, 13, 9,
+                                 11, 12, 13, 4, 5, 8, 6, 7, 9, 5,
+                                 7),
+                           x = c(3, 4, 6, 2, 4, 6, 2, 1, 3, 2,
+                                 1, 1, 2, 3, 1, 1, 2, 2, 3, 2,
+                                 1, 2, 2, 2, 3, 2, 2, 6, 4, 2,
                                  2, 4, 6, 6, 2, 2, 6, 2, 2, 4,
                                  4),
                            dims = c(13, 13))
@@ -128,20 +136,20 @@ calibrpareqmap__ <- sparseMatrix(i = NULL, j = NULL, dims = c(13, 0))
 calibrparcalibreqmap__ <- sparseMatrix(i = NULL, j = NULL, dims = c(0, 0))
 
 # free parameters / equations map
-freepareqmap__ <- sparseMatrix(i = c(1, 2, 2, 2, 3, 3, 3, 4, 4, 4,
-                                     4, 5, 5, 5, 5, 6, 6, 7, 7, 8,
-                                     8, 8, 8, 8, 9, 9, 9, 9, 9, 10,
-                                     10, 10, 10, 11, 11, 11, 11, 12, 12, 12,
-                                     13, 13, 13),
-                               j = c(3, 1, 2, 5, 1, 2, 6, 1, 2, 5,
-                                     8, 1, 2, 6, 8, 5, 7, 6, 7, 1,
-                                     2, 4, 5, 8, 1, 2, 4, 6, 8, 1,
-                                     4, 5, 7, 1, 4, 6, 7, 1, 5, 7,
-                                     1, 6, 7),
-                               x = rep(1, 43), dims = c(13, 8))
+freepareqmap__ <- sparseMatrix(i = c(1, 2, 2, 2, 2, 3, 3, 3, 3, 4,
+                                     4, 4, 5, 5, 5, 6, 6, 7, 7, 8,
+                                     8, 8, 8, 8, 8, 9, 9, 9, 9, 9,
+                                     9, 10, 10, 10, 10, 10, 11, 11, 11, 11,
+                                     11, 12, 12, 12, 13, 13, 13),
+                               j = c(3, 1, 2, 7, 10, 1, 2, 8, 10, 1,
+                                     2, 7, 1, 2, 8, 7, 9, 8, 9, 1,
+                                     2, 4, 5, 7, 10, 1, 2, 5, 6, 8,
+                                     10, 1, 4, 5, 7, 9, 1, 5, 6, 8,
+                                     9, 1, 7, 9, 1, 8, 9),
+                               x = rep(1, 47), dims = c(13, 10))
 
 # free parameters / calibrating equations map
-freeparcalibreqmap__ <- sparseMatrix(i = NULL, j = NULL, dims = c(0, 8))
+freeparcalibreqmap__ <- sparseMatrix(i = NULL, j = NULL, dims = c(0, 10))
 
 # shocks / equations map
 shockeqmap__ <- sparseMatrix(i = c(1),
@@ -152,19 +160,19 @@ shockeqmap__ <- sparseMatrix(i = c(1),
 ss_eq__ <- function(v, pc, pf)
 {
     r <- numeric(13)
-    r[1] = -v[9] + exp(pf[3] * log(v[9]))
-    r[2] = -v[7] + pf[1] * (pf[5] * v[7] + v[8] * (1 - pf[5])) + pf[2] * v[10]
-    r[3] = -v[8] + pf[1] * (pf[6] * v[8] + v[7] * (1 - pf[6])) + pf[2] * v[11]
-    r[4] = pf[5] * v[4] + pf[1] * pf[5] * (-v[4] + pf[2] * v[3]) - pf[2] * pf[8]^-1 * v[10]
-    r[5] = pf[6] * v[6] + pf[1] * pf[6] * (-v[6] + pf[2] * v[5]) - pf[2] * pf[8]^-1 * v[11]
-    r[6] = -v[10] + pf[5] * v[10] - pf[7] * (v[1] - v[9] - pf[5] * v[7] - v[8] * (1 - pf[5])) + v[11] * (1 - pf[5])
-    r[7] = -v[11] + pf[6] * v[11] - pf[7] * (v[2] - v[9] - pf[6] * v[8] - v[7] * (1 - pf[6])) + v[10] * (1 - pf[6])
-    r[8] = v[12] + 0.5 * (-pf[4] + v[7])^2 - pf[1] * (pf[5] * v[12] + v[13] * (1 - pf[5])) + 0.5 * pf[2] * pf[8]^-1 * v[10]^2
-    r[9] = v[13] + 0.5 * (-pf[4] + v[8])^2 - pf[1] * (pf[6] * v[13] + v[12] * (1 - pf[6])) + 0.5 * pf[2] * pf[8]^-1 * v[11]^2
-    r[10] = pf[4] - v[7] + pf[5] * pf[7] * v[4]
-    r[11] = pf[4] - v[8] + pf[6] * pf[7] * v[6]
-    r[12] = -pf[1] * pf[5] * pf[7] * v[4]
-    r[13] = -pf[1] * pf[6] * pf[7] * v[6]
+    r[1] = -v[1] + exp(pf[3] * log(v[1]))
+    r[2] = pf[7] * v[5] + pf[1] * pf[7] * (-v[5] + pf[2] * v[4]) - pf[2] * pf[10]^-1 * v[10]
+    r[3] = pf[8] * v[7] + pf[1] * pf[8] * (-v[7] + pf[2] * v[6]) - pf[2] * pf[10]^-1 * v[11]
+    r[4] = v[1] - v[8] + pf[1] * (pf[7] * v[8] + v[9] * (1 - pf[7])) + pf[2] * v[10]
+    r[5] = v[1] - v[9] + pf[1] * (pf[8] * v[9] + v[8] * (1 - pf[8])) + pf[2] * v[11]
+    r[6] = -v[10] + pf[7] * v[10] - pf[9] * (v[2] - pf[7] * v[8] - v[9] * (1 - pf[7])) + v[11] * (1 - pf[7])
+    r[7] = -v[11] + pf[8] * v[11] - pf[9] * (v[3] - pf[8] * v[9] - v[8] * (1 - pf[8])) + v[10] * (1 - pf[8])
+    r[8] = v[12] + 0.5 * (pf[4] - pf[5] + v[8])^2 - pf[1] * (pf[7] * v[12] + v[13] * (1 - pf[7])) + 0.5 * pf[2] * pf[10]^-1 * v[10]^2
+    r[9] = v[13] + 0.5 * (-pf[5] + pf[6] + v[9])^2 - pf[1] * (pf[8] * v[13] + v[12] * (1 - pf[8])) + 0.5 * pf[2] * pf[10]^-1 * v[11]^2
+    r[10] = -pf[4] + pf[5] - v[8] + pf[7] * pf[9] * v[5]
+    r[11] = pf[5] - pf[6] - v[9] + pf[8] * pf[9] * v[7]
+    r[12] = -pf[1] * pf[7] * pf[9] * v[5]
+    r[13] = -pf[1] * pf[8] * pf[9] * v[7]
 
     return(r)
 }
@@ -182,53 +190,53 @@ ss_calibr_eq_jacob__ <- function(v, pc, pf)
 {
     r <- numeric(0)
     jac <- numeric(39)
-    jac[1] = -1 + pf[3] * v[9]^-1 * exp(pf[3] * log(v[9]))
-    jac[2] = -1 + pf[1] * pf[5]
-    jac[3] = pf[1] * (1 - pf[5])
-    jac[4] = pf[2]
-    jac[5] = pf[1] * (1 - pf[6])
-    jac[6] = -1 + pf[1] * pf[6]
-    jac[7] = pf[2]
-    jac[8] = pf[1] * pf[2] * pf[5]
-    jac[9] = pf[5] - pf[1] * pf[5]
-    jac[10] = -pf[2] * pf[8]^-1
-    jac[11] = pf[1] * pf[2] * pf[6]
-    jac[12] = pf[6] - pf[1] * pf[6]
-    jac[13] = -pf[2] * pf[8]^-1
-    jac[14] = -pf[7]
-    jac[15] = pf[5] * pf[7]
-    jac[16] = -pf[7] * (-1 + pf[5])
-    jac[17] = pf[7]
-    jac[18] = -1 + pf[5]
-    jac[19] = 1 - pf[5]
-    jac[20] = -pf[7]
-    jac[21] = -pf[7] * (-1 + pf[6])
-    jac[22] = pf[6] * pf[7]
-    jac[23] = pf[7]
-    jac[24] = 1 - pf[6]
-    jac[25] = -1 + pf[6]
-    jac[26] = -pf[4] + v[7]
-    jac[27] = pf[2] * pf[8]^-1 * v[10]
-    jac[28] = 1 - pf[1] * pf[5]
-    jac[29] = -pf[1] * (1 - pf[5])
-    jac[30] = -pf[4] + v[8]
-    jac[31] = pf[2] * pf[8]^-1 * v[11]
-    jac[32] = -pf[1] * (1 - pf[6])
-    jac[33] = 1 - pf[1] * pf[6]
-    jac[34] = pf[5] * pf[7]
+    jac[1] = -1 + pf[3] * v[1]^-1 * exp(pf[3] * log(v[1]))
+    jac[2] = pf[1] * pf[2] * pf[7]
+    jac[3] = pf[7] - pf[1] * pf[7]
+    jac[4] = -pf[2] * pf[10]^-1
+    jac[5] = pf[1] * pf[2] * pf[8]
+    jac[6] = pf[8] - pf[1] * pf[8]
+    jac[7] = -pf[2] * pf[10]^-1
+    jac[8] = 1
+    jac[9] = -1 + pf[1] * pf[7]
+    jac[10] = pf[1] * (1 - pf[7])
+    jac[11] = pf[2]
+    jac[12] = 1
+    jac[13] = pf[1] * (1 - pf[8])
+    jac[14] = -1 + pf[1] * pf[8]
+    jac[15] = pf[2]
+    jac[16] = -pf[9]
+    jac[17] = pf[7] * pf[9]
+    jac[18] = -pf[9] * (-1 + pf[7])
+    jac[19] = -1 + pf[7]
+    jac[20] = 1 - pf[7]
+    jac[21] = -pf[9]
+    jac[22] = -pf[9] * (-1 + pf[8])
+    jac[23] = pf[8] * pf[9]
+    jac[24] = 1 - pf[8]
+    jac[25] = -1 + pf[8]
+    jac[26] = pf[4] - pf[5] + v[8]
+    jac[27] = pf[2] * pf[10]^-1 * v[10]
+    jac[28] = 1 - pf[1] * pf[7]
+    jac[29] = -pf[1] * (1 - pf[7])
+    jac[30] = -pf[5] + pf[6] + v[9]
+    jac[31] = pf[2] * pf[10]^-1 * v[11]
+    jac[32] = -pf[1] * (1 - pf[8])
+    jac[33] = 1 - pf[1] * pf[8]
+    jac[34] = pf[7] * pf[9]
     jac[35] = -1
-    jac[36] = pf[6] * pf[7]
+    jac[36] = pf[8] * pf[9]
     jac[37] = -1
-    jac[38] = -pf[1] * pf[5] * pf[7]
-    jac[39] = -pf[1] * pf[6] * pf[7]
+    jac[38] = -pf[1] * pf[7] * pf[9]
+    jac[39] = -pf[1] * pf[8] * pf[9]
     jacob <- sparseMatrix(i = c(1, 2, 2, 2, 3, 3, 3, 4, 4, 4,
-                                5, 5, 5, 6, 6, 6, 6, 6, 6, 7,
+                                4, 5, 5, 5, 5, 6, 6, 6, 6, 6,
                                 7, 7, 7, 7, 7, 8, 8, 8, 8, 9,
                                 9, 9, 9, 10, 10, 11, 11, 12, 13),
-                          j = c(9, 7, 8, 10, 7, 8, 11, 3, 4, 10,
-                                5, 6, 11, 1, 7, 8, 9, 10, 11, 2,
-                                7, 8, 9, 10, 11, 7, 10, 12, 13, 8,
-                                11, 12, 13, 4, 7, 6, 8, 4, 6),
+                          j = c(1, 4, 5, 10, 6, 7, 11, 1, 8, 9,
+                                10, 1, 8, 9, 11, 2, 8, 9, 10, 11,
+                                3, 8, 9, 10, 11, 8, 10, 12, 13, 9,
+                                11, 12, 13, 5, 8, 7, 9, 5, 7),
                           x = jac, dims = c(13, 13))
 
     return(jacob)
@@ -238,82 +246,82 @@ ss_calibr_eq_jacob__ <- function(v, pc, pf)
 pert1__ <- function(v, pc, pf)
 {
     Atm1x <- numeric(11)
-    Atm1x[1] = pf[3] * v[9]^-1 * exp(pf[3] * log(v[9]))
-    Atm1x[2] = -1
-    Atm1x[3] = pf[2]
-    Atm1x[4] = -1
-    Atm1x[5] = pf[2]
-    Atm1x[6] = -pf[7]
-    Atm1x[7] = pf[7]
-    Atm1x[8] = -1
-    Atm1x[9] = -pf[7]
-    Atm1x[10] = pf[7]
+    Atm1x[1] = pf[3] * v[1]^-1 * exp(pf[3] * log(v[1]))
+    Atm1x[2] = 1
+    Atm1x[3] = -1
+    Atm1x[4] = pf[2]
+    Atm1x[5] = 1
+    Atm1x[6] = -1
+    Atm1x[7] = pf[2]
+    Atm1x[8] = -pf[9]
+    Atm1x[9] = -1
+    Atm1x[10] = -pf[9]
     Atm1x[11] = -1
-    Atm1 <- sparseMatrix(i = c(1, 2, 2, 3, 3, 6, 6, 6, 7, 7,
+    Atm1 <- sparseMatrix(i = c(1, 4, 4, 4, 5, 5, 5, 6, 6, 7,
                                7),
-                         j = c(9, 7, 10, 8, 11, 1, 9, 10, 2, 9,
+                         j = c(1, 1, 8, 10, 1, 9, 11, 2, 10, 3,
                                11),
                          x = Atm1x, dims = c(13, 13))
 
     Atx <- numeric(29)
     Atx[1] = -1
-    Atx[2] = pf[1] * pf[5]
-    Atx[3] = pf[1] * (1 - pf[5])
-    Atx[4] = pf[1] * (1 - pf[6])
-    Atx[5] = pf[1] * pf[6]
-    Atx[6] = pf[5]
-    Atx[7] = -pf[2] * pf[8]^-1
-    Atx[8] = pf[6]
-    Atx[9] = -pf[2] * pf[8]^-1
-    Atx[10] = pf[5] * pf[7]
-    Atx[11] = -pf[7] * (-1 + pf[5])
-    Atx[12] = pf[5]
-    Atx[13] = 1 - pf[5]
-    Atx[14] = -pf[7] * (-1 + pf[6])
-    Atx[15] = pf[6] * pf[7]
-    Atx[16] = 1 - pf[6]
-    Atx[17] = pf[6]
-    Atx[18] = -pf[4] + v[7]
-    Atx[19] = pf[2] * pf[8]^-1 * v[10]
+    Atx[2] = pf[7]
+    Atx[3] = -pf[2] * pf[10]^-1
+    Atx[4] = pf[8]
+    Atx[5] = -pf[2] * pf[10]^-1
+    Atx[6] = pf[1] * pf[7]
+    Atx[7] = pf[1] * (1 - pf[7])
+    Atx[8] = pf[1] * (1 - pf[8])
+    Atx[9] = pf[1] * pf[8]
+    Atx[10] = pf[7] * pf[9]
+    Atx[11] = -pf[9] * (-1 + pf[7])
+    Atx[12] = pf[7]
+    Atx[13] = 1 - pf[7]
+    Atx[14] = -pf[9] * (-1 + pf[8])
+    Atx[15] = pf[8] * pf[9]
+    Atx[16] = 1 - pf[8]
+    Atx[17] = pf[8]
+    Atx[18] = pf[4] - pf[5] + v[8]
+    Atx[19] = pf[2] * pf[10]^-1 * v[10]
     Atx[20] = 1
-    Atx[21] = -pf[4] + v[8]
-    Atx[22] = pf[2] * pf[8]^-1 * v[11]
+    Atx[21] = -pf[5] + pf[6] + v[9]
+    Atx[22] = pf[2] * pf[10]^-1 * v[11]
     Atx[23] = 1
-    Atx[24] = pf[1] * pf[5]
-    Atx[25] = pf[5] * pf[7]
+    Atx[24] = pf[1] * pf[7]
+    Atx[25] = pf[7] * pf[9]
     Atx[26] = -1
-    Atx[27] = pf[1] * pf[6]
-    Atx[28] = pf[6] * pf[7]
+    Atx[27] = pf[1] * pf[8]
+    Atx[28] = pf[8] * pf[9]
     Atx[29] = -1
     At <- sparseMatrix(i = c(1, 2, 2, 3, 3, 4, 4, 5, 5, 6,
                              6, 6, 6, 7, 7, 7, 7, 8, 8, 8,
                              9, 9, 9, 10, 10, 10, 11, 11, 11),
-                       j = c(9, 7, 8, 7, 8, 4, 10, 6, 11, 7,
-                             8, 10, 11, 7, 8, 10, 11, 7, 10, 12,
-                             8, 11, 13, 3, 4, 7, 5, 6, 8),
+                       j = c(1, 5, 10, 7, 11, 8, 9, 8, 9, 8,
+                             9, 10, 11, 8, 9, 10, 11, 8, 10, 12,
+                             9, 11, 13, 4, 5, 8, 6, 7, 9),
                          x = Atx, dims = c(13, 13))
 
     Atp1x <- numeric(12)
-    Atp1x[1] = pf[1] * pf[2] * pf[5]
-    Atp1x[2] = -pf[1] * pf[5]
-    Atp1x[3] = pf[1] * pf[2] * pf[6]
-    Atp1x[4] = -pf[1] * pf[6]
-    Atp1x[5] = -pf[1] * pf[5]
-    Atp1x[6] = -pf[1] * (1 - pf[5])
-    Atp1x[7] = -pf[1] * (1 - pf[6])
-    Atp1x[8] = -pf[1] * pf[6]
-    Atp1x[9] = -pf[1] * pf[5]
-    Atp1x[10] = -pf[1] * pf[6]
-    Atp1x[11] = -pf[1] * pf[5] * pf[7]
-    Atp1x[12] = -pf[1] * pf[6] * pf[7]
-    Atp1 <- sparseMatrix(i = c(4, 4, 5, 5, 8, 8, 9, 9, 10, 11,
+    Atp1x[1] = pf[1] * pf[2] * pf[7]
+    Atp1x[2] = -pf[1] * pf[7]
+    Atp1x[3] = pf[1] * pf[2] * pf[8]
+    Atp1x[4] = -pf[1] * pf[8]
+    Atp1x[5] = -pf[1] * pf[7]
+    Atp1x[6] = -pf[1] * (1 - pf[7])
+    Atp1x[7] = -pf[1] * (1 - pf[8])
+    Atp1x[8] = -pf[1] * pf[8]
+    Atp1x[9] = -pf[1] * pf[7]
+    Atp1x[10] = -pf[1] * pf[8]
+    Atp1x[11] = -pf[1] * pf[7] * pf[9]
+    Atp1x[12] = -pf[1] * pf[8] * pf[9]
+    Atp1 <- sparseMatrix(i = c(2, 2, 3, 3, 8, 8, 9, 9, 10, 11,
                                12, 13),
-                         j = c(3, 4, 5, 6, 12, 13, 12, 13, 3, 5,
-                               4, 6),
+                         j = c(4, 5, 6, 7, 12, 13, 12, 13, 4, 6,
+                               5, 7),
                          x = Atp1x, dims = c(13, 13))
 
     Aepsx <- numeric(1)
-    Aepsx[1] = exp(pf[3] * log(v[9]))
+    Aepsx[1] = exp(pf[3] * log(v[1]))
     Aeps <- sparseMatrix(i = c(1),
                          j = c(1),
                          x = Aepsx, dims = c(13, 1))

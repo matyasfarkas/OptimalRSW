@@ -22,7 +22,7 @@ block HIGHREGIME
 {
     definitions
     {
-        uH[] =-1/2* ( (piH[]-pitCB)^2 + kappa/theta * yH[]*yH[]);
+        uH[] =-1/2* ( (piH[]+pitH-pitCB)^2 + kappa/theta * yH[]*yH[]);
     };
     controls
     {
@@ -34,8 +34,8 @@ block HIGHREGIME
     };
     constraints
     {
-        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[]);
-        yH[-1] = (pH*yH[]+ (1-pH)*yL[]) - sigma* ((iH[-1] - (pH*piH[] + (1-pH)*piL[])) - rn[-1]);
+        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[]) + etapi[-1];
+        yH[-1] = (pH*yH[]+ (1-pH)*yL[]) - sigma* ((iH[-1] - (pH*piH[] + (1-pH)*piL[])) );
     };
     calibration
     {
@@ -46,13 +46,15 @@ block HIGHREGIME
         pH = 0.99;
         pL = 0.99;
         pitCB = 0;
+        pitH = 2;
+        pitL = -2;
     };
 };
 block LOWREGIME
 {
     definitions
     {
-        uL[] = -1/2* ((piL[]-pitCB)^2 + kappa/theta * yL[]*yL[]);
+        uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + kappa/theta * yL[]*yL[]);
     };
     controls
     {
@@ -64,8 +66,8 @@ block LOWREGIME
     };
     constraints
     {
-        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]);
-        yL[-1] = (pL*yL[]+ (1-pL)*yH[]) - sigma* ((iL[-1] - (pL*piL[]+ (1-pL)*piH[])) - rn[-1]);
+        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]) + etapi[-1];
+        yL[-1] = (pL*yL[]+ (1-pL)*yH[]) - sigma* ((iL[-1] - (pL*piL[]+ (1-pL)*piH[])));
     };
 };
 
@@ -73,11 +75,11 @@ block EXOG
 {
     identities
     {
-        rn[] = exp(phi * log(rn[-1]) + epsilon_Z[]);
+        etapi[] = exp(phi * log(etapi[-1]) + epsilon_pi[]);
     };
     shocks
     {
-        epsilon_Z[];
+        epsilon_pi[];
     };
     calibration
     {
