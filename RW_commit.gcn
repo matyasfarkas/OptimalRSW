@@ -19,16 +19,15 @@ block RW
     };
     controls
     {
-         pi[], y[], i[];
-    };
+         pi[], y[];
+    }
     objective
     {
             U[] = u[] + beta * (E[][U[1]]);
     };
     constraints
     {
-        pi[-1]= kappa* y[-1] + beta* pi[]+etapi[-1];
-        y[-1] = y[] - sigma* (i[-1] - (pi[] ));
+        pi[-1]= kappa* y[-1] + beta* pi[]+ log(etapi[-1]) ;
     };
     calibration
     {
@@ -53,6 +52,6 @@ block EXOG
     };
     calibration
     {
-        phi = 0.95;
+        phi = 0;
     };
 };

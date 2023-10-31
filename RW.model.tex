@@ -1,4 +1,4 @@
-% Generated on 2023-07-18 11:23:23 by gEcon ver. 1.2.1 (2023-01-18)
+% Generated on 2023-10-27 10:45:21 by gEcon ver. 1.2.1 (2023-01-18)
 % http://gecon.r-forge.r-project.org/
 
 % Model name: RW
@@ -11,8 +11,8 @@
 &\max_{\pi_{t}, y_{t}, i_{t}
 } U_{t} = -0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - 0.5{\kappa} {\theta}^{-1} {y_{t}}^{2}\\
 &\mathrm{s.t.:}\nonumber\\
-& \pi_{t-1} = {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} \quad \left(\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}\right)\\
-& y_{t-1} = y_{t} - {\sigma} \left(i_{t-1} - {r\!n}_{t-1} - \pi_{t}\right) \quad \left(\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t}\right)
+& \pi_{t-1} = {e\!t\!a\!p\!i}_{t-1} + {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} \quad \left(\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}\right)\\
+& y_{t-1} = y_{t} - {\sigma} \left(i_{t-1} - \pi_{t}\right) \quad \left(\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t}\right)
 \end{align}
 
 
@@ -39,7 +39,7 @@
 \subsection{Identities}
 
 \begin{equation}
-{r\!n}_{t} = e^{\epsilon^{\mathrm{Z}}_{t} + {\phi} {\log{{r\!n}_{t-1}}}}
+{e\!t\!a\!p\!i}_{t} = e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}}
 \end{equation}
 
 
@@ -48,16 +48,16 @@
 \section{Equilibrium relationships (after reduction)}
 
 \begin{equation}
--{r\!n}_{t} + e^{\epsilon^{\mathrm{Z}}_{t} + {\phi} {\log{{r\!n}_{t-1}}}} = 0
+-{e\!t\!a\!p\!i}_{t} + e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}} = 0
 \end{equation}
 \begin{equation}
--\pi_{t-1} + {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} = 0
-\end{equation}
-\begin{equation}
--y_{t-1} + y_{t} - {\sigma} \left(i_{t-1} - {r\!n}_{t-1} - \pi_{t}\right) = 0
+-y_{t-1} + y_{t} - {\sigma} \left(i_{t-1} - \pi_{t}\right) = 0
 \end{equation}
 \begin{equation}
 \lambda^{\mathrm{RW}^{\mathrm{2}}}_{t} + {\beta} \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{RW}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {y_{t}} = 0
+\end{equation}
+\begin{equation}
+{e\!t\!a\!p\!i}_{t-1} - \pi_{t-1} + {\beta} {\pi_{t}} + {\kappa} {y_{t-1}} = 0
 \end{equation}
 \begin{equation}
 U_{t} + 0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} + 0.5{\kappa} {\theta}^{-1} {y_{t}}^{2} = 0
@@ -74,16 +74,16 @@ U_{t} + 0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_{t}\right)^{2} - {\beta} {\mathrm{E}_
 \section{Steady state relationships (after reduction)}
 
 \begin{equation}
--{r\!n}_\mathrm{ss} + e^{{\phi} {\log{{r\!n}_\mathrm{ss}}}} = 0
+-{e\!t\!a\!p\!i}_\mathrm{ss} + e^{{\phi} {\log{{e\!t\!a\!p\!i}_\mathrm{ss}}}} = 0
 \end{equation}
 \begin{equation}
--\pi_\mathrm{ss} + {\beta} {\pi_\mathrm{ss}} + {\kappa} {y_\mathrm{ss}} = 0
-\end{equation}
-\begin{equation}
--{\sigma} \left(i_\mathrm{ss} - \pi_\mathrm{ss} - {r\!n}_\mathrm{ss}\right) = 0
+-{\sigma} \left(i_\mathrm{ss} - \pi_\mathrm{ss}\right) = 0
 \end{equation}
 \begin{equation}
 \lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss} + {\beta} \left(-\lambda^{\mathrm{RW}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{RW}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {y_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+{e\!t\!a\!p\!i}_\mathrm{ss} - \pi_\mathrm{ss} + {\beta} {\pi_\mathrm{ss}} + {\kappa} {y_\mathrm{ss}} = 0
 \end{equation}
 \begin{equation}
 U_\mathrm{ss} + 0.5\left(-{p\!i\!s\!t\!a\!r} + \pi_\mathrm{ss}\right)^{2} - {\beta} {U_\mathrm{ss}} + 0.5{\kappa} {\theta}^{-1} {y_\mathrm{ss}}^{2} = 0

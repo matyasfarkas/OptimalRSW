@@ -27,8 +27,8 @@ block RW
     };
     constraints
     {
-        pi[-1]= kappa* y[-1] + beta* pi[]+etapi[-1];
-        y[-1] = y[] - sigma* (i[-1] - (pi[] ));
+        pi[-1]= kappa* y[-1] + beta* pi[];
+        y[-1] = y[] - sigma* (i[-1] - (pi[] ) - rn[-1]);
     };
     calibration
     {
@@ -45,11 +45,11 @@ block EXOG
 {
     identities
     {
-        etapi[] = exp(phi * log(etapi[-1]) + epsilon_pi[]);
+        rn[] = exp(phi * log(rn[-1]) + epsilon_Z[]);
     };
     shocks
     {
-        epsilon_pi[];
+        epsilon_Z[];
     };
     calibration
     {

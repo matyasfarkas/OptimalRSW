@@ -1,4 +1,4 @@
-Generated on 2023-07-18 11:23:23 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2023-10-27 10:45:21 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: RW
@@ -11,8 +11,8 @@ Block: RW
  Objective:
     U[] = -0.5 * (-pistar + pi[])^2 + beta * E[][U[1]] - 0.5 * kappa * theta^-1 * y[]^2
  Constraints:
-    -pi[-1] + beta * pi[] + kappa * y[-1] = 0    (lambda__RW_1[])
-    -y[-1] + y[] - sigma * (i[-1] - rn[-1] - pi[]) = 0    (lambda__RW_2[])
+    etapi[-1] - pi[-1] + beta * pi[] + kappa * y[-1] = 0    (lambda__RW_1[])
+    -y[-1] + y[] - sigma * (i[-1] - pi[]) = 0    (lambda__RW_2[])
  First order conditions:
     pistar - pi[] + beta * lambda__RW_1[] - beta * E[][lambda__RW_1[1]] + sigma * lambda__RW_2[] = 0    (pi[])
     lambda__RW_2[] + beta * (kappa * E[][lambda__RW_1[1]] - E[][lambda__RW_2[1]]) - kappa * theta^-1 * y[] = 0    (y[])
@@ -20,13 +20,13 @@ Block: RW
 
 Block: EXOG
  Identities:
-    -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
+    -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
 
 Variables (7):
-    i[], lambda__RW_1[], lambda__RW_2[], pi[], rn[], y[], U[]
+    etapi[], i[], lambda__RW_1[], lambda__RW_2[], pi[], y[], U[]
 
 Shocks (1):
-    epsilon_Z[]
+    epsilon_pi[]
 
 Parameters (6):
     beta, kappa, phi, pistar, sigma, theta
@@ -35,19 +35,19 @@ Free parameters (6):
     beta, kappa, phi, pistar, sigma, theta
 
 Equations (7):
- (1)  -rn[] + exp(epsilon_Z[] + phi * log(rn[-1])) = 0
- (2)  -pi[-1] + beta * pi[] + kappa * y[-1] = 0
- (3)  -y[-1] + y[] - sigma * (i[-1] - rn[-1] - pi[]) = 0
- (4)  lambda__RW_2[] + beta * (kappa * E[][lambda__RW_1[1]] - E[][lambda__RW_2[1]]) - kappa * theta^-1 * y[] = 0
+ (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+ (2)  -y[-1] + y[] - sigma * (i[-1] - pi[]) = 0
+ (3)  lambda__RW_2[] + beta * (kappa * E[][lambda__RW_1[1]] - E[][lambda__RW_2[1]]) - kappa * theta^-1 * y[] = 0
+ (4)  etapi[-1] - pi[-1] + beta * pi[] + kappa * y[-1] = 0
  (5)  U[] + 0.5 * (-pistar + pi[])^2 - beta * E[][U[1]] + 0.5 * kappa * theta^-1 * y[]^2 = 0
  (6)  pistar - pi[] + beta * lambda__RW_1[] - beta * E[][lambda__RW_1[1]] + sigma * lambda__RW_2[] = 0
  (7)  -beta * sigma * E[][lambda__RW_2[1]] = 0
 
 Steady state equations (7):
- (1)  -rn[ss] + exp(phi * log(rn[ss])) = 0
- (2)  -pi[ss] + beta * pi[ss] + kappa * y[ss] = 0
- (3)  -sigma * (i[ss] - pi[ss] - rn[ss]) = 0
- (4)  lambda__RW_2[ss] + beta * (-lambda__RW_2[ss] + kappa * lambda__RW_1[ss]) - kappa * theta^-1 * y[ss] = 0
+ (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
+ (2)  -sigma * (i[ss] - pi[ss]) = 0
+ (3)  lambda__RW_2[ss] + beta * (-lambda__RW_2[ss] + kappa * lambda__RW_1[ss]) - kappa * theta^-1 * y[ss] = 0
+ (4)  etapi[ss] - pi[ss] + beta * pi[ss] + kappa * y[ss] = 0
  (5)  U[ss] + 0.5 * (-pistar + pi[ss])^2 - beta * U[ss] + 0.5 * kappa * theta^-1 * y[ss]^2 = 0
  (6)  pistar - pi[ss] + sigma * lambda__RW_2[ss] = 0
  (7)  -beta * sigma * lambda__RW_2[ss] = 0

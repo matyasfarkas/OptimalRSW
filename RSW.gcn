@@ -13,10 +13,10 @@ options
     output LaTeX landscape = TRUE;
 };
 
-#tryreduce
-# {
-#    piH[], piL[], yH[], yL[];
-# };
+tryreduce
+{
+    piH[], piL[], yH[], yL[];
+};
 
 block HIGHREGIME
 {
@@ -34,7 +34,7 @@ block HIGHREGIME
     };
     constraints
     {
-        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[]) + etapi[-1];
+        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[]) + log(etapi[-1]);
         yH[-1] = (pH*yH[]+ (1-pH)*yL[]) - sigma* ((iH[-1] - (pH*piH[] + (1-pH)*piL[])) );
     };
     calibration
@@ -66,7 +66,7 @@ block LOWREGIME
     };
     constraints
     {
-        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]) + etapi[-1];
+        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]) + log(etapi[-1]);
         yL[-1] = (pL*yL[]+ (1-pL)*yH[]) - sigma* ((iL[-1] - (pL*piL[]+ (1-pL)*piH[])));
     };
 };

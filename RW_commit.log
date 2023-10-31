@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  27 OCT 2023 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  27 OCT 2023 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./RW.tex
-(RW.tex
+**./RW_commit.tex
+(RW_commit.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-09-28>
 (C:\Users\fm007\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -345,8 +345,8 @@ tex.def
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (RW.aux)
-\openout1 = `RW.aux'.
+) (RW_commit.aux)
+\openout1 = `RW_commit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
@@ -383,9 +383,9 @@ ii
 \everyMPtoPDFconversion=\toks26
 )
 Package hyperref Info: Link coloring OFF on input line 19.
- (RW.out) (RW.out)
+ (RW_commit.out) (RW_commit.out)
 \@outlinefile=\write3
-\openout3 = `RW.out'.
+\openout3 = `RW_commit.out'.
 
 
 *geometry* driver: auto-detecting
@@ -422,7 +422,7 @@ Package hyperref Info: Link coloring OFF on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(RW.model.tex
+(RW_commit.model.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
 
@@ -439,77 +439,168 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {C:/Users/fm007/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) [2]
-(RW.results.tex [3
-
-]
+(RW_commit.results.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 50.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `\pi' on input line 50.
 
 
-Overfull \hbox (46.26671pt too wide) in paragraph at lines 100--112
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 50.
+
+
+Overfull \hbox (45.5473pt too wide) in paragraph at lines 52--61
 [] 
  []
 
-[4]
-Package epstopdf Info: Source file: <plots/plot_21.eps>
-(epstopdf)                    date: 2023-10-27 10:45:22
-(epstopdf)                    size: 6854 bytes
-(epstopdf)             Output file: <plots/plot_21-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_21-eps-co
-nverted-to.pdf plots/plot_21.eps>
-(epstopdf)             \includegraphics on input line 140.
-runsystem(miktex-epstopdf --outfile=plots/plot_21-eps-converted-to.pdf plots/pl
-ot_21.eps)...executed safely (allowed).
+[3
 
-Package epstopdf Info: Result file: <plots/plot_21-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-10-27 12:00:21
-(epstopdf)                    size: 11774 bytes.
+]
+Package epstopdf Info: Source file: <plots/plot_30.eps>
+(epstopdf)                    date: 2023-10-27 14:46:13
+(epstopdf)                    size: 6051 bytes
+(epstopdf)             Output file: <plots/plot_30-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_30-eps-co
+nverted-to.pdf plots/plot_30.eps>
+(epstopdf)             \includegraphics on input line 86.
+runsystem(miktex-epstopdf --outfile=plots/plot_30-eps-converted-to.pdf plots/pl
+ot_30.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <plots/plot_30-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-10-27 14:48:14
+(epstopdf)                    size: 11111 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_21-eps-converted-to.pdf): PDF inclu
+pdfTeX warning: pdflatex (file ./plots/plot_30-eps-converted-to.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_21-eps-converted-to.pdf, id=130, 505.89pt x 505.89pt>
-File: plots/plot_21-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_21-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_21-eps-converted-to.pdf  used on input line
- 140.
+<plots/plot_30-eps-converted-to.pdf, id=120, 505.89pt x 505.89pt>
+File: plots/plot_30-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_30-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_30-eps-converted-to.pdf  used on input line
+ 86.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
-) [5 <./plots/plot_21-eps-converted-to.pdf>] (RW.aux)
-Package rerunfilecheck Info: File `RW.out' has not changed.
-(rerunfilecheck)             Checksum: 674076E2980BC0FDD34C60108CE52D76;2728.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 119.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 119.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 119.
+
+
+Overfull \hbox (45.5473pt too wide) in paragraph at lines 121--130
+[] 
+ []
+
+[4 <./plots/plot_30-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <plots/plot_31.eps>
+(epstopdf)                    date: 2023-10-27 14:47:02
+(epstopdf)                    size: 6051 bytes
+(epstopdf)             Output file: <plots/plot_31-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_31-eps-co
+nverted-to.pdf plots/plot_31.eps>
+(epstopdf)             \includegraphics on input line 155.
+runsystem(miktex-epstopdf --outfile=plots/plot_31-eps-converted-to.pdf plots/pl
+ot_31.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <plots/plot_31-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-10-27 14:48:15
+(epstopdf)                    size: 11111 bytes.
+
+
+pdfTeX warning: pdflatex (file ./plots/plot_31-eps-converted-to.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<plots/plot_31-eps-converted-to.pdf, id=138, 505.89pt x 505.89pt>
+File: plots/plot_31-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_31-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_31-eps-converted-to.pdf  used on input line
+ 155.
+(pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
+[5 <./plots/plot_31-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <plots/plot_32.eps>
+(epstopdf)                    date: 2023-10-27 14:47:08
+(epstopdf)                    size: 6051 bytes
+(epstopdf)             Output file: <plots/plot_32-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_32-eps-co
+nverted-to.pdf plots/plot_32.eps>
+(epstopdf)             \includegraphics on input line 169.
+runsystem(miktex-epstopdf --outfile=plots/plot_32-eps-converted-to.pdf plots/pl
+ot_32.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <plots/plot_32-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-10-27 14:48:16
+(epstopdf)                    size: 11111 bytes.
+
+
+pdfTeX warning: pdflatex (file ./plots/plot_32-eps-converted-to.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<plots/plot_32-eps-converted-to.pdf, id=153, 505.89pt x 505.89pt>
+File: plots/plot_32-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_32-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_32-eps-converted-to.pdf  used on input line
+ 169.
+(pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
+) [6 <./plots/plot_32-eps-converted-to.pdf>] (RW_commit.aux)
+
+Package rerunfilecheck Warning: File `RW_commit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `RW_commit.out':
+(rerunfilecheck)             Before: BDFCC4E26DDC6C41566F612F508B224E;2723
+(rerunfilecheck)             After:  6C8FACF00363A63E9F093DB75C26BE9E;3697.
  ) 
 Here is how much of TeX's memory you used:
- 10185 strings out of 475385
- 162494 string characters out of 2776907
- 521760 words of memory out of 3000000
- 31361 multiletter control sequences out of 15000+600000
+ 10202 strings out of 475385
+ 163204 string characters out of 2776907
+ 517847 words of memory out of 3000000
+ 31373 multiletter control sequences out of 15000+600000
  476684 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,11n,67p,376b,523s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fm007/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/fm007/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/fm007/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/fm007/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
-/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C
-:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7
-.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RW.pdf (5 pages, 189103 bytes).
+ 63i,11n,67p,378b,523s stack positions out of 10000i,1000n,20000p,200000b,80000s
+
+pdfTeX warning (dest): name{subsection.8.4} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.8.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.8.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.8.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+<C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fm007/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/fm007/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/fm007/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/fm007/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/f
+m007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
+Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
+fb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on RW_commit.pdf (6 pages, 204563 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

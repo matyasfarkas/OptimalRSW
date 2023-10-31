@@ -8,26 +8,26 @@ setwd("C:/Users/fm007/Documents/GitHub/OptimalRSW")
 library(gEcon)
 
 # make and load the model
-rsw <- make_model("RSW.gcn")
+rw <- make_model("RW_commit.gcn")
 # find and print steady-state values
-rsw <- steady_state(rsw)
-get_ss_values(rsw, to_tex = TRUE)
+rw <- steady_state(rw)
+get_ss_values(rw, to_tex = TRUE)
 
 # find and print perturbation solution
-rsw <- solve_pert(model = rsw,loglin = TRUE)
-check_bk(rsw)
-var_info(rsw,all =T)
+rw <- solve_pert(model = rw,loglin = TRUE)
+check_bk(rw)
+var_info(rw,all =T)
 
-get_pert_solution(rsw, to_tex = TRUE)
+get_pert_solution(rw, to_tex = TRUE)
 
 # set and print the shock distribution parameters
-rsw <- set_shock_cov_mat(rsw, cov_matrix = matrix(c(0.01), 1, 1),
-                         shock_order = c("epsilon_pi"))
-shock_info(rsw, all = TRUE)
+rw <- set_shock_cov_mat(rw, cov_matrix = matrix(c(0.01), 1, 1),
+                        shock_order = c("epsilon_pi"))
+shock_info(rw, all = TRUE)
 
 # compute and print correlations
-rsw <- compute_model_stats(rsw, ref_var = "iH", n_leadlags = 5)
-get_model_stats(model = rsw, 
+rw <- compute_model_stats(rw, ref_var = "pi", n_leadlags = 5)
+get_model_stats(model = rw, 
                 basic_stats = TRUE, 
                 corr = TRUE, 
                 autocorr = TRUE, 
@@ -35,9 +35,9 @@ get_model_stats(model = rsw,
                 to_tex = TRUE)
 
 # compute and print the IRFs
-rsw_irf <- compute_irf(rsw, 
-                       variables = c("iH", "iL", "piH", "piL", "yH", "yL"))
-plot_simulation(rsw_irf, to_eps = TRUE)
+rw_irf <- compute_irf(rw, 
+                      variables = c( "pi", "y"))
+plot_simulation(rw_irf, to_eps = TRUE)
 
 # print summary of the model results
-summary(rsw)
+summary(rw)

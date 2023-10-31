@@ -1,0 +1,56 @@
+Generated on 2023-10-27 14:43:59 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RW_commit
+
+Block: RW
+ Definitions:
+    u[] = -0.5 * (-pistar + pi[])^2 - 0.5 * kappa * theta^-1 * y[]^2
+ Controls:
+    pi[], y[]
+ Objective:
+    U[] = -0.5 * (-pistar + pi[])^2 + beta * E[][U[1]] - 0.5 * kappa * theta^-1 * y[]^2
+ Constraints:
+    -pi[-1] + log(etapi[-1]) + beta * pi[] + kappa * y[-1] = 0    (lambda__RW_1[])
+ First order conditions:
+    pistar - pi[] + beta * lambda__RW_1[] - beta * E[][lambda__RW_1[1]] = 0    (pi[])
+    beta * kappa * E[][lambda__RW_1[1]] - kappa * theta^-1 * y[] = 0    (y[])
+
+Block: EXOG
+ Identities:
+    -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+
+Variables (5):
+    etapi[], lambda__RW_1[], pi[], y[], U[]
+
+Shocks (1):
+    epsilon_pi[]
+
+Parameters (6):
+    beta, kappa, phi, pistar, sigma, theta
+
+Free parameters (6):
+    beta, kappa, phi, pistar, sigma, theta
+
+Equations (5):
+ (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+ (2)  beta * kappa * E[][lambda__RW_1[1]] - kappa * theta^-1 * y[] = 0
+ (3)  pistar - pi[] + beta * lambda__RW_1[] - beta * E[][lambda__RW_1[1]] = 0
+ (4)  -pi[-1] + log(etapi[-1]) + beta * pi[] + kappa * y[-1] = 0
+ (5)  U[] + 0.5 * (-pistar + pi[])^2 - beta * E[][U[1]] + 0.5 * kappa * theta^-1 * y[]^2 = 0
+
+Steady state equations (5):
+ (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
+ (2)  beta * kappa * lambda__RW_1[ss] - kappa * theta^-1 * y[ss] = 0
+ (3)  pistar - pi[ss] = 0
+ (4)  -pi[ss] + log(etapi[ss]) + beta * pi[ss] + kappa * y[ss] = 0
+ (5)  U[ss] + 0.5 * (-pistar + pi[ss])^2 - beta * U[ss] + 0.5 * kappa * theta^-1 * y[ss]^2 = 0
+
+Parameter settings (6):
+ (1)  beta = 0.99
+ (2)  kappa = 0.2465
+ (3)  phi = 0
+ (4)  pistar = 0
+ (5)  sigma = 1
+ (6)  theta = 6
+
