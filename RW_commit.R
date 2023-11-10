@@ -8,7 +8,7 @@ setwd("C:/Users/fm007/Documents/GitHub/OptimalRSW")
 library(gEcon)
 
 # make and load the model
-rw <- make_model("RW_commit.gcn")
+  rw <- make_model("RW_commit.gcn")
 # find and print steady-state values
 rw <- steady_state(rw)
 get_ss_values(rw, to_tex = TRUE)

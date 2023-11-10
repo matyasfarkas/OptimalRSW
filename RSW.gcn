@@ -1,4 +1,4 @@
-# ############################################################################
+## ############################################################################
 # (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
 #                                                                            #
 # Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
@@ -13,10 +13,10 @@ options
     output LaTeX landscape = TRUE;
 };
 
-tryreduce
-{
-    piH[], piL[], yH[], yL[];
-};
+# tryreduce
+#  {
+#    piH[], piL[], yH[], yL[];
+#  };
 
 block HIGHREGIME
 {
@@ -46,7 +46,7 @@ block HIGHREGIME
         pH = 0.99;
         pL = 0.99;
         pitCB = 0;
-        pitH = 2;
+        pitH  = 0;
         pitL = -2;
     };
 };

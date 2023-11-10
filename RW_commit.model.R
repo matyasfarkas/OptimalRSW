@@ -1,10 +1,10 @@
-# Generated on 2023-10-27 14:41:28 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2023-11-10 14:31:13 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: RW_commit
 
 # info
-info__ <- c("RW_commit", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RW_commit.gcn", "2023-10-27 14:41:28", "false")
+info__ <- c("RW_commit", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RW_commit.gcn", "2023-11-10 14:31:13", "false")
 
 # index sets
 index_sets__ <- list()

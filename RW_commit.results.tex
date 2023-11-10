@@ -1,4 +1,4 @@
-% Generated on 2023-10-27 14:43:59 by gEcon ver. 1.2.1 (2023-01-18)
+% Generated on 2023-11-10 14:33:36 by gEcon ver. 1.2.1 (2023-01-18)
 % http://gecon.r-forge.r-project.org/
 
 % Model name: RW_commit
@@ -18,6 +18,43 @@ $U$ & 0 \\
 \end{tabular}
 
 
+\section{The solution of the 1st order perturbation}
+
+\subsection*{Matrix $P$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & \pi_{t-1} & y_{t-1} \cr
+{e\!t\!a\!p\!i}_{t} & 0 & 0 & 0 \cr
+\pi_{t} & -1.0101 & 1.0101 & -0.249 \cr
+y_{t} & -2.812 & 2.812 & -0.6932 \cr
+}$$
+
+\subsection*{Matrix $Q$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+{e\!t\!a\!p\!i} & 1 \cr
+\pi & 0 \cr
+y & -2.7839 \cr
+}$$
+
+\subsection*{Matrix $R$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & \pi_{t-1} & y_{t-1} \cr
+\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t} & -1.4937 & 1.4937 & -0.3682 \cr
+U_{t} & 0 & 0 & 0 \cr
+}$$
+
+\subsection*{Matrix $S$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+\lambda^{\mathrm{RW}^{\mathrm{1}}} & -0.4687 \cr
+U & 0 \cr
+}$$
+
+
 \section{Model statistics}
 
 \subsection{Basic statistics}
@@ -83,90 +120,7 @@ $y$ & 0.215 & -0.029 & -0.099 & -0.112 & -0.108 \\
 \begin{minipage}{0.5\textwidth}
 \vspace*{-3em}
 \centering
-\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_30.eps}
-\caption{Impulse responses ($\pi, y$) to $\epsilon^{\pi}$ shock}
-\end{minipage}
-\end{figure}
-\section{Model statistics}
-
-\subsection{Basic statistics}
-
-\begin{tabular}{c|c|c|c|c|}
-  & Steady-state value & Std. dev. & Variance & Loglin\\
-\hline
-${e\!t\!a\!p\!i}$ & 1 & 0.0964 & 0.0093 & Y    \\
-$\lambda^{\mathrm{RW}^{\mathrm{1}}}$ & 0 & 0.0611 & 0.0037 & N    \\
-$\pi$ & 0 & 0.0311 & 0.001 & N    \\
-$y$ & 0 & 0.2734 & 0.0747 & N    \\
-$U$ & 0 & 0 & 0 & N    \\
-\hline
-\end{tabular}
-
-
-\subsection{Correlation matrix}
-
-\begin{tabular}{c|cccc|}
-  & ${e\!t\!a\!p\!i}$ & $\lambda^{\mathrm{RW}^{\mathrm{1}}}$ & $\pi$ & $y$\\
-\hline
-${e\!t\!a\!p\!i}$ & 1 & -0.662 & 0.104 & -0.949 \\
-$\lambda^{\mathrm{RW}^{\mathrm{1}}}$ &  & 1 & 0.677 & 0.864 \\
-$\pi$ &  &  & 1 & 0.215 \\
-$y$ &  &  &  & 1 \\
-\hline
-\end{tabular}
-
-
-\subsection{Cross correlations with the reference variable ($\pi$)}
-
-\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|}
-  & $\sigma[\cdot]$ rel. to $\sigma[\pi]$ & $\pi_{t-5}$ & $\pi_{t-4}$ & $\pi_{t-3}$ & $\pi_{t-2}$ & $\pi_{t-1}$ & $\pi_{t}$ & $\pi_{t+1}$ & $\pi_{t+2}$ & $\pi_{t+3}$ & $\pi_{t+4}$ & $\pi_{t+5}$\\
-\hline
-${e\!t\!a\!p\!i}_{t}$ & 3.098 & 0.08 & 0.064 & -0.003 & -0.228 & -0.949 & 0.104 & 0.098 & 0.091 & 0.083 & 0.073 & 0.064 \\
-$\lambda^{\mathrm{RW}^{\mathrm{1}}}_{t}$ & 1.962 & -0.14 & -0.132 & -0.072 & 0.147 & 0.864 & 0.677 & 0.089 & -0.089 & -0.135 & -0.139 & -0.129 \\
-$\pi_{t}$ & 1 & -0.108 & -0.112 & -0.099 & -0.029 & 0.215 & 1 & 0.215 & -0.029 & -0.099 & -0.112 & -0.108 \\
-$y_{t}$ & 8.784 & -0.112 & -0.099 & -0.029 & 0.215 & 1 & 0.215 & -0.029 & -0.099 & -0.112 & -0.108 & -0.097 \\
-\hline
-\end{tabular}
-
-
-\subsection{Autocorrelations}
-
-\begin{tabular}{c|ccccc|}
-  & Lag 1 & Lag 2 & Lag 3 & Lag 4 & Lag 5\\
-\hline
-${e\!t\!a\!p\!i}$ & -0.074 & -0.071 & -0.066 & -0.06 & -0.054 \\
-$\lambda^{\mathrm{RW}^{\mathrm{1}}}$ & 0.556 & 0.021 & -0.137 & -0.174 & -0.171 \\
-$\pi$ & 0.215 & -0.029 & -0.099 & -0.112 & -0.108 \\
-$y$ & 0.215 & -0.029 & -0.099 & -0.112 & -0.108 \\
-\hline
-\end{tabular}
-
-
-
-\pagebreak
-
-\section{Impulse response functions}
-
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.5\textwidth}
-\vspace*{-3em}
-\centering
-\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_31.eps}
-\caption{Impulse responses ($\pi, y$) to $\epsilon^{\pi}$ shock}
-\end{minipage}
-\end{figure}
-
-\pagebreak
-
-\section{Impulse response functions}
-
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.5\textwidth}
-\vspace*{-3em}
-\centering
-\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_32.eps}
+\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_33.eps}
 \caption{Impulse responses ($\pi, y$) to $\epsilon^{\pi}$ shock}
 \end{minipage}
 \end{figure}

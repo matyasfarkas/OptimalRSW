@@ -1,13 +1,7 @@
-Generated on 2023-10-27 15:07:05 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2023-11-10 14:55:02 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: RSW
-
-1 WARNING, see bottom of this logfile
-
-
-Variables selected for reduction:
-    piH[], piL[], yH[], yL[]
 
 Block: HIGHREGIME
  Definitions:
@@ -43,8 +37,8 @@ Block: EXOG
  Identities:
     -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
 
-Variables (11):
-    etapi[], iH[], iL[], lambda__HIGHREGIME_1[], lambda__HIGHREGIME_2[], lambda__LOWREGIME_1[], lambda__LOWREGIME_2[], yH[], yL[], UH[], UL[]
+Variables (13):
+    etapi[], iH[], iL[], lambda__HIGHREGIME_1[], lambda__HIGHREGIME_2[], lambda__LOWREGIME_1[], lambda__LOWREGIME_2[], piH[], piL[], yH[], yL[], UH[], UL[]
 
 Shocks (1):
     epsilon_pi[]
@@ -55,37 +49,41 @@ Parameters (10):
 Free parameters (10):
     beta, kappa, phi, pitH, pitCB, pitL, pH, pL, sigma, theta
 
-Equations (11):
+Equations (13):
  (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
  (2)  pH * lambda__HIGHREGIME_2[] + beta * pH * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0
  (3)  pL * lambda__LOWREGIME_2[] + beta * pL * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0
- (4)  -yH[-1] + pH * yH[] - sigma * (iH[-1] - pH * (-pitH + pitCB + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[]) - (1 - pH) * (pitCB - pitL + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[])) + yL[] * (1 - pH) = 0
- (5)  -yL[-1] + pL * yL[] - sigma * (iL[-1] - pL * (pitCB - pitL + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[]) - (1 - pL) * (-pitH + pitCB + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[])) + yH[] * (1 - pL) = 0
- (6)  UH[] + 0.5 * (beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[])^2 - beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
- (7)  UL[] + 0.5 * (beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[])^2 - beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
- (8)  pitH - pitCB + log(etapi[-1]) + beta * (pH * (-pitH + pitCB + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[]) + (1 - pH) * (pitCB - pitL + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[])) + kappa * yH[-1] - beta * pH * lambda__HIGHREGIME_1[-1] + beta * pH * E[-1][lambda__HIGHREGIME_1[]] - pH * sigma * lambda__HIGHREGIME_2[-1] = 0
- (9)  -pitCB + pitL + log(etapi[-1]) + beta * (pL * (pitCB - pitL + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[]) + (1 - pL) * (-pitH + pitCB + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[])) + kappa * yL[-1] - beta * pL * lambda__LOWREGIME_1[-1] + beta * pL * E[-1][lambda__LOWREGIME_1[]] - pL * sigma * lambda__LOWREGIME_2[-1] = 0
- (10)  -beta * pH * sigma * E[][lambda__HIGHREGIME_2[1]] = 0
- (11)  -beta * pL * sigma * E[][lambda__LOWREGIME_2[1]] = 0
+ (4)  -piH[-1] + log(etapi[-1]) + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0
+ (5)  -piL[-1] + log(etapi[-1]) + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0
+ (6)  -yH[-1] + pH * yH[] - sigma * (iH[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0
+ (7)  -yL[-1] + pL * yL[] - sigma * (iL[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0
+ (8)  UH[] + 0.5 * (pitH - pitCB + piH[])^2 - beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
+ (9)  UL[] + 0.5 * (-pitCB + pitL + piL[])^2 - beta * (pL * E[][UL[1]] + (1 - pL) * E[][UH[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
+ (10)  -pitH + pitCB - piH[] + beta * pH * lambda__HIGHREGIME_1[] - beta * pH * E[][lambda__HIGHREGIME_1[1]] + pH * sigma * lambda__HIGHREGIME_2[] = 0
+ (11)  pitCB - pitL - piL[] + beta * pL * lambda__LOWREGIME_1[] - beta * pL * E[][lambda__LOWREGIME_1[1]] + pL * sigma * lambda__LOWREGIME_2[] = 0
+ (12)  -beta * pH * sigma * E[][lambda__HIGHREGIME_2[1]] = 0
+ (13)  -beta * pL * sigma * E[][lambda__LOWREGIME_2[1]] = 0
 
-Steady state equations (11):
+Steady state equations (13):
  (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
  (2)  pH * lambda__HIGHREGIME_2[ss] + beta * pH * (-lambda__HIGHREGIME_2[ss] + kappa * lambda__HIGHREGIME_1[ss]) - kappa * theta^-1 * yH[ss] = 0
  (3)  pL * lambda__LOWREGIME_2[ss] + beta * pL * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
- (4)  -yH[ss] + pH * yH[ss] - sigma * (iH[ss] - pH * (-pitH + pitCB + pH * sigma * lambda__HIGHREGIME_2[ss]) - (1 - pH) * (pitCB - pitL + pL * sigma * lambda__LOWREGIME_2[ss])) + yL[ss] * (1 - pH) = 0
- (5)  -yL[ss] + pL * yL[ss] - sigma * (iL[ss] - pL * (pitCB - pitL + pL * sigma * lambda__LOWREGIME_2[ss]) - (1 - pL) * (-pitH + pitCB + pH * sigma * lambda__HIGHREGIME_2[ss])) + yH[ss] * (1 - pL) = 0
- (6)  UH[ss] - beta * (pH * UH[ss] + UL[ss] * (1 - pH)) + 0.5 * kappa * theta^-1 * yH[ss]^2 + 0.5 * pH^2 * sigma^2 * lambda__HIGHREGIME_2[ss]^2 = 0
- (7)  UL[ss] - beta * (pL * UL[ss] + UH[ss] * (1 - pL)) + 0.5 * kappa * theta^-1 * yL[ss]^2 + 0.5 * pL^2 * sigma^2 * lambda__LOWREGIME_2[ss]^2 = 0
- (8)  pitH - pitCB + log(etapi[ss]) + beta * (pH * (-pitH + pitCB + pH * sigma * lambda__HIGHREGIME_2[ss]) + (1 - pH) * (pitCB - pitL + pL * sigma * lambda__LOWREGIME_2[ss])) + kappa * yH[ss] - pH * sigma * lambda__HIGHREGIME_2[ss] = 0
- (9)  -pitCB + pitL + log(etapi[ss]) + beta * (pL * (pitCB - pitL + pL * sigma * lambda__LOWREGIME_2[ss]) + (1 - pL) * (-pitH + pitCB + pH * sigma * lambda__HIGHREGIME_2[ss])) + kappa * yL[ss] - pL * sigma * lambda__LOWREGIME_2[ss] = 0
- (10)  -beta * pH * sigma * lambda__HIGHREGIME_2[ss] = 0
- (11)  -beta * pL * sigma * lambda__LOWREGIME_2[ss] = 0
+ (4)  -piH[ss] + log(etapi[ss]) + beta * (pH * piH[ss] + piL[ss] * (1 - pH)) + kappa * yH[ss] = 0
+ (5)  -piL[ss] + log(etapi[ss]) + beta * (pL * piL[ss] + piH[ss] * (1 - pL)) + kappa * yL[ss] = 0
+ (6)  -yH[ss] + pH * yH[ss] - sigma * (iH[ss] - pH * piH[ss] - piL[ss] * (1 - pH)) + yL[ss] * (1 - pH) = 0
+ (7)  -yL[ss] + pL * yL[ss] - sigma * (iL[ss] - pL * piL[ss] - piH[ss] * (1 - pL)) + yH[ss] * (1 - pL) = 0
+ (8)  UH[ss] + 0.5 * (pitH - pitCB + piH[ss])^2 - beta * (pH * UH[ss] + UL[ss] * (1 - pH)) + 0.5 * kappa * theta^-1 * yH[ss]^2 = 0
+ (9)  UL[ss] + 0.5 * (-pitCB + pitL + piL[ss])^2 - beta * (pL * UL[ss] + UH[ss] * (1 - pL)) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
+ (10)  -pitH + pitCB - piH[ss] + pH * sigma * lambda__HIGHREGIME_2[ss] = 0
+ (11)  pitCB - pitL - piL[ss] + pL * sigma * lambda__LOWREGIME_2[ss] = 0
+ (12)  -beta * pH * sigma * lambda__HIGHREGIME_2[ss] = 0
+ (13)  -beta * pL * sigma * lambda__LOWREGIME_2[ss] = 0
 
 Parameter settings (10):
  (1)  beta = 0.99
  (2)  kappa = 0.2465
  (3)  phi = 0.95
- (4)  pitH = 2
+ (4)  pitH = 0
  (5)  pitCB = 0
  (6)  pitL = -2
  (7)  pH = 0.99
@@ -93,6 +91,3 @@ Parameter settings (10):
  (9)  sigma = 1
  (10)  theta = 6
 
-
-1 WARNING
-(gEcon model warning 1): the following variable(s) selected for reduction could not be symbolically reduced in the model: "yH[]", "yL[]"
