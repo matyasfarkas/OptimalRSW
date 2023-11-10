@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  10 NOV 2023 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  10 NOV 2023 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,50 +469,50 @@ Overfull \hbox (94.32599pt too wide) in paragraph at lines 130--148
  []
 
 [5] [6]
-Package epstopdf Info: Source file: <plots/plot_35.eps>
-(epstopdf)                    date: 2023-11-10 14:44:11
-(epstopdf)                    size: 8118 bytes
-(epstopdf)             Output file: <plots/plot_35-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_35-eps-co
-nverted-to.pdf plots/plot_35.eps>
+Package epstopdf Info: Source file: <plots/plot_37.eps>
+(epstopdf)                    date: 2023-11-10 14:55:03
+(epstopdf)                    size: 7835 bytes
+(epstopdf)             Output file: <plots/plot_37-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_37-eps-co
+nverted-to.pdf plots/plot_37.eps>
 (epstopdf)             \includegraphics on input line 181.
-runsystem(miktex-epstopdf --outfile=plots/plot_35-eps-converted-to.pdf plots/pl
-ot_35.eps)...executed safely (allowed).
+runsystem(miktex-epstopdf --outfile=plots/plot_37-eps-converted-to.pdf plots/pl
+ot_37.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <plots/plot_35-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-11-10 14:49:04
-(epstopdf)                    size: 11776 bytes.
+Package epstopdf Info: Result file: <plots/plot_37-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-11-10 15:24:35
+(epstopdf)                    size: 11849 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_35-eps-converted-to.pdf): PDF inclu
+pdfTeX warning: pdflatex (file ./plots/plot_37-eps-converted-to.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_35-eps-converted-to.pdf, id=172, 505.89pt x 505.89pt>
-File: plots/plot_35-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_35-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_35-eps-converted-to.pdf  used on input line
+<plots/plot_37-eps-converted-to.pdf, id=172, 505.89pt x 505.89pt>
+File: plots/plot_37-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_37-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_37-eps-converted-to.pdf  used on input line
  181.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
-Package epstopdf Info: Source file: <plots/plot_36.eps>
-(epstopdf)                    date: 2023-11-10 14:44:11
-(epstopdf)                    size: 5620 bytes
-(epstopdf)             Output file: <plots/plot_36-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_36-eps-co
-nverted-to.pdf plots/plot_36.eps>
+Package epstopdf Info: Source file: <plots/plot_38.eps>
+(epstopdf)                    date: 2023-11-10 14:55:03
+(epstopdf)                    size: 5545 bytes
+(epstopdf)             Output file: <plots/plot_38-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_38-eps-co
+nverted-to.pdf plots/plot_38.eps>
 (epstopdf)             \includegraphics on input line 187.
-runsystem(miktex-epstopdf --outfile=plots/plot_36-eps-converted-to.pdf plots/pl
-ot_36.eps)...executed safely (allowed).
+runsystem(miktex-epstopdf --outfile=plots/plot_38-eps-converted-to.pdf plots/pl
+ot_38.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <plots/plot_36-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-11-10 14:49:05
-(epstopdf)                    size: 11093 bytes.
+Package epstopdf Info: Result file: <plots/plot_38-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-11-10 15:24:36
+(epstopdf)                    size: 11028 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_36-eps-converted-to.pdf): PDF inclu
+pdfTeX warning: pdflatex (file ./plots/plot_38-eps-converted-to.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_36-eps-converted-to.pdf, id=173, 505.89pt x 505.89pt>
-File: plots/plot_36-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_36-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_36-eps-converted-to.pdf  used on input line
+<plots/plot_38-eps-converted-to.pdf, id=173, 505.89pt x 505.89pt>
+File: plots/plot_38-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_38-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_38-eps-converted-to.pdf  used on input line
  187.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
 
@@ -520,7 +520,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 178--190
 []$[]$ $[]$ 
  []
 
-) [7 <./plots/plot_35-eps-converted-to.pdf> <./plots/plot_36-eps-converted-to.p
+) [7 <./plots/plot_37-eps-converted-to.pdf> <./plots/plot_38-eps-converted-to.p
 df>] (RSW.aux)
 Package rerunfilecheck Info: File `RSW.out' has not changed.
 (rerunfilecheck)             Checksum: 1BB48D3D0E448855F7057676C8DD34B0;3198.
@@ -549,7 +549,7 @@ cm/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RSW.pdf (7 pages, 213272 bytes).
+Output written on RSW.pdf (7 pages, 213456 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  82 named destinations out of 1000 (max. 500000)
