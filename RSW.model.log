@@ -1,4 +1,4 @@
-Generated on 2023-11-10 14:55:02 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2023-11-21 11:13:13 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: RSW
@@ -85,7 +85,7 @@ Parameter settings (10):
  (3)  phi = 0.95
  (4)  pitH = 0
  (5)  pitCB = 0
- (6)  pitL = -2
+ (6)  pitL = 2
  (7)  pH = 0.99
  (8)  pL = 0.99
  (9)  sigma = 1

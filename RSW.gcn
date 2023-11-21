@@ -47,7 +47,7 @@ block HIGHREGIME
         pL = 0.99;
         pitCB = 0;
         pitH  = 0;
-        pitL = -2;
+        pitL = 2;
     };
 };
 block LOWREGIME
