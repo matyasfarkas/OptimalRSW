@@ -1,0 +1,93 @@
+Generated on 2023-11-21 15:47:37 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RSW_RP
+
+Block: HIGHREGIME
+ Definitions:
+    uH[] = -0.5 * (pitH - pitCB + piH[])^2 - 0.5 * kappa * theta^-1 * yH[]^2
+ Controls:
+    piH[], yH[], iH[]
+ Objective:
+    UH[] = -0.5 * (pitH - pitCB + piH[])^2 + beta * E[][UH[1]] + beta * (1 - pH) * (-E[][UH[1]] + E[][UL[1]]) - 0.5 * kappa * theta^-1 * yH[]^2
+ Constraints:
+    -piH[-1] + log(etapi[-1]) + beta * piH[] + kappa * yH[-1] + beta * (1 - pH) * (-piH[] + piL[]) = 0    (lambda__HIGHREGIME_1[])
+    -yH[-1] + yH[] - sigma * (iH[-1] - piH[]) + (1 - pH) * (-yH[] + yL[]) + sigma * (1 - pH) * (-piH[] + piL[]) = 0    (lambda__HIGHREGIME_2[])
+ First order conditions:
+    -pitH + pitCB - piH[] + lambda__HIGHREGIME_1[] * (beta - beta * (1 - pH)) + lambda__HIGHREGIME_2[] * (sigma - sigma * (1 - pH)) - (beta - beta * (1 - pH)) * E[][lambda__HIGHREGIME_1[1]] = 0    (piH[])
+    pH * lambda__HIGHREGIME_2[] + (beta - beta * (1 - pH)) * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0    (yH[])
+    -sigma * (beta - beta * (1 - pH)) * E[][lambda__HIGHREGIME_2[1]] = 0    (iH[])
+
+Block: LOWREGIME
+ Definitions:
+    uL[] = -0.5 * (-pitCB + pitL + piL[])^2 - 0.5 * kappa * theta^-1 * yL[]^2
+ Controls:
+    piL[], yL[], iL[]
+ Objective:
+    UL[] = -0.5 * (-pitCB + pitL + piL[])^2 + beta * E[][UL[1]] + beta * (1 - pL) * (E[][UH[1]] - E[][UL[1]]) - 0.5 * kappa * theta^-1 * yL[]^2
+ Constraints:
+    -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * pL * piL[] + beta * (1 - pL) * (piH[] - piL[]) = 0    (lambda__LOWREGIME_1[])
+    -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (1 - pL) * (yH[] - yL[]) + sigma * (1 - pL) * (piH[] - piL[]) = 0    (lambda__LOWREGIME_2[])
+ First order conditions:
+    pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * pL - beta * (1 - pL)) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pL)) - (beta - beta * (1 - pL)) * E[][lambda__LOWREGIME_1[1]] = 0    (piL[])
+    pL * lambda__LOWREGIME_2[] + (beta - beta * (1 - pL)) * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0    (yL[])
+    -sigma * (beta - beta * (1 - pL)) * E[][lambda__LOWREGIME_2[1]] = 0    (iL[])
+
+Block: EXOG
+ Identities:
+    -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+
+Variables (13):
+    etapi[], iH[], iL[], lambda__HIGHREGIME_1[], lambda__HIGHREGIME_2[], lambda__LOWREGIME_1[], lambda__LOWREGIME_2[], piH[], piL[], yH[], yL[], UH[], UL[]
+
+Shocks (1):
+    epsilon_pi[]
+
+Parameters (10):
+    beta, kappa, phi, pitH, pitCB, pitL, pH, pL, sigma, theta
+
+Free parameters (10):
+    beta, kappa, phi, pitH, pitCB, pitL, pH, pL, sigma, theta
+
+Equations (13):
+ (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+ (2)  pH * lambda__HIGHREGIME_2[] + (beta - beta * (1 - pH)) * (kappa * E[][lambda__HIGHREGIME_1[1]] - E[][lambda__HIGHREGIME_2[1]]) - kappa * theta^-1 * yH[] = 0
+ (3)  pL * lambda__LOWREGIME_2[] + (beta - beta * (1 - pL)) * (kappa * E[][lambda__LOWREGIME_1[1]] - E[][lambda__LOWREGIME_2[1]]) - kappa * theta^-1 * yL[] = 0
+ (4)  -piH[-1] + log(etapi[-1]) + beta * piH[] + kappa * yH[-1] + beta * (1 - pH) * (-piH[] + piL[]) = 0
+ (5)  -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * pL * piL[] + beta * (1 - pL) * (piH[] - piL[]) = 0
+ (6)  -yH[-1] + yH[] - sigma * (iH[-1] - piH[]) + (1 - pH) * (-yH[] + yL[]) + sigma * (1 - pH) * (-piH[] + piL[]) = 0
+ (7)  -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (1 - pL) * (yH[] - yL[]) + sigma * (1 - pL) * (piH[] - piL[]) = 0
+ (8)  UH[] + 0.5 * (pitH - pitCB + piH[])^2 - beta * E[][UH[1]] - beta * (1 - pH) * (-E[][UH[1]] + E[][UL[1]]) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
+ (9)  UL[] + 0.5 * (-pitCB + pitL + piL[])^2 - beta * E[][UL[1]] - beta * (1 - pL) * (E[][UH[1]] - E[][UL[1]]) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
+ (10)  -pitH + pitCB - piH[] + lambda__HIGHREGIME_1[] * (beta - beta * (1 - pH)) + lambda__HIGHREGIME_2[] * (sigma - sigma * (1 - pH)) - (beta - beta * (1 - pH)) * E[][lambda__HIGHREGIME_1[1]] = 0
+ (11)  pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * pL - beta * (1 - pL)) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pL)) - (beta - beta * (1 - pL)) * E[][lambda__LOWREGIME_1[1]] = 0
+ (12)  -sigma * (beta - beta * (1 - pH)) * E[][lambda__HIGHREGIME_2[1]] = 0
+ (13)  -sigma * (beta - beta * (1 - pL)) * E[][lambda__LOWREGIME_2[1]] = 0
+
+Steady state equations (13):
+ (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
+ (2)  pH * lambda__HIGHREGIME_2[ss] + (beta - beta * (1 - pH)) * (-lambda__HIGHREGIME_2[ss] + kappa * lambda__HIGHREGIME_1[ss]) - kappa * theta^-1 * yH[ss] = 0
+ (3)  pL * lambda__LOWREGIME_2[ss] + (beta - beta * (1 - pL)) * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
+ (4)  -piH[ss] + log(etapi[ss]) + beta * piH[ss] + kappa * yH[ss] + beta * (1 - pH) * (-piH[ss] + piL[ss]) = 0
+ (5)  -piL[ss] + log(etapi[ss]) + kappa * yL[ss] + beta * pL * piL[ss] + beta * (1 - pL) * (piH[ss] - piL[ss]) = 0
+ (6)  (1 - pH) * (-yH[ss] + yL[ss]) - sigma * (iH[ss] - piH[ss]) + sigma * (1 - pH) * (-piH[ss] + piL[ss]) = 0
+ (7)  (1 - pL) * (yH[ss] - yL[ss]) - sigma * (iL[ss] - piL[ss]) + sigma * (1 - pL) * (piH[ss] - piL[ss]) = 0
+ (8)  UH[ss] + 0.5 * (pitH - pitCB + piH[ss])^2 - beta * UH[ss] - beta * (1 - pH) * (-UH[ss] + UL[ss]) + 0.5 * kappa * theta^-1 * yH[ss]^2 = 0
+ (9)  UL[ss] + 0.5 * (-pitCB + pitL + piL[ss])^2 - beta * UL[ss] - beta * (1 - pL) * (UH[ss] - UL[ss]) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
+ (10)  -pitH + pitCB - piH[ss] + lambda__HIGHREGIME_2[ss] * (sigma - sigma * (1 - pH)) = 0
+ (11)  pitCB - pitL - piL[ss] - lambda__LOWREGIME_1[ss] * (beta - beta * (1 - pL)) + lambda__LOWREGIME_1[ss] * (beta * pL - beta * (1 - pL)) + lambda__LOWREGIME_2[ss] * (sigma - sigma * (1 - pL)) = 0
+ (12)  -sigma * lambda__HIGHREGIME_2[ss] * (beta - beta * (1 - pH)) = 0
+ (13)  -sigma * lambda__LOWREGIME_2[ss] * (beta - beta * (1 - pL)) = 0
+
+Parameter settings (10):
+ (1)  beta = 0.99
+ (2)  kappa = 0.2465
+ (3)  phi = 0.95
+ (4)  pitH = 0
+ (5)  pitCB = 0
+ (6)  pitL = 2
+ (7)  pH = 0.99
+ (8)  pL = 0.99
+ (9)  sigma = 1
+ (10)  theta = 6
+
