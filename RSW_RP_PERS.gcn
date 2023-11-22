@@ -1,0 +1,88 @@
+## ############################################################################
+# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+#                                                                            #
+# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# ############################################################################
+# Constant probability case
+# ############################################################################
+
+options
+{
+    output logfile = TRUE;
+    output LaTeX = TRUE;
+    output LaTeX landscape = TRUE;
+};
+
+# tryreduce
+#  {
+#    piH[], piL[], yH[], yL[];
+#  };
+
+block HIGHREGIME
+{
+    definitions
+    {
+        uH[] =-1/2* ( (piH[]+pitH-pitCB)^2 + kappa/theta * yH[]*yH[]);
+    };
+    controls
+    {
+         piH[], yH[], iH[];
+    };
+    objective
+    {
+            UH[] = uH[] + beta * E[][UH[1]] + beta * (1-pH)* ( E[][UL[1]] -E[][UH[1]]);
+    };
+    constraints
+    {
+        piH[-1]= phipi * piH[-2] + kappa* yH[-1] + (1-phipi)* beta* piH[] + log(etapi[-1]) +(1-phipi)* beta*(1-pH)*(piL[]-piH[]) ;
+        yH[-1] = yH[] - sigma* (iH[-1] - piH[] )  + (1-pH)*(yL[]-yH[]) + sigma* (1-pH)*( piL[]- piH[]);
+    };
+    calibration
+    {
+        kappa =  0.2465; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=6
+        beta = 0.99;
+        theta = 6;
+        sigma = 1;
+        pH = 0.99;
+        pL = 0.99;
+        pitCB = 0;
+        pitH  = 0;
+        pitL = 2;
+        phipi =  0.8;   };
+};
+block LOWREGIME
+{
+    definitions
+    {
+        uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + kappa/theta * yL[]*yL[]);
+    };
+    controls
+    {
+        piL[],  yL[], iL[];
+    };
+    objective
+    {
+        UL[] = uL[] + beta * E[][UL[1]] + beta * (1-pL)* ( E[][UH[1]] -E[][UL[1]]);
+    };
+    constraints
+    {
+        piL[-1]= phipi * piL[-2] + kappa* yL[-1] + (1-phipi) * beta* pL*piL[] + log(etapi[-1]) + (1-phipi) * beta*(1-pL)*(piH[]-piL[]) ;
+        yL[-1] = yL[] - sigma* (iL[-1] - piL[]) + (1-pL)*(yH[]-yL[]) + sigma* (1-pL)*( piH[]- piL[]) ;
+    };
+};
+
+block EXOG 
+{
+    identities
+    {
+        etapi[] = exp(phi * log(etapi[-1]) + epsilon_pi[]);
+    };
+    shocks
+    {
+        epsilon_pi[];
+    };
+    calibration
+    {
+        phi = 0.95;
+    };
+};

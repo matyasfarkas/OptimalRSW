@@ -1,0 +1,238 @@
+% Generated on 2023-11-22 18:14:05 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: RSW_RP_PERS
+
+\section{HIGHREGIME}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{{p\!i\!H}_{t}, {y\!H}_{t}, {i\!H}_{t}, {p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_{t}
+} {U\!H}_{t} = -0.5\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[{U\!H}_{t+1}\right]} + {\beta} \left(1 - {p\!H}\right) \left(-\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] + \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) - 0.5{\kappa} {\theta}^{-1} {{y\!H}_{t}}^{2}\\
+&\mathrm{s.t.:}\nonumber\\
+& {p\!i\!H}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!H}_{t-1}} + {{p\!h\!i\!p\!i}} {{p\!i\!H}_{t-2}} + {\beta} {{p\!i\!H}_{t}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \quad \left(\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t}\right)\\
+& {y\!H}_{t-1} = {y\!H}_{t} - {\sigma} \left({i\!H}_{t-1} - {p\!i\!H}_{t}\right) + \left(1 - {p\!H}\right) \left(-{y\!H}_{t} + {y\!L}_{t}\right) + {\sigma} \left(1 - {p\!H}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \quad \left(\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}\right)
+\end{align}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+-{p\!i\!t\!H} + {p\!i\!t\!C\!B} - {p\!i\!H}_{t} + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!H}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left(-\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right] + \mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_{t+1}\right]\right) = 0
+ \quad \left({p\!i\!H}_{t}\right)
+\end{equation}
+\begin{equation}
+{{p\!H}} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {{y\!H}_{t}} = 0
+ \quad \left({y\!H}_{t}\right)
+\end{equation}
+\begin{equation}
+-{\sigma} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
+ \quad \left({i\!H}_{t}\right)
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_{t} + {{p\!h\!i\!p\!i}} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right]} = 0
+ \quad \left({p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_{t}\right)
+\end{equation}
+
+
+
+
+\section{LOWREGIME}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{{p\!i\!L}_{t}, {y\!L}_{t}, {i\!L}_{t}, {p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_{t}
+} {U\!L}_{t} = -0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} + {\beta} \left(1 - {p\!L}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) - 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2}\\
+&\mathrm{s.t.:}\nonumber\\
+& {p\!i\!L}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {{p\!h\!i\!p\!i}} {{p\!i\!L}_{t-2}} + {\beta} {{p\!L}} {{p\!i\!L}_{t}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}\right)\\
+& {y\!L}_{t-1} = {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left(1 - {p\!L}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) + {\sigma} \left(1 - {p\!L}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}\right)
+\end{align}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} {{p\!L}} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left(-\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right] + \mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_{t+1}\right]\right) = 0
+ \quad \left({p\!i\!L}_{t}\right)
+\end{equation}
+\begin{equation}
+{{p\!L}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {{y\!L}_{t}} = 0
+ \quad \left({y\!L}_{t}\right)
+\end{equation}
+\begin{equation}
+-{\sigma} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
+ \quad \left({i\!L}_{t}\right)
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_{t} + {{p\!h\!i\!p\!i}} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} = 0
+ \quad \left({p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_{t}\right)
+\end{equation}
+
+
+
+
+\section{EXOG}
+
+\subsection{Identities}
+
+\begin{equation}
+{e\!t\!a\!p\!i}_{t} = e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}}
+\end{equation}
+
+
+
+
+\section{Equilibrium relationships (after reduction)}
+
+\begin{equation}
+{p\!i\!H}_{t-1} - {p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_{t} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!L}_{t-1} - {p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_{t} = 0
+\end{equation}
+\begin{equation}
+-{e\!t\!a\!p\!i}_{t} + e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}} = 0
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_{t} + {{p\!h\!i\!p\!i}} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right]} = 0
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_{t} + {{p\!h\!i\!p\!i}} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} = 0
+\end{equation}
+\begin{equation}
+{{p\!H}} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {{y\!H}_{t}} = 0
+\end{equation}
+\begin{equation}
+{{p\!L}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left({\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} - \mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]\right) - {\kappa} {\theta}^{-1} {{y\!L}_{t}} = 0
+\end{equation}
+\begin{equation}
+-{y\!H}_{t-1} + {y\!H}_{t} - {\sigma} \left({i\!H}_{t-1} - {p\!i\!H}_{t}\right) + \left(1 - {p\!H}\right) \left(-{y\!H}_{t} + {y\!L}_{t}\right) + {\sigma} \left(1 - {p\!H}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) = 0
+\end{equation}
+\begin{equation}
+-{y\!L}_{t-1} + {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left(1 - {p\!L}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) + {\sigma} \left(1 - {p\!L}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) = 0
+\end{equation}
+\begin{equation}
+{U\!H}_{t} + 0.5\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[{U\!H}_{t+1}\right]} - {\beta} \left(1 - {p\!H}\right) \left(-\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] + \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) + 0.5{\kappa} {\theta}^{-1} {{y\!H}_{t}}^{2} = 0
+\end{equation}
+\begin{equation}
+{U\!L}_{t} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} - {\beta} \left(1 - {p\!L}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2} = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!t\!H} + {p\!i\!t\!C\!B} - {p\!i\!H}_{t} + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!H}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left(-\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right] + \mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_{t+1}\right]\right) = 0
+\end{equation}
+\begin{equation}
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} {{p\!L}} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left(-\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right] + \mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_{t+1}\right]\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!H}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!H}_{t-1}} + {{p\!h\!i\!p\!i}} {{p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_{t-1}} + {\beta} {{p\!i\!H}_{t}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!L}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {{p\!h\!i\!p\!i}} {{p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_{t-1}} + {\beta} {{p\!L}} {{p\!i\!L}_{t}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) = 0
+\end{equation}
+\begin{equation}
+-{\sigma} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
+\end{equation}
+\begin{equation}
+-{\sigma} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
+\end{equation}
+
+
+
+\section{Steady state relationships (after reduction)}
+
+\begin{equation}
+{p\!i\!H}_\mathrm{ss} - {p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!L}_\mathrm{ss} - {p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+-{e\!t\!a\!p\!i}_\mathrm{ss} + e^{{\phi} {\log{{e\!t\!a\!p\!i}_\mathrm{ss}}}} = 0
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_\mathrm{ss} + {{p\!h\!i\!p\!i}} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) = 0
+\end{equation}
+\begin{equation}
+-\lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_\mathrm{ss} + {{p\!h\!i\!p\!i}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) = 0
+\end{equation}
+\begin{equation}
+{{p\!H}} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left(-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {{y\!H}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+{{p\!L}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+\left(1 - {p\!H}\right) \left(-{y\!H}_\mathrm{ss} + {y\!L}_\mathrm{ss}\right) - {\sigma} \left({i\!H}_\mathrm{ss} - {p\!i\!H}_\mathrm{ss}\right) + {\sigma} \left(1 - {p\!H}\right) \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+\left(1 - {p\!L}\right) \left({y\!H}_\mathrm{ss} - {y\!L}_\mathrm{ss}\right) - {\sigma} \left({i\!L}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) + {\sigma} \left(1 - {p\!L}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+{U\!H}_\mathrm{ss} + 0.5\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2} - {\beta} {{U\!H}_\mathrm{ss}} - {\beta} \left(1 - {p\!H}\right) \left(-{U\!H}_\mathrm{ss} + {U\!L}_\mathrm{ss}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!H}_\mathrm{ss}}^{2} = 0
+\end{equation}
+\begin{equation}
+{U\!L}_\mathrm{ss} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_\mathrm{ss}\right)^{2} - {\beta} {{U\!L}_\mathrm{ss}} - {\beta} \left(1 - {p\!L}\right) \left({U\!H}_\mathrm{ss} - {U\!L}_\mathrm{ss}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}}^{2} = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!t\!H} + {p\!i\!t\!C\!B} - {p\!i\!H}_\mathrm{ss} + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left({\beta} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\sigma - {\sigma} \left(1 - {p\!H}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) \left(-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss} + \lambda^{\mathrm{HIGHREGIME}^{\mathrm{piH}^{\mathrm{lag}^{\mathrm{1}}}}}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_\mathrm{ss} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left({\beta} {{p\!L}} \left(1 - {p\!h\!i\!p\!i}\right) - {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\sigma - {\sigma} \left(1 - {p\!L}\right)\right) + \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss} + \lambda^{\mathrm{LOWREGIME}^{\mathrm{piL}^{\mathrm{lag}^{\mathrm{1}}}}}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!H}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\kappa} {{y\!H}_\mathrm{ss}} + {{p\!h\!i\!p\!i}} {{p\!i\!H}^{\mathrm{lag}^{\mathrm{1}}}_\mathrm{ss}} + {\beta} {{p\!i\!H}_\mathrm{ss}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!H}\right) \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!L}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\kappa} {{y\!L}_\mathrm{ss}} + {{p\!h\!i\!p\!i}} {{p\!i\!L}^{\mathrm{lag}^{\mathrm{1}}}_\mathrm{ss}} + {\beta} {{p\!L}} {{p\!i\!L}_\mathrm{ss}} \left(1 - {p\!h\!i\!p\!i}\right) + {\beta} \left(1 - {p\!h\!i\!p\!i}\right) \left(1 - {p\!L}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) = 0
+\end{equation}
+\begin{equation}
+-{\sigma} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!H}\right)\right) = 0
+\end{equation}
+\begin{equation}
+-{\sigma} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L}\right)\right) = 0
+\end{equation}
+
+
+
+
+
+
+\section{Parameter settings}
+
+\begin{equation}
+\beta = 0.99
+\end{equation}
+\begin{equation}
+\kappa = 0.2465
+\end{equation}
+\begin{equation}
+\phi = 0.95
+\end{equation}
+\begin{equation}
+{p\!h\!i\!p\!i} = 0.8
+\end{equation}
+\begin{equation}
+{p\!i\!t\!H} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!t\!C\!B} = 0
+\end{equation}
+\begin{equation}
+{p\!i\!t\!L} = 2
+\end{equation}
+\begin{equation}
+{p\!H} = 0.99
+\end{equation}
+\begin{equation}
+{p\!L} = 0.99
+\end{equation}
+\begin{equation}
+\sigma = 1
+\end{equation}
+\begin{equation}
+\theta = 6
+\end{equation}
+
+
