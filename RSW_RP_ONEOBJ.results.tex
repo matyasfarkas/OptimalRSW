@@ -1,0 +1,168 @@
+% Generated on 2023-12-01 17:50:12 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: RSW_RP_ONEOBJ
+
+\section{Steady-state values}
+
+
+\begin{tabular}{c|c|}
+  & Steady-state value\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 \\
+$i$ & -1.0001 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}$ & -0.0243 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}$ & -0.5105 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}$ & 0.0141 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}$ & 0.5105 \\
+${p\!i\!H}$ & -0.9997 \\
+${p\!i\!L}$ & -1.0006 \\
+${y\!H}$ & -0.0405 \\
+${y\!L}$ & -0.0808 \\
+$U$ & -49.9673 \\
+\hline
+\end{tabular}
+
+
+\section{The solution of the 1st order perturbation}
+
+\subsection*{Matrix $P$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & i_{t-1} & {p\!i\!H}_{t-1} & {p\!i\!L}_{t-1} & {y\!H}_{t-1} & {y\!L}_{t-1} \cr
+{e\!t\!a\!p\!i}_{t} & 0.95 & 0 & 0 & 0 & 0 & 0 \cr
+i_{t} & -29.0023 & -3.0336 & -589.7847 & 607.7495 & 15.026 & -30.556 \cr
+{p\!i\!H}_{t} & -1.0103 & 0 & 1.0204 & -0.0104 & -0.0102 & 0.0002 \cr
+{p\!i\!L}_{t} & -1.0198 & 0 & -0.0104 & 1.0308 & 0.0001 & -0.0205 \cr
+{y\!H}_{t} & 24.9235 & 24.6802 & -25.1736 & 0.2571 & 1.2617 & -0.0255 \cr
+{y\!L}_{t} & 12.6276 & 12.3768 & 0.1288 & -12.7635 & -0.0064 & 1.2643 \cr
+}$$
+
+\subsection*{Matrix $Q$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+{e\!t\!a\!p\!i} & 1 \cr
+i & -12.1391 \cr
+{p\!i\!H} & 0 \cr
+{p\!i\!L} & 0 \cr
+{y\!H} & 0 \cr
+{y\!L} & 0 \cr
+}$$
+
+\subsection*{Matrix $R$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & i_{t-1} & {p\!i\!H}_{t-1} & {p\!i\!L}_{t-1} & {y\!H}_{t-1} & {y\!L}_{t-1} \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t} & 78354.8138 & 5351.9263 & 2931231.873 & -2990881.8819 & -74650.4938 & 150430.5551 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t} & -1426.9835 & -97.4423 & -53335.8517 & 54422.0249 & 1358.3293 & -2737.2326 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}_{t} & -138117.8358 & -9440.8772 & -5150701.2185 & 5255767.5998 & 131175.5042 & -264343.799 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}_{t} & 1435.7948 & 98.1682 & 53590.8208 & -54683.1946 & -1364.8251 & 2750.3637 \cr
+U_{t} & -0.0034 & 0 & 0.0005 & -0.0003 & 0.0004 & -0.0008 \cr
+}$$
+
+\subsection*{Matrix $S$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}} & 22259.7763 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}} & -405.5204 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}} & -39307.9945 \cr
+\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}} & 408.4928 \cr
+U & -0.0034 \cr
+}$$
+
+
+\section{Model statistics}
+
+\subsection{Basic statistics}
+
+\begin{tabular}{c|c|c|c|c|}
+  & Steady-state value & Std. dev. & Variance & Loglin\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 & 0.1303 & 0.017 & Y    \\
+$i$ & -1.0001 & 1.4658 & 2.1487 & Y    \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}$ & -0.0243 & 2399.9295 & 5759661.7798 & Y    \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}$ & -0.5105 & 43.7148 & 1910.9849 & Y    \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}$ & 0.0141 & 4228.1871 & 17877566.0584 & Y    \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}$ & 0.5105 & 43.9456 & 1931.2164 & Y    \\
+${p\!i\!H}$ & -0.9997 & 0.1683 & 0.0283 & Y    \\
+${p\!i\!L}$ & -1.0006 & 0.1688 & 0.0285 & Y    \\
+${y\!H}$ & -0.0405 & 25.2506 & 637.5929 & Y    \\
+${y\!L}$ & -0.0808 & 12.6478 & 159.9677 & Y    \\
+$U$ & -49.9673 & 0 & 0 & Y    \\
+\hline
+\end{tabular}
+
+
+\subsection{Correlation matrix}
+
+\begin{tabular}{c|cccccccccc|}
+  & ${e\!t\!a\!p\!i}$ & $i$ & $\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}$ & $\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}$ & $\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}$ & $\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}$ & ${p\!i\!H}$ & ${p\!i\!L}$ & ${y\!H}$ & ${y\!L}$\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 & -0.099 & 0.753 & -0.753 & -0.751 & 0.751 & 0.156 & 0.153 & -0.559 & -0.559 \\
+$i$ &  & 1 & -0.398 & 0.398 & 0.402 & -0.402 & -0.206 & -0.209 & -0.656 & -0.656 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}$ &  &  & 1 & -1 & -1 & 1 & -0.179 & -0.182 & -0.385 & -0.385 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}$ &  &  &  & 1 & 1 & -1 & 0.18 & 0.183 & 0.386 & 0.385 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}$ &  &  &  &  & 1 & -1 & 0.182 & 0.185 & 0.382 & 0.382 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}$ &  &  &  &  &  & 1 & -0.18 & -0.183 & -0.382 & -0.382 \\
+${p\!i\!H}$ &  &  &  &  &  &  & 1 & 1 & 0.443 & 0.444 \\
+${p\!i\!L}$ &  &  &  &  &  &  &  & 1 & 0.447 & 0.449 \\
+${y\!H}$ &  &  &  &  &  &  &  &  & 1 & 1 \\
+${y\!L}$ &  &  &  &  &  &  &  &  &  & 1 \\
+\hline
+\end{tabular}
+
+
+\subsection{Cross correlations with the reference variable ($i$)}
+
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|}
+  & $\sigma[\cdot]$ rel. to $\sigma[i]$ & $i_{t-5}$ & $i_{t-4}$ & $i_{t-3}$ & $i_{t-2}$ & $i_{t-1}$ & $i_{t}$ & $i_{t+1}$ & $i_{t+2}$ & $i_{t+3}$ & $i_{t+4}$ & $i_{t+5}$\\
+\hline
+${e\!t\!a\!p\!i}_{t}$ & 0.089 & -0.021 & -0.008 & 0.033 & 0.16 & 0.562 & -0.099 & -0.09 & -0.08 & -0.07 & -0.06 & -0.05 \\
+$i_{t}$ & 1 & -0.004 & -0.012 & -0.035 & -0.109 & -0.343 & 1 & -0.343 & -0.109 & -0.035 & -0.012 & -0.004 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}$ & 1637.229 & 0 & 0.015 & 0.058 & 0.191 & 0.61 & -0.398 & -0.234 & -0.135 & -0.074 & -0.036 & -0.014 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}$ & 29.822 & 0 & -0.015 & -0.058 & -0.191 & -0.61 & 0.398 & 0.235 & 0.135 & 0.073 & 0.036 & 0.014 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}_{t}$ & 2884.463 & 0 & -0.015 & -0.058 & -0.191 & -0.611 & 0.402 & 0.236 & 0.134 & 0.072 & 0.035 & 0.013 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}_{t}$ & 29.98 & 0 & 0.015 & 0.058 & 0.191 & 0.611 & -0.402 & -0.234 & -0.134 & -0.073 & -0.036 & -0.013 \\
+${p\!i\!H}_{t}$ & 0.115 & -0.007 & -0.008 & -0.011 & -0.024 & -0.067 & -0.206 & 0.863 & -0.019 & -0.179 & -0.157 & -0.106 \\
+${p\!i\!L}_{t}$ & 0.115 & -0.007 & -0.008 & -0.011 & -0.025 & -0.068 & -0.209 & 0.863 & -0.016 & -0.177 & -0.156 & -0.106 \\
+${y\!H}_{t}$ & 17.226 & 0.012 & 0.007 & -0.008 & -0.055 & -0.199 & -0.656 & 0.635 & 0.147 & 0.021 & -0.004 & -0.003 \\
+${y\!L}_{t}$ & 8.628 & 0.012 & 0.007 & -0.008 & -0.055 & -0.199 & -0.656 & 0.636 & 0.147 & 0.02 & -0.004 & -0.003 \\
+\hline
+\end{tabular}
+
+
+\subsection{Autocorrelations}
+
+\begin{tabular}{c|ccccc|}
+  & Lag 1 & Lag 2 & Lag 3 & Lag 4 & Lag 5\\
+\hline
+${e\!t\!a\!p\!i}$ & 0.713 & 0.471 & 0.271 & 0.11 & -0.016 \\
+$i$ & -0.343 & -0.109 & -0.035 & -0.012 & -0.004 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}$ & 0.467 & 0.156 & -0.021 & -0.115 & -0.159 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}$ & 0.467 & 0.154 & -0.022 & -0.116 & -0.159 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{3}}}$ & 0.463 & 0.151 & -0.023 & -0.116 & -0.158 \\
+$\lambda^{\mathrm{OPTIMALMP}^{\mathrm{4}}}$ & 0.464 & 0.153 & -0.022 & -0.115 & -0.158 \\
+${p\!i\!H}$ & 0.218 & -0.026 & -0.098 & -0.113 & -0.109 \\
+${p\!i\!L}$ & 0.217 & -0.027 & -0.098 & -0.113 & -0.109 \\
+${y\!H}$ & 0.163 & -0.029 & -0.055 & -0.05 & -0.045 \\
+${y\!L}$ & 0.162 & -0.03 & -0.056 & -0.05 & -0.045 \\
+\hline
+\end{tabular}
+
+
+
+\pagebreak
+
+\section{Impulse response functions}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.5\textwidth}
+\vspace*{-3em}
+\centering
+\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_50.eps}
+\caption{Impulse responses ($i, {p\!i\!H}, {p\!i\!L}, {y\!H}, {y\!L}$) to $\epsilon^{\pi}$ shock}
+\end{minipage}
+\end{figure}

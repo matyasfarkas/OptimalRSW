@@ -1,10 +1,10 @@
-# Generated on 2023-11-21 15:44:45 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2023-12-01 17:14:41 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: RSW_RP
 
 # info
-info__ <- c("RSW_RP", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW_RP.gcn", "2023-11-21 15:44:45", "false")
+info__ <- c("RSW_RP", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW_RP.gcn", "2023-12-01 17:14:41", "false")
 
 # index sets
 index_sets__ <- list()
