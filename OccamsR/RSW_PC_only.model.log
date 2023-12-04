@@ -1,0 +1,79 @@
+Generated on 2023-12-04 18:12:57 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RSW_PC_only
+
+Block: OPTIMALMP
+ Definitions:
+    uH[] = -0.5 * (pitH - pitCB + piH[])^2 - 0.5 * kappa * theta^-1 * yH[]^2
+    uL[] = -0.5 * (-pitCB + pitL + piL[])^2 - 0.5 * kappa * theta^-1 * yL[]^2
+ Controls:
+    piH[], piL[], yH[], yL[], i[]
+ Objective:
+    U[] = -0.25 * (pitH - pitCB + piH[])^2 - 0.25 * (-pitCB + pitL + piL[])^2 + beta * E[][U[1]] - 0.25 * kappa * theta^-1 * yH[]^2 - 0.25 * kappa * theta^-1 * yL[]^2
+ Constraints:
+    -piH[-1] + log(etapi[-1]) + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0    (lambda__OPTIMALMP_1[])
+    -piL[-1] + log(etapi[-1]) + beta * (pL * piL[] + piL[] * (1 - pL)) + kappa * yL[-1] = 0    (lambda__OPTIMALMP_2[])
+    -yH[-1] + pH * yH[] - sigma * (i[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0    (lambda__OPTIMALMP_3[])
+    -yL[-1] + pL * yL[] - sigma * (i[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0    (lambda__OPTIMALMP_4[])
+ First order conditions:
+    -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + beta * pH * lambda__OPTIMALMP_1[] + pH * sigma * lambda__OPTIMALMP_3[] - sigma * lambda__OPTIMALMP_4[] * (-1 + pL) = 0    (piH[])
+    0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] + beta * lambda__OPTIMALMP_2[] - beta * E[][lambda__OPTIMALMP_2[1]] + beta * lambda__OPTIMALMP_1[] * (1 - pH) + pL * sigma * lambda__OPTIMALMP_4[] - sigma * lambda__OPTIMALMP_3[] * (-1 + pH) = 0    (piL[])
+    beta * (kappa * E[][lambda__OPTIMALMP_1[1]] - E[][lambda__OPTIMALMP_3[1]]) + pH * lambda__OPTIMALMP_3[] + lambda__OPTIMALMP_4[] * (1 - pL) - 0.5 * kappa * theta^-1 * yH[] = 0    (yH[])
+    beta * (kappa * E[][lambda__OPTIMALMP_2[1]] - E[][lambda__OPTIMALMP_4[1]]) + pL * lambda__OPTIMALMP_4[] + lambda__OPTIMALMP_3[] * (1 - pH) - 0.5 * kappa * theta^-1 * yL[] = 0    (yL[])
+    beta * (-sigma * E[][lambda__OPTIMALMP_3[1]] - sigma * E[][lambda__OPTIMALMP_4[1]]) = 0    (i[])
+
+Block: EXOG
+ Identities:
+    -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+
+Variables (11):
+    etapi[], i[], lambda__OPTIMALMP_1[], lambda__OPTIMALMP_2[], lambda__OPTIMALMP_3[], lambda__OPTIMALMP_4[], piH[], piL[], yH[], yL[], U[]
+
+Shocks (1):
+    epsilon_pi[]
+
+Parameters (10):
+    beta, kappa, phi, pitH, pitCB, pitL, pH, pL, sigma, theta
+
+Free parameters (10):
+    beta, kappa, phi, pitH, pitCB, pitL, pH, pL, sigma, theta
+
+Equations (11):
+ (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+ (2)  -piH[-1] + log(etapi[-1]) + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0
+ (3)  -piL[-1] + log(etapi[-1]) + beta * (pL * piL[] + piL[] * (1 - pL)) + kappa * yL[-1] = 0
+ (4)  -yH[-1] + pH * yH[] - sigma * (i[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0
+ (5)  -yL[-1] + pL * yL[] - sigma * (i[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0
+ (6)  beta * (kappa * E[][lambda__OPTIMALMP_1[1]] - E[][lambda__OPTIMALMP_3[1]]) + pH * lambda__OPTIMALMP_3[] + lambda__OPTIMALMP_4[] * (1 - pL) - 0.5 * kappa * theta^-1 * yH[] = 0
+ (7)  beta * (kappa * E[][lambda__OPTIMALMP_2[1]] - E[][lambda__OPTIMALMP_4[1]]) + pL * lambda__OPTIMALMP_4[] + lambda__OPTIMALMP_3[] * (1 - pH) - 0.5 * kappa * theta^-1 * yL[] = 0
+ (8)  U[] + 0.25 * (pitH - pitCB + piH[])^2 + 0.25 * (-pitCB + pitL + piL[])^2 - beta * E[][U[1]] + 0.25 * kappa * theta^-1 * yH[]^2 + 0.25 * kappa * theta^-1 * yL[]^2 = 0
+ (9)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + beta * pH * lambda__OPTIMALMP_1[] + pH * sigma * lambda__OPTIMALMP_3[] - sigma * lambda__OPTIMALMP_4[] * (-1 + pL) = 0
+ (10)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] + beta * lambda__OPTIMALMP_2[] - beta * E[][lambda__OPTIMALMP_2[1]] + beta * lambda__OPTIMALMP_1[] * (1 - pH) + pL * sigma * lambda__OPTIMALMP_4[] - sigma * lambda__OPTIMALMP_3[] * (-1 + pH) = 0
+ (11)  beta * (-sigma * E[][lambda__OPTIMALMP_3[1]] - sigma * E[][lambda__OPTIMALMP_4[1]]) = 0
+
+Steady state equations (11):
+ (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
+ (2)  -piH[ss] + log(etapi[ss]) + beta * (pH * piH[ss] + piL[ss] * (1 - pH)) + kappa * yH[ss] = 0
+ (3)  -piL[ss] + log(etapi[ss]) + beta * (pL * piL[ss] + piL[ss] * (1 - pL)) + kappa * yL[ss] = 0
+ (4)  -yH[ss] + pH * yH[ss] - sigma * (i[ss] - pH * piH[ss] - piL[ss] * (1 - pH)) + yL[ss] * (1 - pH) = 0
+ (5)  -yL[ss] + pL * yL[ss] - sigma * (i[ss] - pL * piL[ss] - piH[ss] * (1 - pL)) + yH[ss] * (1 - pL) = 0
+ (6)  beta * (-lambda__OPTIMALMP_3[ss] + kappa * lambda__OPTIMALMP_1[ss]) + pH * lambda__OPTIMALMP_3[ss] + lambda__OPTIMALMP_4[ss] * (1 - pL) - 0.5 * kappa * theta^-1 * yH[ss] = 0
+ (7)  beta * (-lambda__OPTIMALMP_4[ss] + kappa * lambda__OPTIMALMP_2[ss]) + pL * lambda__OPTIMALMP_4[ss] + lambda__OPTIMALMP_3[ss] * (1 - pH) - 0.5 * kappa * theta^-1 * yL[ss] = 0
+ (8)  U[ss] + 0.25 * (pitH - pitCB + piH[ss])^2 + 0.25 * (-pitCB + pitL + piL[ss])^2 - beta * U[ss] + 0.25 * kappa * theta^-1 * yH[ss]^2 + 0.25 * kappa * theta^-1 * yL[ss]^2 = 0
+ (9)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[ss] - beta * lambda__OPTIMALMP_1[ss] + beta * pH * lambda__OPTIMALMP_1[ss] + pH * sigma * lambda__OPTIMALMP_3[ss] - sigma * lambda__OPTIMALMP_4[ss] * (-1 + pL) = 0
+ (10)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[ss] + beta * lambda__OPTIMALMP_1[ss] * (1 - pH) + pL * sigma * lambda__OPTIMALMP_4[ss] - sigma * lambda__OPTIMALMP_3[ss] * (-1 + pH) = 0
+ (11)  beta * (-sigma * lambda__OPTIMALMP_3[ss] - sigma * lambda__OPTIMALMP_4[ss]) = 0
+
+Parameter settings (10):
+ (1)  beta = 0.99
+ (2)  kappa = 0.2465
+ (3)  phi = 0.95
+ (4)  pitH = 2
+ (5)  pitCB = 2
+ (6)  pitL = 4
+ (7)  pH = 0.99
+ (8)  pL = 0.99
+ (9)  sigma = 1
+ (10)  theta = 6
+

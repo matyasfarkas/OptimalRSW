@@ -1,10 +1,10 @@
-# Generated on 2023-12-01 17:48:04 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2023-12-04 18:13:08 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: RSW_RP_ONEOBJ
 
 # info
-info__ <- c("RSW_RP_ONEOBJ", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW_RP_ONEOBJ.gcn", "2023-12-01 17:48:04", "false")
+info__ <- c("RSW_RP_ONEOBJ", "C:/Users/fm007/Documents/GitHub/OptimalRSW/RSW_RP_ONEOBJ.gcn", "2023-12-04 18:13:08", "false")
 
 # index sets
 index_sets__ <- list()

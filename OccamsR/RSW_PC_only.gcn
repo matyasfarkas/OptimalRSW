@@ -18,24 +18,27 @@ options
 #    piH[], piL[], yH[], yL[];
 #  };
 
-block HIGHREGIME
+block OPTIMALMP
 {
     definitions
     {
-        uH[] =-1/2* ( (piH[]+pitH-pitCB)^2 + kappa/theta * yH[]*yH[]);
+        uH[] = -1/2* ((piH[]+pitH-pitCB)^2 + kappa/theta * yH[]*yH[]);
+        uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + kappa/theta * yL[]*yL[]);
     };
     controls
     {
-         piH[], yH[], iH[];
+         piH[],piL[], yH[],   yL[], i[]; #,   yH[],   yL[]
     };
     objective
     {
-            UH[] = uH[] + beta * E[][UH[1]] + beta * (1-pH)* ( E[][UL[1]] -E[][UH[1]]);
+                U[] = 0.5*( uL[]+uH[]) + beta * E[][U[1]] ;
     };
     constraints
     {
-        piH[-1]= kappa* yH[-1] + beta* pH* piH[] + log(etapi[-1]) + beta*(1-pH)*(piL[]-piH[]) ;
-        yH[-1] = yH[] - sigma* (iH[-1] - piH[] )  + (1-pH)*(yL[]-yH[]) + sigma* (1-pH)*( piL[]- piH[]);
+        piH[-1]= kappa* yH[-1] + beta* (pH*piH[]+ (1-pH)*piL[])  + log(etapi[-1])  ;
+        piL[-1]= kappa* yL[-1] + beta* (pL*piL[]+ (1-pL)*piH[]) + log(etapi[-1]) ;
+        yH[-1] = (pH*yH[]+ (1-pH)*yL[]) - sigma* ((i[-1] - (pH*piH[] + (1-pH)*piL[])));  
+        yL[-1] = (pL*yL[]+ (1-pL)*yH[]) - sigma* ((i[-1] - (pL*piL[] + (1-pL)*piH[])));
     };
     calibration
     {
@@ -45,29 +48,9 @@ block HIGHREGIME
         sigma = 1;
         pH = 0.99;
         pL = 0.99;
-        pitCB = 0;
-        pitH  = 0;
-        pitL = 2;
-    };
-};
-block LOWREGIME
-{
-    definitions
-    {
-        uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + kappa/theta * yL[]*yL[]);
-    };
-    controls
-    {
-        piL[],  yL[], iL[];
-    };
-    objective
-    {
-        UL[] = uL[] + beta * E[][UL[1]] + beta * (1-pL)* ( E[][UH[1]] -E[][UL[1]]);
-    };
-    constraints
-    {
-        piL[-1]= kappa* yL[-1] + beta* pL*piL[] + log(etapi[-1]) + beta*(1-pL)*(piH[]-piL[]) ;
-        yL[-1] = yL[] - sigma* (iL[-1] - piL[]) + (1-pL)*(yH[]-yL[]) + sigma* (1-pL)*( piH[]- piL[]) ;
+        pitCB = 2;
+        pitH  = 2;
+        pitL = 4;
     };
 };
 
