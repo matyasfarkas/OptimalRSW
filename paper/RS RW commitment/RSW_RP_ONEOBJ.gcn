@@ -39,7 +39,7 @@ block OPTIMALMP
     {
         piH[-1]= kappa* yH[-1] + beta* piH[] + log(etapi[-1]) + beta*(1-pH)*(piL[]-piH[]) ;
         # yH[-1] = yH[] - sigma* (i[-1] - piH[] )  + (1-pH)*(yL[]-yH[]) + sigma* (1-pH)*( piL[]- piH[]);
-        piL[-1]= kappa* yL[-1] + beta* pL*piL[] + log(etapi[-1]) + beta*(1-pL)*(piH[]-piL[]) ;
+        piL[-1]= kappa* yL[-1] + beta* piL[] + log(etapi[-1]) + beta*(1-pL)*(piH[]-piL[]) ;
         # yL[-1] = yL[] - sigma* (i[-1] - piL[]) + (1-pL)*(yH[]-yL[]) + sigma* (1-pL)*( piH[]- piL[]) ;
 
     };

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  13 FEB 2024 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  13 FEB 2024 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,27 +474,27 @@ Overfull \hbox (113.28807pt too wide) in paragraph at lines 105--118
  []
 
 [4]
-Package epstopdf Info: Source file: <plots/plot_1.eps>
-(epstopdf)                    date: 2024-02-13 18:14:58
-(epstopdf)                    size: 7414 bytes
-(epstopdf)             Output file: <plots/plot_1-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-02-13 18:16:05
-(epstopdf)                    size: 12027 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_1-eps-con
-verted-to.pdf plots/plot_1.eps>
+Package epstopdf Info: Source file: <plots/plot_3.eps>
+(epstopdf)                    date: 2024-02-13 19:11:10
+(epstopdf)                    size: 7529 bytes
+(epstopdf)             Output file: <plots/plot_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-02-13 19:17:09
+(epstopdf)                    size: 12235 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_3-eps-con
+verted-to.pdf plots/plot_3.eps>
 (epstopdf)             \includegraphics on input line 147.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_1-eps-converted-to.pdf): PDF inclus
+pdfTeX warning: pdflatex (file ./plots/plot_3-eps-converted-to.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_1-eps-converted-to.pdf, id=138, 505.89pt x 505.89pt>
-File: plots/plot_1-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_1-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_1-eps-converted-to.pdf  used on input line 
+<plots/plot_3-eps-converted-to.pdf, id=138, 505.89pt x 505.89pt>
+File: plots/plot_3-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_3-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_3-eps-converted-to.pdf  used on input line 
 147.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
-) [5 <./plots/plot_1-eps-converted-to.pdf>] (RSW_RP_ONEOBJ.aux)
+) [5 <./plots/plot_3-eps-converted-to.pdf>] (RSW_RP_ONEOBJ.aux)
 Package rerunfilecheck Info: File `RSW_RP_ONEOBJ.out' has not changed.
 (rerunfilecheck)             Checksum: 006C41AEFD031C1E0717E394021830DE;2773.
  ) 
@@ -505,7 +505,7 @@ Here is how much of TeX's memory you used:
  31361 multiletter control sequences out of 15000+600000
  476684 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,11n,67p,405b,523s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 63i,11n,67p,397b,523s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmex10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -522,7 +522,7 @@ cm/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RSW_RP_ONEOBJ.pdf (5 pages, 194587 bytes).
+Output written on RSW_RP_ONEOBJ.pdf (5 pages, 194375 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  62 named destinations out of 1000 (max. 500000)

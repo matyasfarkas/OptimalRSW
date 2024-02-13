@@ -1,10 +1,10 @@
-# Generated on 2024-02-13 18:09:18 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2024-02-13 19:05:33 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: RSW_RP_ONEOBJ
 
 # info
-info__ <- c("RSW_RP_ONEOBJ", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/RS RW commitment/RSW_RP_ONEOBJ.gcn", "2024-02-13 18:09:18", "false")
+info__ <- c("RSW_RP_ONEOBJ", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/RS RW commitment/RSW_RP_ONEOBJ.gcn", "2024-02-13 19:05:33", "false")
 
 # index sets
 index_sets__ <- list()
@@ -89,9 +89,9 @@ equations__ <- c("-etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0",
                  "-0.5 * lambda * yH[] + beta * kappa * E[][lambda__OPTIMALMP_1[1]] = 0",
                  "-0.5 * lambda * yL[] + beta * kappa * E[][lambda__OPTIMALMP_2[1]] = 0",
                  "-piH[-1] + log(etapi[-1]) + beta * piH[] + kappa * yH[-1] + beta * (1 - pH) * (-piH[] + piL[]) = 0",
-                 "-piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * pL * piL[] + beta * (1 - pL) * (piH[] - piL[]) = 0",
+                 "-piL[-1] + log(etapi[-1]) + beta * piL[] + kappa * yL[-1] + beta * (1 - pL) * (piH[] - piL[]) = 0",
                  "-0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + lambda__OPTIMALMP_1[] * (beta - beta * (1 - pH)) + beta * lambda__OPTIMALMP_2[] * (1 - pL) = 0",
-                 "0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta * pL - beta * (1 - pL)) + beta * lambda__OPTIMALMP_1[] * (1 - pH) = 0",
+                 "0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta - beta * (1 - pL)) + beta * lambda__OPTIMALMP_1[] * (1 - pH) = 0",
                  "U[] + 0.25 * (pitH - pitCB + piH[])^2 + 0.25 * (-pitCB + pitL + piL[])^2 - beta * E[][U[1]] + 0.25 * lambda * yH[]^2 + 0.25 * lambda * yL[]^2 = 0")
 
 # calibrating equations
@@ -143,9 +143,9 @@ ss_eq__ <- function(v, pc, pf)
     r[2] = -0.5 * pf[3] * v[6] + pf[1] * pf[2] * v[2]
     r[3] = -0.5 * pf[3] * v[7] + pf[1] * pf[2] * v[3]
     r[4] = -v[4] + log(v[1]) + pf[1] * v[4] + pf[2] * v[6] + pf[1] * (1 - pf[8]) * (-v[4] + v[5])
-    r[5] = -v[5] + log(v[1]) + pf[2] * v[7] + pf[1] * pf[9] * v[5] + pf[1] * (1 - pf[9]) * (v[4] - v[5])
+    r[5] = -v[5] + log(v[1]) + pf[1] * v[5] + pf[2] * v[7] + pf[1] * (1 - pf[9]) * (v[4] - v[5])
     r[6] = -0.5 * pf[5] + 0.5 * pf[6] - 0.5 * v[4] - pf[1] * v[2] + v[2] * (pf[1] - pf[1] * (1 - pf[8])) + pf[1] * v[3] * (1 - pf[9])
-    r[7] = 0.5 * pf[6] - 0.5 * pf[7] - 0.5 * v[5] - pf[1] * v[3] + v[3] * (pf[1] * pf[9] - pf[1] * (1 - pf[9])) + pf[1] * v[2] * (1 - pf[8])
+    r[7] = 0.5 * pf[6] - 0.5 * pf[7] - 0.5 * v[5] - pf[1] * v[3] + v[3] * (pf[1] - pf[1] * (1 - pf[9])) + pf[1] * v[2] * (1 - pf[8])
     r[8] = v[8] + 0.25 * (pf[5] - pf[6] + v[4])^2 + 0.25 * (-pf[6] + pf[7] + v[5])^2 - pf[1] * v[8] + 0.25 * pf[3] * v[6]^2 + 0.25 * pf[3] * v[7]^2
 
     return(r)
@@ -175,13 +175,13 @@ ss_calibr_eq_jacob__ <- function(v, pc, pf)
     jac[9] = pf[2]
     jac[10] = v[1]^-1
     jac[11] = pf[1] * (1 - pf[9])
-    jac[12] = -1 + pf[1] * pf[9] - pf[1] * (1 - pf[9])
+    jac[12] = -1 + pf[1] - pf[1] * (1 - pf[9])
     jac[13] = pf[2]
     jac[14] = -pf[1] * (1 - pf[8])
     jac[15] = pf[1] * (1 - pf[9])
     jac[16] = -0.5
     jac[17] = pf[1] * (1 - pf[8])
-    jac[18] = -pf[1] + pf[1] * pf[9] - pf[1] * (1 - pf[9])
+    jac[18] = -pf[1] * (1 - pf[9])
     jac[19] = -0.5
     jac[20] = 0.5 * pf[5] - 0.5 * pf[6] + 0.5 * v[4]
     jac[21] = -0.5 * pf[6] + 0.5 * pf[7] + 0.5 * v[5]
@@ -221,12 +221,12 @@ pert1__ <- function(v, pc, pf)
     Atx[4] = pf[1] - pf[1] * (1 - pf[8])
     Atx[5] = pf[1] * (1 - pf[8])
     Atx[6] = pf[1] * (1 - pf[9])
-    Atx[7] = pf[1] * pf[9] - pf[1] * (1 - pf[9])
+    Atx[7] = pf[1] - pf[1] * (1 - pf[9])
     Atx[8] = pf[1] - pf[1] * (1 - pf[8])
     Atx[9] = pf[1] * (1 - pf[9])
     Atx[10] = -0.5
     Atx[11] = pf[1] * (1 - pf[8])
-    Atx[12] = pf[1] * pf[9] - pf[1] * (1 - pf[9])
+    Atx[12] = pf[1] - pf[1] * (1 - pf[9])
     Atx[13] = -0.5
     Atx[14] = 0.5 * pf[5] - 0.5 * pf[6] + 0.5 * v[4]
     Atx[15] = -0.5 * pf[6] + 0.5 * pf[7] + 0.5 * v[5]
