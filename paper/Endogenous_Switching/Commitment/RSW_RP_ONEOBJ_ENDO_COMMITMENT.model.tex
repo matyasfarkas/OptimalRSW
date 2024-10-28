@@ -1,0 +1,152 @@
+% Generated on 2024-10-28 10:11:09 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: RSW_RP_ONEOBJ_ENDO_COMMITMENT
+
+\section{OPTIMALMP}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{{p\!i\!H}_{t}, {y\!H}_{t}, {p\!i\!L}_{t}, {y\!L}_{t}
+} U_{t} = -0.25\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2} - 0.25\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - 0.25{\lambda} {{y\!H}_{t}}^{2} - 0.25{\lambda} {{y\!L}_{t}}^{2}\\
+&\mathrm{s.t.:}\nonumber\\
+& {p\!i\!H}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} {{p\!i\!H}_{t}} + {\kappa} {{y\!H}_{t-1}} + {\beta} \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}\right)\\
+& {p\!i\!L}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} {{p\!i\!L}_{t}} + {\kappa} {{y\!L}_{t-1}} + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}\right)
+\end{align}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+-0.5{p\!i\!t\!H} + 0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!H}_{t} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t+1}\right]} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
+ \quad \left({p\!i\!H}_{t}\right)
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!H}_{t}} + {\beta} {\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t+1}\right]} = 0
+ \quad \left({y\!H}_{t}\right)
+\end{equation}
+\begin{equation}
+0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!t\!L} - 0.5{p\!i\!L}_{t} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t+1}\right]} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) = 0
+ \quad \left({p\!i\!L}_{t}\right)
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!L}_{t}} + {\beta} {\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t+1}\right]} = 0
+ \quad \left({y\!L}_{t}\right)
+\end{equation}
+
+
+
+
+\section{EXOG}
+
+\subsection{Identities}
+
+\begin{equation}
+{e\!t\!a\!p\!i}_{t} = e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}}
+\end{equation}
+
+
+
+
+\section{Equilibrium relationships (after reduction)}
+
+\begin{equation}
+-{e\!t\!a\!p\!i}_{t} + e^{\epsilon^{\pi}_{t} + {\phi} {\log{{e\!t\!a\!p\!i}_{t-1}}}} = 0
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!H}_{t}} + {\beta} {\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t+1}\right]} = 0
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!L}_{t}} + {\beta} {\kappa} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t+1}\right]} = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!H}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} {{p\!i\!H}_{t}} + {\kappa} {{y\!H}_{t-1}} + {\beta} \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!L}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} {{p\!i\!L}_{t}} + {\kappa} {{y\!L}_{t-1}} + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+-0.5{p\!i\!t\!H} + 0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!H}_{t} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t+1}\right]} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!t\!L} - 0.5{p\!i\!L}_{t} - {\beta} {\mathrm{E}_{t}\left[\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t+1}\right]} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_{t}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_{t}} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+U_{t} + 0.25\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2} + 0.25\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} + 0.25{\lambda} {{y\!H}_{t}}^{2} + 0.25{\lambda} {{y\!L}_{t}}^{2} = 0
+\end{equation}
+
+
+
+\section{Steady state relationships (after reduction)}
+
+\begin{equation}
+-{e\!t\!a\!p\!i}_\mathrm{ss} + e^{{\phi} {\log{{e\!t\!a\!p\!i}_\mathrm{ss}}}} = 0
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!H}_\mathrm{ss}} + {\beta} {\kappa} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-0.5{\lambda} {{y\!L}_\mathrm{ss}} + {\beta} {\kappa} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!H}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\beta} {{p\!i\!H}_\mathrm{ss}} + {\kappa} {{y\!H}_\mathrm{ss}} + {\beta} \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+-{p\!i\!L}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\beta} {{p\!i\!L}_\mathrm{ss}} + {\kappa} {{y\!L}_\mathrm{ss}} + {\beta} \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+-0.5{p\!i\!t\!H} + 0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!H}_\mathrm{ss} - {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_\mathrm{ss}} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_\mathrm{ss}} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+0.5{p\!i\!t\!C\!B} - 0.5{p\!i\!t\!L} - 0.5{p\!i\!L}_\mathrm{ss} - {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_\mathrm{ss}} + {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right)\right) + {\beta} {\lambda^{\mathrm{OPTIMALMP}^{\mathrm{1}}}_\mathrm{ss}} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) = 0
+\end{equation}
+\begin{equation}
+U_\mathrm{ss} + 0.25\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2} + 0.25\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_\mathrm{ss}\right)^{2} - {\beta} {U_\mathrm{ss}} + 0.25{\lambda} {{y\!H}_\mathrm{ss}}^{2} + 0.25{\lambda} {{y\!L}_\mathrm{ss}}^{2} = 0
+\end{equation}
+
+
+
+
+
+
+\section{Parameter settings}
+
+\begin{equation}
+\beta = 0.99
+\end{equation}
+\begin{equation}
+\kappa = 0.2465
+\end{equation}
+\begin{equation}
+\lambda = 0.04106
+\end{equation}
+\begin{equation}
+\phi = 0.95
+\end{equation}
+\begin{equation}
+{p\!i\!t\!H} = 2
+\end{equation}
+\begin{equation}
+{p\!i\!t\!C\!B} = 2
+\end{equation}
+\begin{equation}
+{p\!i\!t\!L} = 4
+\end{equation}
+\begin{equation}
+{p\!H\!s\!s} = 0.99
+\end{equation}
+\begin{equation}
+{p\!L\!s\!s} = 0.99
+\end{equation}
+\begin{equation}
+\sigma = 1
+\end{equation}
+\begin{equation}
+\tau = 0.01
+\end{equation}
+\begin{equation}
+\theta = 6
+\end{equation}
+
+

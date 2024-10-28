@@ -1,0 +1,78 @@
+## ############################################################################
+# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+#                                                                            #
+# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# ############################################################################
+# Endogenous probability case
+# ############################################################################
+
+options
+{
+    output logfile = TRUE;
+    output LaTeX = TRUE;
+    output LaTeX landscape = TRUE;
+};
+
+# tryreduce
+#  {
+#    piH[], piL[], yH[], yL[];
+#  };
+
+block OPTIMALMP
+{
+    definitions
+    {
+        uH[] = -1/2* ((piH[]+pitH-pitCB)^2 + lambda * yH[]*yH[]);
+        uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + lambda * yL[]*yL[]);
+        pH[] =  pHss + tau*(piH[]-pitCB)^2;# 1/(1+exp(-(piH[]-pitCB)));
+        pL[] =  pLss + tau*(piL[]-pitCB)^2; # 1/(1+exp(-(piL[]-pitCB)));  
+
+    };
+    controls
+    {
+         piH[], yH[],  piL[],  yL[]; #i[]
+    };
+    objective
+    {
+           # U[] =0.5* ( uL[] + beta * E[][U[1]] + beta * (1-pL[])* ( E[][U[1]] -E[][U[1]]) + uH[] + beta * E[][U[1]] + beta * (1-pH[])* ( E[][U[1]] -E[][U[1]]));
+                U[] = 0.5*( uL[]+uH[]) + beta * E[][U[1]] ;
+    };
+    constraints
+    {
+        piH[-1]= kappa* yH[-1] + beta* piH[] + log(etapi[-1]) + beta*(1-pH[])*(piL[]-piH[]) ;
+        #yH[-1] = yH[] - sigma* (i[-1] - piH[] )  + (1-pH[])*(yL[]-yH[]) + sigma* (1-pH[])*( piL[]- piH[]);
+        piL[-1]= kappa* yL[-1] + beta* piL[] + log(etapi[-1]) + beta*(1-pL[])*(piH[]-piL[]) ;
+        #yL[-1] = yL[] - sigma* (i[-1] - piL[]) + (1-pL[])*(yH[]-yL[]) + sigma* (1-pL[])*( piH[]- piL[]) ;
+
+    };
+    calibration
+    {
+        kappa =  0.2465; # (1-alpha)(1-alpha*beta)/(alpha*(1+eta*theta)) * ((sigma^-1) + eta), where alpha =0.33, beta =0.99, sigma =2, theta=6
+        beta = 0.99;
+        lambda = 0.04106;
+        theta = 6;
+        sigma = 1;
+        pHss = 0.99;
+        pLss = 0.99;
+        pitCB = 2;
+        pitH  = 2;
+        pitL = 4;
+        tau = 0.01;
+    };
+};
+
+block EXOG 
+{
+    identities
+    {
+        etapi[] = exp(phi * log(etapi[-1]) + epsilon_pi[]);
+    };
+    shocks
+    {
+        epsilon_pi[];
+    };
+    calibration
+    {
+        phi = 0.95;
+    };
+};

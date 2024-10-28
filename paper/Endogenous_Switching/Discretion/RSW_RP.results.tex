@@ -1,0 +1,192 @@
+% Generated on 2024-10-28 10:02:20 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: RSW_RP
+
+\section{Steady-state values}
+
+
+\begin{tabular}{c|c|}
+  & Steady-state value\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 \\
+${i\!H}$ & -0.0149 \\
+${i\!L}$ & -1.5222 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}$ & 0.0103 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}$ & 0 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}$ & 0.0152 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}$ & 0 \\
+${p\!i\!H}$ & -2e-04 \\
+${p\!i\!L}$ & -1.5036 \\
+${y\!H}$ & 0.0604 \\
+${y\!L}$ & 0.0913 \\
+${U\!H}$ & -16.4635 \\
+${U\!L}$ & -33.0857 \\
+\hline
+\end{tabular}
+
+
+\section{The solution of the 1st order perturbation}
+
+\subsection*{Matrix $P$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & {i\!H}_{t-1} & {i\!L}_{t-1} & {p\!i\!H}_{t-1} & {p\!i\!L}_{t-1} & {y\!H}_{t-1} & {y\!L}_{t-1} \cr
+{e\!t\!a\!p\!i}_{t} & 0.95 & 0 & 0 & 0 & 0 & 0 & 0 \cr
+{i\!H}_{t} & -848.7704 & -1.911 & 2.0657 & 0.0579 & -5.8446 & -13.4357 & 0.2113 \cr
+{i\!L}_{t} & -7.7526 & -3e-04 & -1.8409 & 0 & 4.8756 & -0.0019 & -0.1833 \cr
+{p\!i\!H}_{t} & -6739.446 & 0 & 0 & 1.0306 & -91.6514 & -101.197 & 1.3713 \cr
+{p\!i\!L}_{t} & -0.6098 & 0 & 0 & 0 & 0.9053 & -1e-04 & -0.0135 \cr
+{y\!H}_{t} & 16.9118 & 0.2489 & -0.2515 & -0.0026 & 0.24 & 1.264 & -0.0187 \cr
+{y\!L}_{t} & 10.4862 & 0.002 & 16.4684 & 0 & -15.5666 & 0.0103 & 1.2203 \cr
+}$$
+
+\subsection*{Matrix $Q$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+{e\!t\!a\!p\!i} & 1 \cr
+{i\!H} & -495.6617 \cr
+{i\!L} & -4.6907 \cr
+{p\!i\!H} & 0 \cr
+{p\!i\!L} & 0 \cr
+{y\!H} & 0 \cr
+{y\!L} & 0 \cr
+}$$
+
+\subsection*{Matrix $R$}
+
+$$\bordermatrix{
+~ & {e\!t\!a\!p\!i}_{t-1} & {i\!H}_{t-1} & {i\!L}_{t-1} & {p\!i\!H}_{t-1} & {p\!i\!L}_{t-1} & {y\!H}_{t-1} & {y\!L}_{t-1} \cr
+\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t} & -462.4401 & -0.5903 & 1.1272 & 0.0389 & -5.9375 & -6.2186 & 0.1564 \cr
+\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t} & 0.8172 & 0.0017 & -0.0027 & -1e-04 & 0.0104 & 0.0129 & -3e-04 \cr
+\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t} & -350.1771 & -0.0115 & -44.8291 & 7e-04 & 301.0756 & -0.1149 & -7.1927 \cr
+\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t} & 0.9313 & 0 & 0.194 & 0 & -0.6719 & 4e-04 & 0.0217 \cr
+{U\!H}_{t} & 0.0112 & 0 & 0 & 0 & 0 & 0 & 0 \cr
+{U\!L}_{t} & 0.0083 & 0 & 0 & 0 & -7e-04 & 0 & 0 \cr
+}$$
+
+\subsection*{Matrix $S$}
+
+$$\bordermatrix{
+~ & \epsilon^{\pi} \cr
+\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}} & -220.5089 \cr
+\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}} & 0.4387 \cr
+\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}} & -152.9985 \cr
+\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}} & 0.497 \cr
+{U\!H} & 0.0111 \cr
+{U\!L} & 0.0083 \cr
+}$$
+
+
+\section{Model statistics}
+
+\subsection{Basic statistics}
+
+\begin{tabular}{c|c|c|c|c|}
+  & Steady-state value & Std. dev. & Variance & Loglin\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 & 0.1303 & 0.017 & Y    \\
+${i\!H}$ & -0.0149 & 49.8555 & 2485.5672 & Y    \\
+${i\!L}$ & -1.5222 & 0.4746 & 0.2253 & Y    \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}$ & 0.0103 & 24.2739 & 589.2208 & Y    \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}$ & 0 & 0.0423 & 0.0018 & N    \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}$ & 0.0152 & 17.4504 & 304.515 & Y    \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}$ & 0 & 0.0479 & 0.0023 & N    \\
+${p\!i\!H}$ & -2e-04 & 666.7814 & 444597.4198 & Y    \\
+${p\!i\!L}$ & -1.5036 & 0.0585 & 0.0034 & Y    \\
+${y\!H}$ & 0.0604 & 11.3389 & 128.5701 & Y    \\
+${y\!L}$ & 0.0913 & 7.201 & 51.8548 & Y    \\
+${U\!H}$ & -16.4635 & 0.0015 & 0 & Y    \\
+${U\!L}$ & -33.0857 & 0.0011 & 0 & Y    \\
+\hline
+\end{tabular}
+
+
+\subsection{Correlation matrix}
+
+\begin{tabular}{c|ccccccccccccc|}
+  & ${e\!t\!a\!p\!i}$ & ${i\!H}$ & ${i\!L}$ & $\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}$ & $\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}$ & $\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}$ & $\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}$ & ${p\!i\!H}$ & ${p\!i\!L}$ & ${y\!H}$ & ${y\!L}$ & ${U\!H}$ & ${U\!L}$\\
+\hline
+${e\!t\!a\!p\!i}$ & 1 & -0.32 & -0.312 & -0.861 & 0.436 & -0.836 & 0.436 & -0.52 & -0.51 & -0.706 & -0.703 & 0.999 & 0.999 \\
+${i\!H}$ &  & 1 & 0.999 & 0.583 & -0.985 & 0.556 & -0.985 & -0.294 & -0.299 & -0.418 & -0.421 & -0.313 & -0.301 \\
+${i\!L}$ &  &  & 1 & 0.563 & -0.979 & 0.533 & -0.979 & -0.324 & -0.33 & -0.432 & -0.435 & -0.303 & -0.291 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}$ &  &  &  & 1 & -0.71 & 0.997 & -0.71 & 0.565 & 0.557 & 0.464 & 0.462 & -0.871 & -0.864 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}$ &  &  &  &  & 1 & -0.689 & 1 & 0.125 & 0.131 & 0.276 & 0.279 & 0.433 & 0.421 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}$ &  &  &  &  &  & 1 & -0.689 & 0.606 & 0.602 & 0.473 & 0.472 & -0.85 & -0.842 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}$ &  &  &  &  &  &  & 1 & 0.125 & 0.131 & 0.276 & 0.279 & 0.433 & 0.421 \\
+${p\!i\!H}$ &  &  &  &  &  &  &  & 1 & 0.997 & 0.837 & 0.837 & -0.547 & -0.549 \\
+${p\!i\!L}$ &  &  &  &  &  &  &  &  & 1 & 0.831 & 0.833 & -0.54 & -0.54 \\
+${y\!H}$ &  &  &  &  &  &  &  &  &  & 1 & 1 & -0.716 & -0.725 \\
+${y\!L}$ &  &  &  &  &  &  &  &  &  &  & 1 & -0.715 & -0.722 \\
+${U\!H}$ &  &  &  &  &  &  &  &  &  &  &  & 1 & 0.999 \\
+${U\!L}$ &  &  &  &  &  &  &  &  &  &  &  &  & 1 \\
+\hline
+\end{tabular}
+
+
+\subsection{Cross correlations with the reference variable (${i\!H}$)}
+
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|}
+  & $\sigma[\cdot]$ rel. to $\sigma[{i\!H}]$ & ${i\!H}_{t-5}$ & ${i\!H}_{t-4}$ & ${i\!H}_{t-3}$ & ${i\!H}_{t-2}$ & ${i\!H}_{t-1}$ & ${i\!H}_{t}$ & ${i\!H}_{t+1}$ & ${i\!H}_{t+2}$ & ${i\!H}_{t+3}$ & ${i\!H}_{t+4}$ & ${i\!H}_{t+5}$\\
+\hline
+${e\!t\!a\!p\!i}_{t}$ & 0.003 & 0.108 & 0.145 & 0.195 & 0.275 & 0.43 & -0.32 & -0.269 & -0.222 & -0.178 & -0.139 & -0.104 \\
+${i\!H}_{t}$ & 1 & -0.032 & -0.041 & -0.058 & -0.095 & -0.186 & 1 & -0.186 & -0.095 & -0.058 & -0.041 & -0.032 \\
+${i\!L}_{t}$ & 0.01 & -0.032 & -0.041 & -0.057 & -0.094 & -0.183 & 0.999 & -0.224 & -0.09 & -0.05 & -0.035 & -0.029 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t}$ & 0.487 & -0.09 & -0.116 & -0.155 & -0.224 & -0.369 & 0.583 & 0.449 & 0.18 & 0.069 & 0.02 & -0.004 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}$ & 0.001 & 0.044 & 0.056 & 0.078 & 0.122 & 0.228 & -0.985 & 0.047 & 0.046 & 0.044 & 0.041 & 0.038 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}$ & 0.35 & -0.087 & -0.112 & -0.15 & -0.217 & -0.358 & 0.556 & 0.517 & 0.156 & 0.044 & 0.004 & -0.012 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}$ & 0.001 & 0.044 & 0.056 & 0.078 & 0.122 & 0.228 & -0.985 & 0.047 & 0.046 & 0.044 & 0.041 & 0.038 \\
+${p\!i\!H}_{t}$ & 13.374 & -0.053 & -0.066 & -0.083 & -0.112 & -0.167 & -0.294 & 0.835 & 0.283 & 0.072 & -0.009 & -0.038 \\
+${p\!i\!L}_{t}$ & 0.001 & -0.052 & -0.066 & -0.084 & -0.113 & -0.17 & -0.299 & 0.871 & 0.227 & 0.039 & -0.016 & -0.032 \\
+${y\!H}_{t}$ & 0.227 & -0.077 & -0.102 & -0.135 & -0.181 & -0.26 & -0.418 & 0.542 & 0.299 & 0.186 & 0.124 & 0.085 \\
+${y\!L}_{t}$ & 0.144 & -0.077 & -0.102 & -0.135 & -0.182 & -0.261 & -0.421 & 0.556 & 0.279 & 0.174 & 0.122 & 0.088 \\
+${U\!H}_{t}$ & 0 & 0.108 & 0.144 & 0.194 & 0.275 & 0.43 & -0.313 & -0.315 & -0.197 & -0.168 & -0.135 & -0.102 \\
+${U\!L}_{t}$ & 0 & 0.108 & 0.144 & 0.194 & 0.274 & 0.428 & -0.301 & -0.299 & -0.226 & -0.176 & -0.135 & -0.101 \\
+\hline
+\end{tabular}
+
+
+\subsection{Autocorrelations}
+
+\begin{tabular}{c|ccccc|}
+  & Lag 1 & Lag 2 & Lag 3 & Lag 4 & Lag 5\\
+\hline
+${e\!t\!a\!p\!i}$ & 0.713 & 0.471 & 0.271 & 0.11 & -0.016 \\
+${i\!H}$ & -0.186 & -0.095 & -0.058 & -0.041 & -0.032 \\
+${i\!L}$ & -0.221 & -0.089 & -0.049 & -0.035 & -0.028 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}$ & 0.525 & 0.133 & -0.031 & -0.102 & -0.132 \\
+$\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}$ & -0.074 & -0.071 & -0.066 & -0.06 & -0.054 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}$ & 0.534 & 0.08 & -0.064 & -0.114 & -0.131 \\
+$\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}$ & -0.074 & -0.071 & -0.066 & -0.06 & -0.054 \\
+${p\!i\!H}$ & 0.28 & 0.008 & -0.089 & -0.119 & -0.121 \\
+${p\!i\!L}$ & 0.204 & -0.024 & -0.086 & -0.1 & -0.098 \\
+${y\!H}$ & 0.535 & 0.281 & 0.123 & 0.016 & -0.059 \\
+${y\!L}$ & 0.517 & 0.281 & 0.133 & 0.029 & -0.048 \\
+${U\!H}$ & 0.713 & 0 & 0 & 0 & 0 \\
+${U\!L}$ & 0 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+
+
+
+\pagebreak
+
+\section{Impulse response functions}
+
+\begin{figure}[h]
+\begin{minipage}{0.5\textwidth}
+\vspace*{-3em}
+\centering
+\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_3.eps}
+\caption{Impulse responses (${i\!H}, {i\!L}, {p\!i\!H}, {p\!i\!L}, {y\!H}$) to $\epsilon^{\pi}$ shock}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\vspace*{-3em}
+\centering
+\includegraphics[width=0.99\textwidth, scale=0.55]{plots/plot_4.eps}
+\caption{Impulse response (${y\!L}$) to $\epsilon^{\pi}$ shock}
+\end{minipage}
+\end{figure}
+
+
