@@ -25,7 +25,7 @@ block OPTIMALMP
         uH[] = -1/2* ((piH[]+pitH-pitCB)^2 + lambda * yH[]*yH[]);
         uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + lambda * yL[]*yL[]);
         pH[] =  pHss + tau*(piH[]-pitCB)^2;# 1/(1+exp(-(piH[]-pitCB)));
-        pL[] =  pLss + tau*(piL[]-pitCB)^2; # 1/(1+exp(-(piL[]-pitCB)));  
+        pL[] =  pLss - tau*(piL[]-pitCB)^2; # 1/(1+exp(-(piL[]-pitCB)));  
 
     };
     controls
@@ -57,7 +57,7 @@ block OPTIMALMP
         pitCB = 2;
         pitH  = 2;
         pitL = 4;
-        tau = 0.01;
+        tau = 0.001;
     };
 };
 

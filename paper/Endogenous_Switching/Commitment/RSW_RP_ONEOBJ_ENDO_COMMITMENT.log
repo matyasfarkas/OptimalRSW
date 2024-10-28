@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  28 OCT 2024 10:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  28 OCT 2024 10:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,8 +345,7 @@ tex.def
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-)
-No file RSW_RP_ONEOBJ_ENDO_COMMITMENT.aux.
+) (RSW_RP_ONEOBJ_ENDO_COMMITMENT.aux)
 \openout1 = `RSW_RP_ONEOBJ_ENDO_COMMITMENT.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -384,6 +383,7 @@ ii
 \everyMPtoPDFconversion=\toks26
 )
 Package hyperref Info: Link coloring OFF on input line 19.
+ (RSW_RP_ONEOBJ_ENDO_COMMITMENT.out) (RSW_RP_ONEOBJ_ENDO_COMMITMENT.out)
 \@outlinefile=\write3
 \openout3 = `RSW_RP_ONEOBJ_ENDO_COMMITMENT.out'.
 
@@ -494,76 +494,69 @@ r/m/n/10 = 0
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 103.
+(hyperref)                removing `math shift' on input line 102.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 103.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -1.66702pt
-(hyperref)                removed on input line 103.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 103.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -1.66702pt
-(hyperref)                removed on input line 103.
+(hyperref)                removed on input line 102.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 103.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
 
 
-Overfull \hbox (113.28807pt too wide) in paragraph at lines 105--118
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -1.66702pt
+(hyperref)                removed on input line 102.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 102.
+
+
+Overfull \hbox (113.28807pt too wide) in paragraph at lines 104--116
 [] 
  []
 
 [5]
-Package epstopdf Info: Source file: <plots/plot_6.eps>
-(epstopdf)                    date: 2024-10-28 10:11:09
-(epstopdf)                    size: 7487 bytes
-(epstopdf)             Output file: <plots/plot_6-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_6-eps-con
-verted-to.pdf plots/plot_6.eps>
-(epstopdf)             \includegraphics on input line 147.
-runsystem(miktex-epstopdf --outfile=plots/plot_6-eps-converted-to.pdf plots/plo
-t_6.eps)...executed safely (allowed).
+Package epstopdf Info: Source file: <plots/plot_7.eps>
+(epstopdf)                    date: 2024-10-28 10:26:52
+(epstopdf)                    size: 7271 bytes
+(epstopdf)             Output file: <plots/plot_7-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_7-eps-con
+verted-to.pdf plots/plot_7.eps>
+(epstopdf)             \includegraphics on input line 144.
+runsystem(miktex-epstopdf --outfile=plots/plot_7-eps-converted-to.pdf plots/plo
+t_7.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <plots/plot_6-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-10-28 10:12:39
-(epstopdf)                    size: 11949 bytes.
+Package epstopdf Info: Result file: <plots/plot_7-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-10-28 10:31:06
+(epstopdf)                    size: 11983 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_6-eps-converted-to.pdf): PDF inclus
+pdfTeX warning: pdflatex (file ./plots/plot_7-eps-converted-to.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_6-eps-converted-to.pdf, id=94, 505.89pt x 505.89pt>
-File: plots/plot_6-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_6-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_6-eps-converted-to.pdf  used on input line 
-147.
+<plots/plot_7-eps-converted-to.pdf, id=143, 505.89pt x 505.89pt>
+File: plots/plot_7-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_7-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_7-eps-converted-to.pdf  used on input line 
+144.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
-) [6 <./plots/plot_6-eps-converted-to.pdf>] (RSW_RP_ONEOBJ_ENDO_COMMITMENT.aux)
-
-Package rerunfilecheck Warning: File `RSW_RP_ONEOBJ_ENDO_COMMITMENT.out' has ch
-anged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `RSW_RP_ONEOBJ_ENDO_COMMITMENT.out':
-
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  006C41AEFD031C1E0717E394021830DE;2773.
+) [6 <./plots/plot_7-eps-converted-to.pdf>] (RSW_RP_ONEOBJ_ENDO_COMMITMENT.aux)
+Package rerunfilecheck Info: File `RSW_RP_ONEOBJ_ENDO_COMMITMENT.out' has not c
+hanged.
+(rerunfilecheck)             Checksum: 006C41AEFD031C1E0717E394021830DE;2773.
  ) 
 Here is how much of TeX's memory you used:
- 10172 strings out of 475385
- 163010 string characters out of 2776907
- 526764 words of memory out of 3000000
- 31344 multiletter control sequences out of 15000+600000
+ 10195 strings out of 475385
+ 163664 string characters out of 2776907
+ 522947 words of memory out of 3000000
+ 31361 multiletter control sequences out of 15000+600000
  476684 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,11n,67p,705b,524s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -583,9 +576,9 @@ cm/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RSW_RP_ONEOBJ_ENDO_COMMITMENT.pdf (6 pages, 190768 bytes).
+Output written on RSW_RP_ONEOBJ_ENDO_COMMITMENT.pdf (6 pages, 196287 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
+ 230 PDF objects out of 1000 (max. 8388607)
  64 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

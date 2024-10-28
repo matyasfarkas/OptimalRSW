@@ -1,4 +1,4 @@
-Generated on 2024-10-28 10:02:20 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2024-10-28 10:34:50 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: RSW_RP
@@ -23,18 +23,18 @@ Block: HIGHREGIME
 Block: LOWREGIME
  Definitions:
     uL[] = -0.5 * (-pitCB + pitL + piL[])^2 - 0.5 * kappa * theta^-1 * yL[]^2
-    pL[] = pLss + tau * (-pitCB + piL[])^2
+    pL[] = pLss - tau * (-pitCB + piL[])^2
  Controls:
     piL[], yL[], iL[]
  Objective:
-    UL[] = -0.5 * (-pitCB + pitL + piL[])^2 + beta * E[][UL[1]] + beta * (E[][UH[1]] - E[][UL[1]]) * (1 - pLss - tau * (-pitCB + piL[])^2) - 0.5 * kappa * theta^-1 * yL[]^2    (lambda__LOWREGIME_UL[])
+    UL[] = -0.5 * (-pitCB + pitL + piL[])^2 + beta * E[][UL[1]] + beta * (E[][UH[1]] - E[][UL[1]]) * (1 - pLss + tau * (-pitCB + piL[])^2) - 0.5 * kappa * theta^-1 * yL[]^2    (lambda__LOWREGIME_UL[])
  Constraints:
-    -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * piL[] * (pLss + tau * (-pitCB + piL[])^2) + beta * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0    (lambda__LOWREGIME_1[])
-    -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (yH[] - yL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) + sigma * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0    (lambda__LOWREGIME_2[])
+    -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * piL[] * (pLss - tau * (-pitCB + piL[])^2) + beta * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0    (lambda__LOWREGIME_1[])
+    -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (yH[] - yL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) + sigma * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0    (lambda__LOWREGIME_2[])
  First order conditions:
-    beta - lambda__LOWREGIME_UL[] - beta * (1 - pLss - tau * (-pitCB + piL[-1])^2) = 0    (UL[])
-    pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * (pLss + tau * (-pitCB + piL[])^2) - beta * (1 - pLss - tau * (-pitCB + piL[])^2) + 2 * beta * tau * piL[] * (-pitCB + piL[]) - 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pLss - tau * (-pitCB + piL[])^2) - 2 * tau * (-pitCB + piL[]) * (yH[] - yL[]) - 2 * sigma * tau * (-pitCB + piL[]) * (piH[] - piL[])) - 2 * beta * tau * (-pitCB + piL[]) * (E[][UH[1]] - E[][UL[1]]) - E[][lambda__LOWREGIME_UL[1] * lambda__LOWREGIME_1[1]] = 0    (piL[])
-    lambda__LOWREGIME_2[] * (pLss + tau * (-pitCB + piL[])^2) - kappa * theta^-1 * yL[] + E[][lambda__LOWREGIME_UL[1] * (-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1])] = 0    (yL[])
+    beta - lambda__LOWREGIME_UL[] - beta * (1 - pLss + tau * (-pitCB + piL[-1])^2) = 0    (UL[])
+    pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * (pLss - tau * (-pitCB + piL[])^2) - beta * (1 - pLss + tau * (-pitCB + piL[])^2) - 2 * beta * tau * piL[] * (-pitCB + piL[]) + 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pLss + tau * (-pitCB + piL[])^2) + 2 * tau * (-pitCB + piL[]) * (yH[] - yL[]) + 2 * sigma * tau * (-pitCB + piL[]) * (piH[] - piL[])) + 2 * beta * tau * (-pitCB + piL[]) * (E[][UH[1]] - E[][UL[1]]) - E[][lambda__LOWREGIME_UL[1] * lambda__LOWREGIME_1[1]] = 0    (piL[])
+    lambda__LOWREGIME_2[] * (pLss - tau * (-pitCB + piL[])^2) - kappa * theta^-1 * yL[] + E[][lambda__LOWREGIME_UL[1] * (-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1])] = 0    (yL[])
     -sigma * E[][lambda__LOWREGIME_UL[1] * lambda__LOWREGIME_2[1]] = 0    (iL[])
 
 Block: EXOG
@@ -56,32 +56,32 @@ Free parameters (11):
 Equations (13):
  (1)  -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
  (2)  lambda__HIGHREGIME_2[] * (pHss + tau * (-pitCB + piH[])^2) + (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2)) * E[][-lambda__HIGHREGIME_2[1] + kappa * lambda__HIGHREGIME_1[1]] - kappa * theta^-1 * yH[] = 0
- (3)  lambda__LOWREGIME_2[] * (pLss + tau * (-pitCB + piL[])^2) + (beta - beta * (1 - pLss - tau * (-pitCB + piL[])^2)) * E[][-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1]] - kappa * theta^-1 * yL[] = 0
+ (3)  lambda__LOWREGIME_2[] * (pLss - tau * (-pitCB + piL[])^2) + (beta - beta * (1 - pLss + tau * (-pitCB + piL[])^2)) * E[][-lambda__LOWREGIME_2[1] + kappa * lambda__LOWREGIME_1[1]] - kappa * theta^-1 * yL[] = 0
  (4)  -piH[-1] + log(etapi[-1]) + kappa * yH[-1] + beta * piH[] * (pHss + tau * (-pitCB + piH[])^2) + beta * (-piH[] + piL[]) * (1 - pHss - tau * (-pitCB + piH[])^2) = 0
- (5)  -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * piL[] * (pLss + tau * (-pitCB + piL[])^2) + beta * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0
+ (5)  -piL[-1] + log(etapi[-1]) + kappa * yL[-1] + beta * piL[] * (pLss - tau * (-pitCB + piL[])^2) + beta * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0
  (6)  -yH[-1] + yH[] - sigma * (iH[-1] - piH[]) + (-yH[] + yL[]) * (1 - pHss - tau * (-pitCB + piH[])^2) + sigma * (-piH[] + piL[]) * (1 - pHss - tau * (-pitCB + piH[])^2) = 0
- (7)  -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (yH[] - yL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) + sigma * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0
+ (7)  -yL[-1] + yL[] - sigma * (iL[-1] - piL[]) + (yH[] - yL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) + sigma * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0
  (8)  UH[] + 0.5 * (pitH - pitCB + piH[])^2 - beta * E[][UH[1]] - beta * (-E[][UH[1]] + E[][UL[1]]) * (1 - pHss - tau * (-pitCB + piH[])^2) + 0.5 * kappa * theta^-1 * yH[]^2 = 0
- (9)  UL[] + 0.5 * (-pitCB + pitL + piL[])^2 - beta * E[][UL[1]] - beta * (E[][UH[1]] - E[][UL[1]]) * (1 - pLss - tau * (-pitCB + piL[])^2) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
+ (9)  UL[] + 0.5 * (-pitCB + pitL + piL[])^2 - beta * E[][UL[1]] - beta * (E[][UH[1]] - E[][UL[1]]) * (1 - pLss + tau * (-pitCB + piL[])^2) + 0.5 * kappa * theta^-1 * yL[]^2 = 0
  (10)  -pitH + pitCB - piH[] + lambda__HIGHREGIME_1[] * (beta * (pHss + tau * (-pitCB + piH[])^2) - beta * (1 - pHss - tau * (-pitCB + piH[])^2) + 2 * beta * tau * piH[] * (-pitCB + piH[]) - 2 * beta * tau * (-pitCB + piH[]) * (-piH[] + piL[])) + lambda__HIGHREGIME_2[] * (sigma - sigma * (1 - pHss - tau * (-pitCB + piH[])^2) - 2 * tau * (-pitCB + piH[]) * (-yH[] + yL[]) - 2 * sigma * tau * (-pitCB + piH[]) * (-piH[] + piL[])) - (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2)) * E[][lambda__HIGHREGIME_1[1]] - 2 * beta * tau * (-pitCB + piH[]) * (-E[][UH[1]] + E[][UL[1]]) = 0
- (11)  pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * (pLss + tau * (-pitCB + piL[])^2) - beta * (1 - pLss - tau * (-pitCB + piL[])^2) + 2 * beta * tau * piL[] * (-pitCB + piL[]) - 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pLss - tau * (-pitCB + piL[])^2) - 2 * tau * (-pitCB + piL[]) * (yH[] - yL[]) - 2 * sigma * tau * (-pitCB + piL[]) * (piH[] - piL[])) - (beta - beta * (1 - pLss - tau * (-pitCB + piL[])^2)) * E[][lambda__LOWREGIME_1[1]] - 2 * beta * tau * (-pitCB + piL[]) * (E[][UH[1]] - E[][UL[1]]) = 0
+ (11)  pitCB - pitL - piL[] + lambda__LOWREGIME_1[] * (beta * (pLss - tau * (-pitCB + piL[])^2) - beta * (1 - pLss + tau * (-pitCB + piL[])^2) - 2 * beta * tau * piL[] * (-pitCB + piL[]) + 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + lambda__LOWREGIME_2[] * (sigma - sigma * (1 - pLss + tau * (-pitCB + piL[])^2) + 2 * tau * (-pitCB + piL[]) * (yH[] - yL[]) + 2 * sigma * tau * (-pitCB + piL[]) * (piH[] - piL[])) - (beta - beta * (1 - pLss + tau * (-pitCB + piL[])^2)) * E[][lambda__LOWREGIME_1[1]] + 2 * beta * tau * (-pitCB + piL[]) * (E[][UH[1]] - E[][UL[1]]) = 0
  (12)  -sigma * (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2)) * E[][lambda__HIGHREGIME_2[1]] = 0
- (13)  -sigma * (beta - beta * (1 - pLss - tau * (-pitCB + piL[])^2)) * E[][lambda__LOWREGIME_2[1]] = 0
+ (13)  -sigma * (beta - beta * (1 - pLss + tau * (-pitCB + piL[])^2)) * E[][lambda__LOWREGIME_2[1]] = 0
 
 Steady state equations (13):
  (1)  -etapi[ss] + exp(phi * log(etapi[ss])) = 0
  (2)  lambda__HIGHREGIME_2[ss] * (pHss + tau * (-pitCB + piH[ss])^2) + (beta - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2)) * (-lambda__HIGHREGIME_2[ss] + kappa * lambda__HIGHREGIME_1[ss]) - kappa * theta^-1 * yH[ss] = 0
- (3)  lambda__LOWREGIME_2[ss] * (pLss + tau * (-pitCB + piL[ss])^2) + (beta - beta * (1 - pLss - tau * (-pitCB + piL[ss])^2)) * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
+ (3)  lambda__LOWREGIME_2[ss] * (pLss - tau * (-pitCB + piL[ss])^2) + (beta - beta * (1 - pLss + tau * (-pitCB + piL[ss])^2)) * (-lambda__LOWREGIME_2[ss] + kappa * lambda__LOWREGIME_1[ss]) - kappa * theta^-1 * yL[ss] = 0
  (4)  -piH[ss] + log(etapi[ss]) + kappa * yH[ss] + beta * piH[ss] * (pHss + tau * (-pitCB + piH[ss])^2) + beta * (-piH[ss] + piL[ss]) * (1 - pHss - tau * (-pitCB + piH[ss])^2) = 0
- (5)  -piL[ss] + log(etapi[ss]) + kappa * yL[ss] + beta * piL[ss] * (pLss + tau * (-pitCB + piL[ss])^2) + beta * (piH[ss] - piL[ss]) * (1 - pLss - tau * (-pitCB + piL[ss])^2) = 0
+ (5)  -piL[ss] + log(etapi[ss]) + kappa * yL[ss] + beta * piL[ss] * (pLss - tau * (-pitCB + piL[ss])^2) + beta * (piH[ss] - piL[ss]) * (1 - pLss + tau * (-pitCB + piL[ss])^2) = 0
  (6)  (-yH[ss] + yL[ss]) * (1 - pHss - tau * (-pitCB + piH[ss])^2) - sigma * (iH[ss] - piH[ss]) + sigma * (-piH[ss] + piL[ss]) * (1 - pHss - tau * (-pitCB + piH[ss])^2) = 0
- (7)  (yH[ss] - yL[ss]) * (1 - pLss - tau * (-pitCB + piL[ss])^2) - sigma * (iL[ss] - piL[ss]) + sigma * (piH[ss] - piL[ss]) * (1 - pLss - tau * (-pitCB + piL[ss])^2) = 0
+ (7)  (yH[ss] - yL[ss]) * (1 - pLss + tau * (-pitCB + piL[ss])^2) - sigma * (iL[ss] - piL[ss]) + sigma * (piH[ss] - piL[ss]) * (1 - pLss + tau * (-pitCB + piL[ss])^2) = 0
  (8)  UH[ss] + 0.5 * (pitH - pitCB + piH[ss])^2 - beta * UH[ss] - beta * (-UH[ss] + UL[ss]) * (1 - pHss - tau * (-pitCB + piH[ss])^2) + 0.5 * kappa * theta^-1 * yH[ss]^2 = 0
- (9)  UL[ss] + 0.5 * (-pitCB + pitL + piL[ss])^2 - beta * UL[ss] - beta * (UH[ss] - UL[ss]) * (1 - pLss - tau * (-pitCB + piL[ss])^2) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
+ (9)  UL[ss] + 0.5 * (-pitCB + pitL + piL[ss])^2 - beta * UL[ss] - beta * (UH[ss] - UL[ss]) * (1 - pLss + tau * (-pitCB + piL[ss])^2) + 0.5 * kappa * theta^-1 * yL[ss]^2 = 0
  (10)  -pitH + pitCB - piH[ss] - lambda__HIGHREGIME_1[ss] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2)) + lambda__HIGHREGIME_1[ss] * (beta * (pHss + tau * (-pitCB + piH[ss])^2) - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2) + 2 * beta * tau * piH[ss] * (-pitCB + piH[ss]) - 2 * beta * tau * (-pitCB + piH[ss]) * (-piH[ss] + piL[ss])) + lambda__HIGHREGIME_2[ss] * (sigma - sigma * (1 - pHss - tau * (-pitCB + piH[ss])^2) - 2 * tau * (-pitCB + piH[ss]) * (-yH[ss] + yL[ss]) - 2 * sigma * tau * (-pitCB + piH[ss]) * (-piH[ss] + piL[ss])) - 2 * beta * tau * (-pitCB + piH[ss]) * (-UH[ss] + UL[ss]) = 0
- (11)  pitCB - pitL - piL[ss] - lambda__LOWREGIME_1[ss] * (beta - beta * (1 - pLss - tau * (-pitCB + piL[ss])^2)) + lambda__LOWREGIME_1[ss] * (beta * (pLss + tau * (-pitCB + piL[ss])^2) - beta * (1 - pLss - tau * (-pitCB + piL[ss])^2) + 2 * beta * tau * piL[ss] * (-pitCB + piL[ss]) - 2 * beta * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) + lambda__LOWREGIME_2[ss] * (sigma - sigma * (1 - pLss - tau * (-pitCB + piL[ss])^2) - 2 * tau * (-pitCB + piL[ss]) * (yH[ss] - yL[ss]) - 2 * sigma * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) - 2 * beta * tau * (-pitCB + piL[ss]) * (UH[ss] - UL[ss]) = 0
+ (11)  pitCB - pitL - piL[ss] - lambda__LOWREGIME_1[ss] * (beta - beta * (1 - pLss + tau * (-pitCB + piL[ss])^2)) + lambda__LOWREGIME_1[ss] * (beta * (pLss - tau * (-pitCB + piL[ss])^2) - beta * (1 - pLss + tau * (-pitCB + piL[ss])^2) - 2 * beta * tau * piL[ss] * (-pitCB + piL[ss]) + 2 * beta * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) + lambda__LOWREGIME_2[ss] * (sigma - sigma * (1 - pLss + tau * (-pitCB + piL[ss])^2) + 2 * tau * (-pitCB + piL[ss]) * (yH[ss] - yL[ss]) + 2 * sigma * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) + 2 * beta * tau * (-pitCB + piL[ss]) * (UH[ss] - UL[ss]) = 0
  (12)  -sigma * lambda__HIGHREGIME_2[ss] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2)) = 0
- (13)  -sigma * lambda__LOWREGIME_2[ss] * (beta - beta * (1 - pLss - tau * (-pitCB + piL[ss])^2)) = 0
+ (13)  -sigma * lambda__LOWREGIME_2[ss] * (beta - beta * (1 - pLss + tau * (-pitCB + piL[ss])^2)) = 0
 
 Parameter settings (11):
  (1)  beta = 0.99
@@ -93,6 +93,6 @@ Parameter settings (11):
  (7)  pHss = 0.99
  (8)  pLss = 0.99
  (9)  sigma = 1
- (10)  tau = 0.01
+ (10)  tau = 0.001
  (11)  theta = 6
 

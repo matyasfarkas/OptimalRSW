@@ -1,4 +1,4 @@
-% Generated on 2024-10-28 10:02:20 by gEcon ver. 1.2.1 (2023-01-18)
+% Generated on 2024-10-28 10:34:50 by gEcon ver. 1.2.1 (2023-01-18)
 % http://gecon.r-forge.r-project.org/
 
 % Model name: RSW_RP
@@ -44,25 +44,25 @@
 
 \begin{align}
 &\max_{{p\!i\!L}_{t}, {y\!L}_{t}, {i\!L}_{t}
-} {U\!L}_{t} = -0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} + {\beta} \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2}\\
+} {U\!L}_{t} = -0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} + {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} + {\beta} \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2}\\
 &\mathrm{s.t.:}\nonumber\\
-& {p\!i\!L}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {\beta} {{p\!i\!L}_{t}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}\right)\\
-& {y\!L}_{t-1} = {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left({y\!H}_{t} - {y\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\sigma} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}\right)
+& {p\!i\!L}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {\beta} {{p\!i\!L}_{t}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}\right)\\
+& {y\!L}_{t-1} = {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left({y\!H}_{t} - {y\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\sigma} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) \quad \left(\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}\right)
 \end{align}
 
 
 \subsection{First order conditions}
 
 \begin{equation}
-\beta - \lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t} - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t-1}\right)^{2}\right) = 0
+\beta - \lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t} - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t-1}\right)^{2}\right) = 0
  \quad \left({U\!L}_{t}\right)
 \end{equation}
 \begin{equation}
-{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 2{\beta} {\tau} {{p\!i\!L}_{t}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) - 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) - \mathrm{E}_{t}\left[{\lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t+1}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right] = 0
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\beta} {\tau} {{p\!i\!L}_{t}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) + 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) - \mathrm{E}_{t}\left[{\lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t+1}} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right] = 0
  \quad \left({p\!i\!L}_{t}\right)
 \end{equation}
 \begin{equation}
-{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\kappa} {\theta}^{-1} {{y\!L}_{t}} + \mathrm{E}_{t}\left[{\lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t+1}} \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right)\right] = 0
+{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\kappa} {\theta}^{-1} {{y\!L}_{t}} + \mathrm{E}_{t}\left[{\lambda^{\mathrm{LOWREGIME}^{\mathrm{UL}}}_{t+1}} \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right)\right] = 0
  \quad \left({y\!L}_{t}\right)
 \end{equation}
 \begin{equation}
@@ -93,37 +93,37 @@
 {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1} + {\kappa} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}}\right]} - {\kappa} {\theta}^{-1} {{y\!H}_{t}} = 0
 \end{equation}
 \begin{equation}
-{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right]} - {\kappa} {\theta}^{-1} {{y\!L}_{t}} = 0
+{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}}\right]} - {\kappa} {\theta}^{-1} {{y\!L}_{t}} = 0
 \end{equation}
 \begin{equation}
 -{p\!i\!H}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!H}_{t-1}} + {\beta} {{p\!i\!H}_{t}} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) + {\beta} \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
--{p\!i\!L}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {\beta} {{p\!i\!L}_{t}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
+-{p\!i\!L}_{t-1} + \log{{e\!t\!a\!p\!i}_{t-1}} + {\kappa} {{y\!L}_{t-1}} + {\beta} {{p\!i\!L}_{t}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\beta} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
 -{y\!H}_{t-1} + {y\!H}_{t} - {\sigma} \left({i\!H}_{t-1} - {p\!i\!H}_{t}\right) + \left(-{y\!H}_{t} + {y\!L}_{t}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) + {\sigma} \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
--{y\!L}_{t-1} + {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left({y\!H}_{t} - {y\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\sigma} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
+-{y\!L}_{t-1} + {y\!L}_{t} - {\sigma} \left({i\!L}_{t-1} - {p\!i\!L}_{t}\right) + \left({y\!H}_{t} - {y\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + {\sigma} \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
 {U\!H}_{t} + 0.5\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[{U\!H}_{t+1}\right]} - {\beta} \left(-\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] + \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!H}_{t}}^{2} = 0
 \end{equation}
 \begin{equation}
-{U\!L}_{t} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} - {\beta} \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2} = 0
+{U\!L}_{t} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_{t}\right)^{2} - {\beta} {\mathrm{E}_{t}\left[{U\!L}_{t+1}\right]} - {\beta} \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_{t}}^{2} = 0
 \end{equation}
 \begin{equation}
 -{p\!i\!t\!H} + {p\!i\!t\!C\!B} - {p\!i\!H}_{t} + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) + 2{\beta} {\tau} {{p\!i\!H}_{t}} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right) - 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-{y\!H}_{t} + {y\!L}_{t}\right) - 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-{p\!i\!H}_{t} + {p\!i\!L}_{t}\right)\right) - \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_{t+1}\right]} - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right) \left(-\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] + \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) = 0
 \end{equation}
 \begin{equation}
-{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 2{\beta} {\tau} {{p\!i\!L}_{t}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) - 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) - \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) = 0
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_{t} + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t}} \left({\beta} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) - 2{\beta} {\tau} {{p\!i\!L}_{t}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right) + 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({y\!H}_{t} - {y\!L}_{t}\right) + 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left({p\!i\!H}_{t} - {p\!i\!L}_{t}\right)\right) - \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_{t+1}\right]} + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right) \left(\mathrm{E}_{t}\left[{U\!H}_{t+1}\right] - \mathrm{E}_{t}\left[{U\!L}_{t+1}\right]\right) = 0
 \end{equation}
 \begin{equation}
 -{\sigma} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
 \end{equation}
 \begin{equation}
--{\sigma} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
+-{\sigma} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_{t}\right)^{2}\right)\right) {\mathrm{E}_{t}\left[\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_{t+1}\right]} = 0
 \end{equation}
 
 
@@ -137,37 +137,37 @@
 {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right)\right) \left(-\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {{y\!H}_\mathrm{ss}} = 0
 \end{equation}
 \begin{equation}
-{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}} = 0
+{\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) \left(-\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss} + {\kappa} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}}\right) - {\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}} = 0
 \end{equation}
 \begin{equation}
 -{p\!i\!H}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\kappa} {{y\!H}_\mathrm{ss}} + {\beta} {{p\!i\!H}_\mathrm{ss}} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) + {\beta} \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
--{p\!i\!L}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\kappa} {{y\!L}_\mathrm{ss}} + {\beta} {{p\!i\!L}_\mathrm{ss}} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + {\beta} \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
+-{p\!i\!L}_\mathrm{ss} + \log{{e\!t\!a\!p\!i}_\mathrm{ss}} + {\kappa} {{y\!L}_\mathrm{ss}} + {\beta} {{p\!i\!L}_\mathrm{ss}} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + {\beta} \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
 \left(-{y\!H}_\mathrm{ss} + {y\!L}_\mathrm{ss}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) - {\sigma} \left({i\!H}_\mathrm{ss} - {p\!i\!H}_\mathrm{ss}\right) + {\sigma} \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
-\left({y\!H}_\mathrm{ss} - {y\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - {\sigma} \left({i\!L}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) + {\sigma} \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
+\left({y\!H}_\mathrm{ss} - {y\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - {\sigma} \left({i\!L}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) + {\sigma} \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) = 0
 \end{equation}
 \begin{equation}
 {U\!H}_\mathrm{ss} + 0.5\left({p\!i\!t\!H} - {p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2} - {\beta} {{U\!H}_\mathrm{ss}} - {\beta} \left(-{U\!H}_\mathrm{ss} + {U\!L}_\mathrm{ss}\right) \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!H}_\mathrm{ss}}^{2} = 0
 \end{equation}
 \begin{equation}
-{U\!L}_\mathrm{ss} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_\mathrm{ss}\right)^{2} - {\beta} {{U\!L}_\mathrm{ss}} - {\beta} \left({U\!H}_\mathrm{ss} - {U\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}}^{2} = 0
+{U\!L}_\mathrm{ss} + 0.5\left(-{p\!i\!t\!C\!B} + {p\!i\!t\!L} + {p\!i\!L}_\mathrm{ss}\right)^{2} - {\beta} {{U\!L}_\mathrm{ss}} - {\beta} \left({U\!H}_\mathrm{ss} - {U\!L}_\mathrm{ss}\right) \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + 0.5{\kappa} {\theta}^{-1} {{y\!L}_\mathrm{ss}}^{2} = 0
 \end{equation}
 \begin{equation}
 -{p\!i\!t\!H} + {p\!i\!t\!C\!B} - {p\!i\!H}_\mathrm{ss} - {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left({\beta} \left({p\!H\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) + 2{\beta} {\tau} {{p\!i\!H}_\mathrm{ss}} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right)\right) + {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\sigma - {\sigma} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right) - 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) \left(-{y\!H}_\mathrm{ss} + {y\!L}_\mathrm{ss}\right) - 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) \left(-{p\!i\!H}_\mathrm{ss} + {p\!i\!L}_\mathrm{ss}\right)\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right) \left(-{U\!H}_\mathrm{ss} + {U\!L}_\mathrm{ss}\right) = 0
 \end{equation}
 \begin{equation}
-{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_\mathrm{ss} - {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left({\beta} \left({p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + 2{\beta} {\tau} {{p\!i\!L}_\mathrm{ss}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({y\!H}_\mathrm{ss} - {y\!L}_\mathrm{ss}\right) - 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right)\right) - 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({U\!H}_\mathrm{ss} - {U\!L}_\mathrm{ss}\right) = 0
+{p\!i\!t\!C\!B} - {p\!i\!t\!L} - {p\!i\!L}_\mathrm{ss} - {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{1}}}_\mathrm{ss}} \left({\beta} \left({p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) - 2{\beta} {\tau} {{p\!i\!L}_\mathrm{ss}} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right)\right) + {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\sigma - {\sigma} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right) + 2{\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({y\!H}_\mathrm{ss} - {y\!L}_\mathrm{ss}\right) + 2{\sigma} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({p\!i\!H}_\mathrm{ss} - {p\!i\!L}_\mathrm{ss}\right)\right) + 2{\beta} {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right) \left({U\!H}_\mathrm{ss} - {U\!L}_\mathrm{ss}\right) = 0
 \end{equation}
 \begin{equation}
 -{\sigma} {\lambda^{\mathrm{HIGHREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!H\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!H}_\mathrm{ss}\right)^{2}\right)\right) = 0
 \end{equation}
 \begin{equation}
--{\sigma} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} - {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) = 0
+-{\sigma} {\lambda^{\mathrm{LOWREGIME}^{\mathrm{2}}}_\mathrm{ss}} \left(\beta - {\beta} \left(1 - {p\!L\!s\!s} + {\tau} \left(-{p\!i\!t\!C\!B} + {p\!i\!L}_\mathrm{ss}\right)^{2}\right)\right) = 0
 \end{equation}
 
 
@@ -205,7 +205,7 @@
 \sigma = 1
 \end{equation}
 \begin{equation}
-\tau = 0.01
+\tau = 0.001
 \end{equation}
 \begin{equation}
 \theta = 6

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  28 OCT 2024 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  28 OCT 2024 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,9 +443,8 @@ cmr/m/n/10 + [] [] + [] [] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/
 
 
 Overfull \hbox (935.57079pt too wide) detected at line 63
-[][][] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + [] [] + [] [] \OMS/cm
-sy/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^L^^\ [] [] \OMS/cmsy/m/n/10 ^
-^@ \OT1/cmr/m/n/10 E[] [] = 0  []
+[][][] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + [] [] + [] [] + 2\OML
+/cmm/m/it/10 ^^L^^\ [] [] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 E[] [] = 0  []
  []
 
 [1
@@ -461,8 +460,8 @@ cmr/m/n/10 + [] [] + [] [] \OMS/cmsy/m/n/10 ^^@ [] [] ^^@ \OT1/cmr/m/n/10 2\OML
 
 Overfull \hbox (1006.7599pt too wide) detected at line 121
 [][][] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + [] [] + [] [] \OMS/cm
-sy/m/n/10 ^^@ [] [] ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^L^^\ [] [] \OT1/cmr
-/m/n/10 = 0
+sy/m/n/10 ^^@ [] [] \OT1/cmr/m/n/10 + 2\OML/cmm/m/it/10 ^^L^^\ [] [] \OT1/cmr/m
+/n/10 = 0
  []
 
 [2]
@@ -475,14 +474,13 @@ Overfull \hbox (1074.84045pt too wide) detected at line 162
 
 Overfull \hbox (992.96593pt too wide) detected at line 165
 [][][] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] ^^@ [] [] \OT1/cmr/m/n/10 + [] [] + [] 
-[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^L^^\ [] [] \OT1/cmr
-/m/n/10 = 0
+[] + 2\OML/cmm/m/it/10 ^^L^^\ [] [] \OT1/cmr/m/n/10 = 0
  []
 
 [3]) [4] (RSW_RP.results.tex [5
 
 ]
-Overfull \hbox (219.36314pt too wide) in paragraph at lines 108--126
+Overfull \hbox (224.36316pt too wide) in paragraph at lines 108--126
 [] 
  []
 
@@ -509,50 +507,50 @@ Overfull \hbox (94.32599pt too wide) in paragraph at lines 130--148
  []
 
 [6] [7]
-Package epstopdf Info: Source file: <plots/plot_3.eps>
-(epstopdf)                    date: 2024-10-28 10:02:21
-(epstopdf)                    size: 8052 bytes
-(epstopdf)             Output file: <plots/plot_3-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_3-eps-con
-verted-to.pdf plots/plot_3.eps>
+Package epstopdf Info: Source file: <plots/plot_7.eps>
+(epstopdf)                    date: 2024-10-28 10:35:17
+(epstopdf)                    size: 8090 bytes
+(epstopdf)             Output file: <plots/plot_7-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_7-eps-con
+verted-to.pdf plots/plot_7.eps>
 (epstopdf)             \includegraphics on input line 181.
-runsystem(miktex-epstopdf --outfile=plots/plot_3-eps-converted-to.pdf plots/plo
-t_3.eps)...executed safely (allowed).
+runsystem(miktex-epstopdf --outfile=plots/plot_7-eps-converted-to.pdf plots/plo
+t_7.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <plots/plot_3-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-10-28 10:02:45
-(epstopdf)                    size: 12027 bytes.
+Package epstopdf Info: Result file: <plots/plot_7-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-10-28 10:35:38
+(epstopdf)                    size: 12150 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_3-eps-converted-to.pdf): PDF inclus
+pdfTeX warning: pdflatex (file ./plots/plot_7-eps-converted-to.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_3-eps-converted-to.pdf, id=176, 505.89pt x 505.89pt>
-File: plots/plot_3-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_3-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_3-eps-converted-to.pdf  used on input line 
+<plots/plot_7-eps-converted-to.pdf, id=180, 505.89pt x 505.89pt>
+File: plots/plot_7-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_7-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_7-eps-converted-to.pdf  used on input line 
 181.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
-Package epstopdf Info: Source file: <plots/plot_4.eps>
-(epstopdf)                    date: 2024-10-28 10:02:21
-(epstopdf)                    size: 5667 bytes
-(epstopdf)             Output file: <plots/plot_4-eps-converted-to.pdf>
-(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_4-eps-con
-verted-to.pdf plots/plot_4.eps>
+Package epstopdf Info: Source file: <plots/plot_8.eps>
+(epstopdf)                    date: 2024-10-28 10:35:17
+(epstopdf)                    size: 5557 bytes
+(epstopdf)             Output file: <plots/plot_8-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=plots/plot_8-eps-con
+verted-to.pdf plots/plot_8.eps>
 (epstopdf)             \includegraphics on input line 187.
-runsystem(miktex-epstopdf --outfile=plots/plot_4-eps-converted-to.pdf plots/plo
-t_4.eps)...executed safely (allowed).
+runsystem(miktex-epstopdf --outfile=plots/plot_8-eps-converted-to.pdf plots/plo
+t_8.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <plots/plot_4-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-10-28 10:02:46
-(epstopdf)                    size: 11240 bytes.
+Package epstopdf Info: Result file: <plots/plot_8-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-10-28 10:35:39
+(epstopdf)                    size: 11074 bytes.
 
 
-pdfTeX warning: pdflatex (file ./plots/plot_4-eps-converted-to.pdf): PDF inclus
+pdfTeX warning: pdflatex (file ./plots/plot_8-eps-converted-to.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<plots/plot_4-eps-converted-to.pdf, id=177, 505.89pt x 505.89pt>
-File: plots/plot_4-eps-converted-to.pdf Graphic file (type pdf)
-<use plots/plot_4-eps-converted-to.pdf>
-Package pdftex.def Info: plots/plot_4-eps-converted-to.pdf  used on input line 
+<plots/plot_8-eps-converted-to.pdf, id=181, 505.89pt x 505.89pt>
+File: plots/plot_8-eps-converted-to.pdf Graphic file (type pdf)
+<use plots/plot_8-eps-converted-to.pdf>
+Package pdftex.def Info: plots/plot_8-eps-converted-to.pdf  used on input line 
 187.
 (pdftex.def)             Requested size: 278.24034pt x 278.24034pt.
 
@@ -560,22 +558,16 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 178--190
 []$[]$ $[]$ 
  []
 
-) [8 <./plots/plot_3-eps-converted-to.pdf> <./plots/plot_4-eps-converted-to.pdf
+) [8 <./plots/plot_7-eps-converted-to.pdf> <./plots/plot_8-eps-converted-to.pdf
 >] (RSW_RP.aux)
-
-Package rerunfilecheck Warning: File `RSW_RP.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `RSW_RP.out':
-(rerunfilecheck)             Before: 92B7BE071ECC319D1A24E08EA94B67AA;3017
-(rerunfilecheck)             After:  1BB48D3D0E448855F7057676C8DD34B0;3198.
+Package rerunfilecheck Info: File `RSW_RP.out' has not changed.
+(rerunfilecheck)             Checksum: 1BB48D3D0E448855F7057676C8DD34B0;3198.
  ) 
 Here is how much of TeX's memory you used:
- 10226 strings out of 475385
- 163538 string characters out of 2776907
- 540840 words of memory out of 3000000
- 31369 multiletter control sequences out of 15000+600000
+ 10227 strings out of 475385
+ 163550 string characters out of 2776907
+ 540837 words of memory out of 3000000
+ 31370 multiletter control sequences out of 15000+600000
  476684 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,11n,67p,1362b,524s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -595,9 +587,9 @@ cm/cmsy10.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy5.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb><C:/Users/fm007/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RSW_RP.pdf (8 pages, 219256 bytes).
+Output written on RSW_RP.pdf (8 pages, 219567 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
+ 283 PDF objects out of 1000 (max. 8388607)
  86 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

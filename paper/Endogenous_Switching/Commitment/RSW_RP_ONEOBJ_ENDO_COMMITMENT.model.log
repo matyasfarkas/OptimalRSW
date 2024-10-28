@@ -1,4 +1,4 @@
-Generated on 2024-10-28 10:11:09 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2024-10-28 10:31:11 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: RSW_RP_ONEOBJ_ENDO_COMMITMENT
@@ -8,18 +8,18 @@ Block: OPTIMALMP
     uH[] = -0.5 * (pitH - pitCB + piH[])^2 - 0.5 * lambda * yH[]^2
     uL[] = -0.5 * (-pitCB + pitL + piL[])^2 - 0.5 * lambda * yL[]^2
     pH[] = pHss + tau * (-pitCB + piH[])^2
-    pL[] = pLss + tau * (-pitCB + piL[])^2
+    pL[] = pLss - tau * (-pitCB + piL[])^2
  Controls:
     piH[], yH[], piL[], yL[]
  Objective:
     U[] = -0.25 * (pitH - pitCB + piH[])^2 - 0.25 * (-pitCB + pitL + piL[])^2 + beta * E[][U[1]] - 0.25 * lambda * yH[]^2 - 0.25 * lambda * yL[]^2
  Constraints:
     -piH[-1] + log(etapi[-1]) + beta * piH[] + kappa * yH[-1] + beta * (-piH[] + piL[]) * (1 - pHss - tau * (-pitCB + piH[])^2) = 0    (lambda__OPTIMALMP_1[])
-    -piL[-1] + log(etapi[-1]) + beta * piL[] + kappa * yL[-1] + beta * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0    (lambda__OPTIMALMP_2[])
+    -piL[-1] + log(etapi[-1]) + beta * piL[] + kappa * yL[-1] + beta * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0    (lambda__OPTIMALMP_2[])
  First order conditions:
-    -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + lambda__OPTIMALMP_1[] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2) - 2 * beta * tau * (-pitCB + piH[]) * (-piH[] + piL[])) + beta * lambda__OPTIMALMP_2[] * (1 - pLss - tau * (-pitCB + piL[])^2) = 0    (piH[])
+    -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + lambda__OPTIMALMP_1[] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2) - 2 * beta * tau * (-pitCB + piH[]) * (-piH[] + piL[])) + beta * lambda__OPTIMALMP_2[] * (1 - pLss + tau * (-pitCB + piL[])^2) = 0    (piH[])
     -0.5 * lambda * yH[] + beta * kappa * E[][lambda__OPTIMALMP_1[1]] = 0    (yH[])
-    0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta - beta * (1 - pLss - tau * (-pitCB + piL[])^2) - 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + beta * lambda__OPTIMALMP_1[] * (1 - pHss - tau * (-pitCB + piH[])^2) = 0    (piL[])
+    0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta - beta * (1 - pLss + tau * (-pitCB + piL[])^2) + 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + beta * lambda__OPTIMALMP_1[] * (1 - pHss - tau * (-pitCB + piH[])^2) = 0    (piL[])
     -0.5 * lambda * yL[] + beta * kappa * E[][lambda__OPTIMALMP_2[1]] = 0    (yL[])
 
 Block: EXOG
@@ -43,9 +43,9 @@ Equations (8):
  (2)  -0.5 * lambda * yH[] + beta * kappa * E[][lambda__OPTIMALMP_1[1]] = 0
  (3)  -0.5 * lambda * yL[] + beta * kappa * E[][lambda__OPTIMALMP_2[1]] = 0
  (4)  -piH[-1] + log(etapi[-1]) + beta * piH[] + kappa * yH[-1] + beta * (-piH[] + piL[]) * (1 - pHss - tau * (-pitCB + piH[])^2) = 0
- (5)  -piL[-1] + log(etapi[-1]) + beta * piL[] + kappa * yL[-1] + beta * (piH[] - piL[]) * (1 - pLss - tau * (-pitCB + piL[])^2) = 0
- (6)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + lambda__OPTIMALMP_1[] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2) - 2 * beta * tau * (-pitCB + piH[]) * (-piH[] + piL[])) + beta * lambda__OPTIMALMP_2[] * (1 - pLss - tau * (-pitCB + piL[])^2) = 0
- (7)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta - beta * (1 - pLss - tau * (-pitCB + piL[])^2) - 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + beta * lambda__OPTIMALMP_1[] * (1 - pHss - tau * (-pitCB + piH[])^2) = 0
+ (5)  -piL[-1] + log(etapi[-1]) + beta * piL[] + kappa * yL[-1] + beta * (piH[] - piL[]) * (1 - pLss + tau * (-pitCB + piL[])^2) = 0
+ (6)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[] - beta * E[][lambda__OPTIMALMP_1[1]] + lambda__OPTIMALMP_1[] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[])^2) - 2 * beta * tau * (-pitCB + piH[]) * (-piH[] + piL[])) + beta * lambda__OPTIMALMP_2[] * (1 - pLss + tau * (-pitCB + piL[])^2) = 0
+ (7)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[] - beta * E[][lambda__OPTIMALMP_2[1]] + lambda__OPTIMALMP_2[] * (beta - beta * (1 - pLss + tau * (-pitCB + piL[])^2) + 2 * beta * tau * (-pitCB + piL[]) * (piH[] - piL[])) + beta * lambda__OPTIMALMP_1[] * (1 - pHss - tau * (-pitCB + piH[])^2) = 0
  (8)  U[] + 0.25 * (pitH - pitCB + piH[])^2 + 0.25 * (-pitCB + pitL + piL[])^2 - beta * E[][U[1]] + 0.25 * lambda * yH[]^2 + 0.25 * lambda * yL[]^2 = 0
 
 Steady state equations (8):
@@ -53,9 +53,9 @@ Steady state equations (8):
  (2)  -0.5 * lambda * yH[ss] + beta * kappa * lambda__OPTIMALMP_1[ss] = 0
  (3)  -0.5 * lambda * yL[ss] + beta * kappa * lambda__OPTIMALMP_2[ss] = 0
  (4)  -piH[ss] + log(etapi[ss]) + beta * piH[ss] + kappa * yH[ss] + beta * (-piH[ss] + piL[ss]) * (1 - pHss - tau * (-pitCB + piH[ss])^2) = 0
- (5)  -piL[ss] + log(etapi[ss]) + beta * piL[ss] + kappa * yL[ss] + beta * (piH[ss] - piL[ss]) * (1 - pLss - tau * (-pitCB + piL[ss])^2) = 0
- (6)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[ss] - beta * lambda__OPTIMALMP_1[ss] + lambda__OPTIMALMP_1[ss] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2) - 2 * beta * tau * (-pitCB + piH[ss]) * (-piH[ss] + piL[ss])) + beta * lambda__OPTIMALMP_2[ss] * (1 - pLss - tau * (-pitCB + piL[ss])^2) = 0
- (7)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[ss] - beta * lambda__OPTIMALMP_2[ss] + lambda__OPTIMALMP_2[ss] * (beta - beta * (1 - pLss - tau * (-pitCB + piL[ss])^2) - 2 * beta * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) + beta * lambda__OPTIMALMP_1[ss] * (1 - pHss - tau * (-pitCB + piH[ss])^2) = 0
+ (5)  -piL[ss] + log(etapi[ss]) + beta * piL[ss] + kappa * yL[ss] + beta * (piH[ss] - piL[ss]) * (1 - pLss + tau * (-pitCB + piL[ss])^2) = 0
+ (6)  -0.5 * pitH + 0.5 * pitCB - 0.5 * piH[ss] - beta * lambda__OPTIMALMP_1[ss] + lambda__OPTIMALMP_1[ss] * (beta - beta * (1 - pHss - tau * (-pitCB + piH[ss])^2) - 2 * beta * tau * (-pitCB + piH[ss]) * (-piH[ss] + piL[ss])) + beta * lambda__OPTIMALMP_2[ss] * (1 - pLss + tau * (-pitCB + piL[ss])^2) = 0
+ (7)  0.5 * pitCB - 0.5 * pitL - 0.5 * piL[ss] - beta * lambda__OPTIMALMP_2[ss] + lambda__OPTIMALMP_2[ss] * (beta - beta * (1 - pLss + tau * (-pitCB + piL[ss])^2) + 2 * beta * tau * (-pitCB + piL[ss]) * (piH[ss] - piL[ss])) + beta * lambda__OPTIMALMP_1[ss] * (1 - pHss - tau * (-pitCB + piH[ss])^2) = 0
  (8)  U[ss] + 0.25 * (pitH - pitCB + piH[ss])^2 + 0.25 * (-pitCB + pitL + piL[ss])^2 - beta * U[ss] + 0.25 * lambda * yH[ss]^2 + 0.25 * lambda * yL[ss]^2 = 0
 
 Parameter settings (12):
@@ -69,6 +69,6 @@ Parameter settings (12):
  (8)  pHss = 0.99
  (9)  pLss = 0.99
  (10)  sigma = 1
- (11)  tau = 0.01
+ (11)  tau = 0.001
  (12)  theta = 6
 

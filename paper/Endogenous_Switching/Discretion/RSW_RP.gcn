@@ -52,7 +52,7 @@ block HIGHREGIME
         pitCB = 0;
         pitH  = 0;
         pitL = 2;
-        tau  = 0.01;
+        tau  = 0.001;
     };
 };
 block LOWREGIME
@@ -60,7 +60,7 @@ block LOWREGIME
     definitions
     {
         uL[] = -1/2* ((piL[]+pitL-pitCB)^2 + kappa/theta * yL[]*yL[]);
-        pL[] =  pLss + tau*(piL[]-pitCB)^2; # 1/(1+exp(-(piL[]-pitCB)));  
+        pL[] =  pLss - tau*(piL[]-pitCB)^2; # 1/(1+exp(-(piL[]-pitCB)));  
     };
     controls
     {
