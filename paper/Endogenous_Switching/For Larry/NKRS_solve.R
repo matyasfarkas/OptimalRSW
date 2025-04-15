@@ -1,7 +1,7 @@
 # ############################################################################
-# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+# (c) 3Eq NK model with endogenous probability                               #
 #                                                                            #
-# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# Authors:  Matyas Farkas, IMF 2025 April                                    #
 # ############################################################################
 setwd("C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/")
 # load gEcon package
@@ -37,7 +37,7 @@ get_model_stats(model = nkrs,
 
 # compute and print the IRFs
 nkrs_irf <- compute_irf(nkrs, 
-                       variables = c("pi","R", "C","pH"))
+                       variables = c("pi","pH","R","percieved_pi_obj","inflation_gap"))
 plot_simulation(nkrs_irf, to_eps = TRUE)
 
 # print summary of the model results

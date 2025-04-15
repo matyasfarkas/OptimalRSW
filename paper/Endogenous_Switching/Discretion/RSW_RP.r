@@ -36,7 +36,7 @@ get_model_stats(model = rsw,
 
 # compute and print the IRFs
 rsw_irf <- compute_irf(rsw, 
-                       variables = c("iH", "iL", "piH", "piL", "yH", "yL","pH","pL"))
+                       variables = c("iH", "iL", "piH", "piL", "yH", "yL"))
 plot_simulation(rsw_irf, to_eps = TRUE)
 
 # print summary of the model results

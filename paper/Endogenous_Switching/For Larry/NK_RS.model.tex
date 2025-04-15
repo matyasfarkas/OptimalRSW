@@ -1,4 +1,4 @@
-% Generated on 2025-04-15 00:20:49 by gEcon ver. 1.2.1 (2023-01-18)
+% Generated on 2025-04-15 16:10:16 by gEcon ver. 1.2.1 (2023-01-18)
 % http://gecon.r-forge.r-project.org/
 
 % Model name: NK_RS
@@ -168,7 +168,7 @@ B_{t} = 0
 {p\!H}_{t} = 1 - {p\!L}_{t}
 \end{equation}
 \begin{equation}
-\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} = {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} {\log{\pi_{t}}}
+\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} = {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} \left(\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t-1}} + {\tau} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}}}\right)
 \end{equation}
 
 
@@ -288,7 +288,7 @@ U_{t} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - \left(1 - \eta\right)^{-1
 -\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}} - \log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + \log{\pi_{t}} = 0
 \end{equation}
 \begin{equation}
--\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} {\log{\pi_{t}}} = 0
+-\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} \left(\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t-1}} + {\tau} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}}}\right) = 0
 \end{equation}
 \begin{equation}
 \eta^{\pi}_{t} - \log{\pi^{\mathrm{obj}}_{t}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
@@ -386,7 +386,7 @@ U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_
 -\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_\mathrm{ss}} - \log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + \log{\pi_\mathrm{ss}} = 0
 \end{equation}
 \begin{equation}
--\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + {{p\!H}_\mathrm{ss}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_\mathrm{ss}} {\log{\pi_\mathrm{ss}}} = 0
+-\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + {{p\!H}_\mathrm{ss}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_\mathrm{ss}} \left(\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + {\tau} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_\mathrm{ss}}}\right) = 0
 \end{equation}
 \begin{equation}
 -\log{\pi^{\mathrm{obj}}_\mathrm{ss}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_\mathrm{ss}}} + {\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
@@ -466,6 +466,9 @@ r^{\mathrm{Y}} = 0.099
 \end{equation}
 \begin{equation}
 \rho^{\mathrm{a}} = 0.823
+\end{equation}
+\begin{equation}
+\tau = 0.085
 \end{equation}
 \begin{equation}
 \xi^{\mathrm{p}} = 0.908

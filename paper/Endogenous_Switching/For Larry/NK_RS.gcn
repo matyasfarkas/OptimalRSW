@@ -153,7 +153,6 @@ block ENDOGENOUS_REGIME_PROB
 {
     identities
     {
-
         log(inflation_gap[]) = log(pi[]) - log(percieved_pi_obj[]);
         # Markov regime weights: pL is probability of low target, pH = 1 - pL
         # Logistic function for regime probability
@@ -162,10 +161,11 @@ block ENDOGENOUS_REGIME_PROB
 
 
         # Inflation target as a convex combination
-        log(percieved_pi_obj[]) = pL[] * log(pi[]) + pH[]*log(pi_H);
+        log(percieved_pi_obj[]) = pL[] * (log(percieved_pi_obj[-1])+tau* log(inflation_gap[]))  + pH[]*log(pi_H);
     };
     calibration
     {
+        tau = 0.085;
         pL[ss] =0.05 -> pLss; 
         kappa = 1;  # sensitivity to inflation gap
         pi_H = 1;  # High credibility inflation target

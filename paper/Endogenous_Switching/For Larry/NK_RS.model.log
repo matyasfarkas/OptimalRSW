@@ -1,4 +1,4 @@
-Generated on 2025-04-15 00:20:49 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2025-04-15 16:10:16 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: NK_RS
@@ -72,7 +72,7 @@ Block: ENDOGENOUS_REGIME_PROB
     -log(inflation_gap[]) - log(percieved_pi_obj[]) + log(pi[]) = 0
     -pL[] + (1 + exp(pLss - kappa * log(inflation_gap[])))^-1 = 0
     1 - pH[] - pL[] = 0
-    -log(percieved_pi_obj[]) + pH[] * log(pi_H) + pL[] * log(pi[]) = 0
+    -log(percieved_pi_obj[]) + pH[] * log(pi_H) + pL[] * (log(percieved_pi_obj[-1]) + tau * log(inflation_gap[])) = 0
 
 Block: GOVERNMENT
  Identities:
@@ -93,11 +93,11 @@ Variables (31):
 Shocks (5):
     epsilon_Z[], eta_p[], eta_R[], eta_pi[], eta_G[]
 
-Parameters (19):
-    alpha, beta, calibr_pi, delta, eta, gamma_p, kappa, lambda_p, mu, pi_H, pLss, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p, G_bar
+Parameters (20):
+    alpha, beta, calibr_pi, delta, eta, gamma_p, kappa, lambda_p, mu, pi_H, pLss, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, tau, xi_p, G_bar
 
-Free parameters (16):
-    alpha, beta, delta, eta, gamma_p, kappa, lambda_p, mu, pi_H, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p
+Free parameters (17):
+    alpha, beta, delta, eta, gamma_p, kappa, lambda_p, mu, pi_H, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, tau, xi_p
 
 Calibrated parameters (3):
     calibr_pi, pLss, G_bar
@@ -128,7 +128,7 @@ Equations (31):
  (23)  I[] - K_s[] + K_s[-1] * (1 - delta) = 0
  (24)  U[] - beta * E[][U[1]] - (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta) = 0
  (25)  -log(inflation_gap[]) - log(percieved_pi_obj[]) + log(pi[]) = 0
- (26)  -log(percieved_pi_obj[]) + pH[] * log(pi_H) + pL[] * log(pi[]) = 0
+ (26)  -log(percieved_pi_obj[]) + pH[] * log(pi_H) + pL[] * (log(percieved_pi_obj[-1]) + tau * log(inflation_gap[])) = 0
  (27)  eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(percieved_pi_obj[]) * (1 - rho_pi_bar) = 0
  (28)  -Div[] + Y[] - K_s[-1] * r[] - L_s[] * W[] = 0
  (29)  -G[] + T[] - B[-1] * pi[]^-1 + B[] * R[]^-1 = 0
@@ -161,7 +161,7 @@ Steady state equations (31):
  (23)  I[ss] - K_s[ss] + K_s[ss] * (1 - delta) = 0
  (24)  U[ss] - beta * U[ss] - (1 - eta)^-1 * (C[ss]^mu * (1 - L_s[ss])^(1 - mu))^(1 - eta) = 0
  (25)  -log(inflation_gap[ss]) - log(percieved_pi_obj[ss]) + log(pi[ss]) = 0
- (26)  -log(percieved_pi_obj[ss]) + pH[ss] * log(pi_H) + pL[ss] * log(pi[ss]) = 0
+ (26)  -log(percieved_pi_obj[ss]) + pH[ss] * log(pi_H) + pL[ss] * (log(percieved_pi_obj[ss]) + tau * log(inflation_gap[ss])) = 0
  (27)  -log(pi_obj[ss]) + rho_pi_bar * log(pi_obj[ss]) + log(percieved_pi_obj[ss]) * (1 - rho_pi_bar) = 0
  (28)  -Div[ss] + Y[ss] - r[ss] * K_s[ss] - L_s[ss] * W[ss] = 0
  (29)  -G[ss] + T[ss] - pi[ss]^-1 * B[ss] + B[ss] * R[ss]^-1 = 0
@@ -173,7 +173,7 @@ Calibrating equations (3):
  (2)  -0.05 + pL[ss] = 0
  (3)  pi[ss] - pi_obj[ss] = 0
 
-Parameter settings (16):
+Parameter settings (17):
  (1)  alpha = 0.3
  (2)  beta = 0.99
  (3)  delta = 0.025
@@ -189,7 +189,8 @@ Parameter settings (16):
  (13)  rho_pi_bar = 0.924
  (14)  rho_G = 0.949
  (15)  rho_a = 0.823
- (16)  xi_p = 0.908
+ (16)  tau = 0.085
+ (17)  xi_p = 0.908
 
 
 2 WARNINGS

@@ -8,7 +8,7 @@ setwd("C:/Users/fm007/Documents/GitHub/OptimalRSW/temp")
 library(gEcon)
 
 # make and load the model
-rsw <- make_model("RSW.gcn")
+rsw <- make_model("RSW_ONE.gcn")
 # find and print steady-state values
 rsw <- steady_state(rsw)
 get_ss_values(rsw, to_tex = TRUE)
@@ -21,8 +21,8 @@ var_info(rsw,all =T)
 get_pert_solution(rsw, to_tex = TRUE)
 
 # set and print the shock distribution parameters
-rsw <- set_shock_cov_mat(rsw, cov_matrix = matrix(c(0.01), 1, 1),
-                         shock_order = c("epsilon_pi"))
+rsw <- set_shock_cov_mat(rsw, cov_matrix = diag(0.01,2,2),
+                         shock_order = c("epsilon_pi","epsilon_g"))
 shock_info(rsw, all = TRUE)
 
 # compute and print correlations
