@@ -1,4 +1,4 @@
-% Generated on 2025-04-15 16:56:31 by gEcon ver. 1.2.1 (2023-01-18)
+% Generated on 2025-04-15 17:44:06 by gEcon ver. 1.2.1 (2023-01-18)
 % http://gecon.r-forge.r-project.org/
 
 % Model name: baseline_NK
@@ -148,7 +148,7 @@ B_{t} = 0
 {c\!a\!l\!i\!b\!r}^{\pi} + \log\left({R_\mathrm{ss}}^{-1} {R_{t}}\right) = \eta^{\mathrm{R}}_{t} + {\rho} {\log\left({R_\mathrm{ss}}^{-1} {R_{t-1}}\right)} + \left(1 - \rho\right) \left(\log{\pi^{\mathrm{obj}}_{t}} + {r^{\pi}} \left(-\log{\pi^{\mathrm{obj}}_{t}} + \log\left({\pi_\mathrm{ss}}^{-1} {\pi_{t-1}}\right)\right) + {r^{\mathrm{Y}}} {\log\left({Y_\mathrm{ss}}^{-1} {Y_{t}}\right)}\right)
 \end{equation}
 \begin{equation}
-\log{\pi^{\mathrm{obj}}_{t}} = \eta^{\pi}_{t} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{\pi^{\mathrm{target}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right)
+\log{\pi^{\mathrm{obj}}_{t}} = \eta^{\pi}_{t} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{{c\!a\!l\!i\!b\!r}^{\pi^{\mathrm{obj}}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right)
 \end{equation}
 
 
@@ -259,7 +259,7 @@ I_{t} - K^{\mathrm{s}}_{t} + {K^{\mathrm{s}}_{t-1}} \left(1 - \delta\right) = 0
 U_{t} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - \left(1 - \eta\right)^{-1} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{1 - \eta}} = 0
 \end{equation}
 \begin{equation}
-\eta^{\pi}_{t} - \log{\pi^{\mathrm{obj}}_{t}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{\pi^{\mathrm{target}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
+\eta^{\pi}_{t} - \log{\pi^{\mathrm{obj}}_{t}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{{c\!a\!l\!i\!b\!r}^{\pi^{\mathrm{obj}}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
 \end{equation}
 \begin{equation}
 -{D\!i\!v}_{t} + Y_{t} - {K^{\mathrm{s}}_{t-1}} {r_{t}} - {L^{\mathrm{s}}_{t}} {W_{t}} = 0
@@ -345,7 +345,7 @@ I_\mathrm{ss} - K^{\mathrm{s}}_\mathrm{ss} + {K^{\mathrm{s}}_\mathrm{ss}} \left(
 U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_\mathrm{ss}}^{\mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{1 - \mu}}\right)^{1 - \eta}} = 0
 \end{equation}
 \begin{equation}
--\log{\pi^{\mathrm{obj}}_\mathrm{ss}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_\mathrm{ss}}} + {\log{\pi^{\mathrm{target}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
+-\log{\pi^{\mathrm{obj}}_\mathrm{ss}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_\mathrm{ss}}} + {\log{{c\!a\!l\!i\!b\!r}^{\pi^{\mathrm{obj}}}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
 \end{equation}
 \begin{equation}
 -{D\!i\!v}_\mathrm{ss} + Y_\mathrm{ss} - {r_\mathrm{ss}} {K^{\mathrm{s}}_\mathrm{ss}} - {L^{\mathrm{s}}_\mathrm{ss}} {W_\mathrm{ss}} = 0
@@ -365,7 +365,13 @@ U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_
 \section{Calibrating equations}
 
 \begin{equation}
+-1 + \pi^{\mathrm{obj}}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
 -0.18 + {G_\mathrm{ss}} {Y_\mathrm{ss}}^{-1} = 0
+\end{equation}
+\begin{equation}
+\pi_\mathrm{ss} - \pi^{\mathrm{obj}}_\mathrm{ss} = 0
 \end{equation}
 
 
@@ -377,9 +383,6 @@ U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_
 \end{equation}
 \begin{equation}
 \beta = 0.99
-\end{equation}
-\begin{equation}
-{c\!a\!l\!i\!b\!r}^{\pi} = 1
 \end{equation}
 \begin{equation}
 \delta = 0.025
@@ -395,9 +398,6 @@ U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_
 \end{equation}
 \begin{equation}
 \mu = 0.3
-\end{equation}
-\begin{equation}
-\pi^{\mathrm{target}} = 1
 \end{equation}
 \begin{equation}
 r^{\pi} = 1.684

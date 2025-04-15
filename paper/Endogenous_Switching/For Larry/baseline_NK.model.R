@@ -1,10 +1,10 @@
-# Generated on 2025-04-15 16:59:49 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2025-04-15 17:45:09 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: baseline_NK
 
 # info
-info__ <- c("baseline_NK", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/baseline_NK.gcn", "2025-04-15 16:59:49", "false")
+info__ <- c("baseline_NK", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/baseline_NK.gcn", "2025-04-15 17:45:09", "false")
 
 # index sets
 index_sets__ <- list()
@@ -83,12 +83,12 @@ shocks_tex__ <- c("\\epsilon^{\\mathrm{Z}}",
 parameters__ <- c("alpha",
                   "beta",
                   "calibr_pi",
+                  "calibr_pi_obj",
                   "delta",
                   "eta",
                   "gamma_p",
                   "lambda_p",
                   "mu",
-                  "pi_target",
                   "r_pi",
                   "r_Y",
                   "rho",
@@ -101,12 +101,12 @@ parameters__ <- c("alpha",
 parameters_tex__ <- c("\\alpha",
                      "\\beta",
                      "{c\\!a\\!l\\!i\\!b\\!r}^{\\pi}",
+                     "{c\\!a\\!l\\!i\\!b\\!r}^{\\pi^{\\mathrm{obj}}}",
                      "\\delta",
                      "\\eta",
                      "\\gamma^{\\mathrm{p}}",
                      "\\lambda^{\\mathrm{p}}",
                      "\\mu",
-                     "\\pi^{\\mathrm{target}}",
                      "r^{\\pi}",
                      "r^{\\mathrm{Y}}",
                      "\\rho",
@@ -171,7 +171,7 @@ equations__ <- c("-B[] = 0",
                  "-nu_p[] + (1 - xi_p) * pi_star[]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[-1] * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0",
                  "I[] - K_s[] + K_s[-1] * (1 - delta) = 0",
                  "U[] - beta * E[][U[1]] - (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta) = 0",
-                 "eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(pi_target) * (1 - rho_pi_bar) = 0",
+                 "eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0",
                  "-Div[] + Y[] - K_s[-1] * r[] - L_s[] * W[] = 0",
                  "-G[] + T[] - B[-1] * pi[]^-1 + B[] * R[]^-1 = 0",
                  "-calibr_pi + eta_R[] - log(R[ss]^-1 * R[]) + rho * log(R[ss]^-1 * R[-1]) + (1 - rho) * (log(pi_obj[]) + r_pi * (-log(pi_obj[]) + log(pi[ss]^-1 * pi[-1])) + r_Y * log(Y[ss]^-1 * Y[])) = 0",

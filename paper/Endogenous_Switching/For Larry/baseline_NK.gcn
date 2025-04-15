@@ -126,12 +126,12 @@ block MONETARY_POLICY_AUTHORITY
 {
     identities
     {
-        log(R[] / R[ss]) + calibr_pi = rho * log(R[-1] / R[ss]) +
+        log(R[] / R[ss])  + calibr_pi= rho * log(R[-1] / R[ss]) +
                                      (1 - rho) * (log(pi_obj[]) +
                                      r_pi * (log(pi[-1] / pi[ss]) - log(pi_obj[])) +
                                      r_Y * (log(Y[]/ Y[ss]) )) +
                                      eta_R[];
-        log(pi_obj[]) = (1 - rho_pi_bar) * log(pi_target) +
+        log(pi_obj[]) = (1 - rho_pi_bar) * log(calibr_pi_obj) +
                         rho_pi_bar * log(pi_obj[-1]) + eta_pi[];
     };
     shocks
@@ -144,12 +144,11 @@ block MONETARY_POLICY_AUTHORITY
         rho = 0.961;                              # Interest rate smoothing parameter
         r_Y = 0.099;                              # Weight on the output gap
         r_pi = 1.684;                             # Weight on the inflation gap
-        pi_obj[ss] = 1      -> pi_target;     # Calibration of the inflation objective
-        pi[ss] = pi_obj[ss] -> calibr_pi;         # Calibration of the inflation
         rho_pi_bar = 0.924;                       # AR parameter for the inflation objective
+        pi_obj[ss] = 1      -> calibr_pi_obj;     # Calibration of the inflation objective
+        pi[ss] = pi_obj[ss] -> calibr_pi;         # Calibration of the inflation
     };
 };
-
 
 block GOVERNMENT
 {
@@ -160,7 +159,7 @@ block GOVERNMENT
     };
     calibration
     {
-        G[ss] / Y[ss] = 0.18  -> G_bar; # Calibration of the steady state government expenditures
+       G[ss] / Y[ss] = 0.18  -> G_bar; # Calibration of the steady state government expenditures
     };
 };
 

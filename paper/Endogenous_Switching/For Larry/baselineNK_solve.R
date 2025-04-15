@@ -10,10 +10,38 @@ library(gEcon)
 # make and load the model
 nk <- make_model("baseline_NK.gcn")
 # find and print steady-state values
+steady_state_values <- c(
+  epsilon_G = 1,
+  g_1 = 7.3514,
+  g_2 = 4.9009,
+  lambda = 1.5467,
+  mc = 0.6667,
+  pi_obj = 1,
+  nu_p = 1,
+  pi = 1,
+  pi_star = 1,
+  q = 1.5467,
+  r = 0.0351,
+  B = 0,
+  C = 0.3255,
+  Div = 0.1601,
+  G = 0.0865,
+  I = 0.0684,
+  K_s = 2.7374,
+  L_s = 0.2279,
+  Q = 1,
+  R = 1.0101,
+  T = 0.0865,
+  U = -167.8256,
+  W = 0.9837,
+  Y = 0.4804,
+  Y_j = 0.4804,
+  Y_s = 0.4804,
+  Z = 1
+)
+nk <- initval_var(nk, steady_state_values)
+
 nk <- steady_state(nk)
-get_residuals(nk)
-list_eq(nk, eq_idx = c(14))
-nk <-steady_state(model = nk, calibration = FALSE)
 get_ss_values(nk, to_tex = TRUE)
 
 # find and print perturbation solution
@@ -39,7 +67,7 @@ get_model_stats(model = nk,
 
 # compute and print the IRFs
 nk_irf <- compute_irf(nk, 
-                       variables = c("pi", "C"))
+                       variables = c("pi","pH","R"))
 plot_simulation(nk_irf, to_eps = TRUE)
 
 # print summary of the model results
