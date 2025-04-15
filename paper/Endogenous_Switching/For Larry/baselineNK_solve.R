@@ -1,7 +1,7 @@
 # ############################################################################
-# (c) 3Eq NK model a la Rotember Woodford model with MS Regimes              #
+# (c) 3Eq NK model                                                           #
 #                                                                            #
-# Authors:  Matyas Farkas, ECB and Kai Christoffel, ECB                      #
+# Authors:  Matyas Farkas, IMF April 2025                                    #
 # ############################################################################
 setwd("C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/")
 # load gEcon package
@@ -12,7 +12,7 @@ nk <- make_model("baseline_NK.gcn")
 # find and print steady-state values
 nk <- steady_state(nk)
 get_residuals(nk)
-list_eq(nk, eq_idx = c(15))
+list_eq(nk, eq_idx = c(14))
 nk <-steady_state(model = nk, calibration = FALSE)
 get_ss_values(nk, to_tex = TRUE)
 

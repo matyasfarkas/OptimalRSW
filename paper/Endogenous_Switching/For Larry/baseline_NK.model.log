@@ -1,9 +1,9 @@
-Generated on 2025-04-15 00:13:35 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2025-04-15 16:56:31 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: baseline_NK
 
-2 WARNINGS, see bottom of this logfile
+1 WARNING, see bottom of this logfile
 
 
 Variables selected for reduction:
@@ -65,7 +65,7 @@ Block: EQUILIBRIUM
 Block: MONETARY_POLICY_AUTHORITY
  Identities:
     -calibr_pi + eta_R[] - log(R[ss]^-1 * R[]) + rho * log(R[ss]^-1 * R[-1]) + (1 - rho) * (log(pi_obj[]) + r_pi * (-log(pi_obj[]) + log(pi[ss]^-1 * pi[-1])) + r_Y * log(Y[ss]^-1 * Y[])) = 0
-    eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+    eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(pi_target) * (1 - rho_pi_bar) = 0
 
 Block: GOVERNMENT
  Identities:
@@ -87,13 +87,13 @@ Shocks (5):
     epsilon_Z[], eta_p[], eta_R[], eta_pi[], eta_G[]
 
 Parameters (17):
-    alpha, beta, calibr_pi, calibr_pi_obj, delta, eta, gamma_p, lambda_p, mu, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p, G_bar
+    alpha, beta, calibr_pi, delta, eta, gamma_p, lambda_p, mu, pi_target, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p, G_bar
 
-Free parameters (14):
-    alpha, beta, delta, eta, gamma_p, lambda_p, mu, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p
+Free parameters (16):
+    alpha, beta, calibr_pi, delta, eta, gamma_p, lambda_p, mu, pi_target, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p
 
-Calibrated parameters (3):
-    calibr_pi, calibr_pi_obj, G_bar
+Calibrated parameters (1):
+    G_bar
 
 Equations (27):
  (1)  -B[] = 0
@@ -118,7 +118,7 @@ Equations (27):
  (20)  -nu_p[] + (1 - xi_p) * pi_star[]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[-1] * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
  (21)  I[] - K_s[] + K_s[-1] * (1 - delta) = 0
  (22)  U[] - beta * E[][U[1]] - (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta) = 0
- (23)  eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+ (23)  eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(pi_target) * (1 - rho_pi_bar) = 0
  (24)  -Div[] + Y[] - K_s[-1] * r[] - L_s[] * W[] = 0
  (25)  -G[] + T[] - B[-1] * pi[]^-1 + B[] * R[]^-1 = 0
  (26)  -calibr_pi + eta_R[] - log(R[ss]^-1 * R[]) + rho * log(R[ss]^-1 * R[-1]) + (1 - rho) * (log(pi_obj[]) + r_pi * (-log(pi_obj[]) + log(pi[ss]^-1 * pi[-1])) + r_Y * log(Y[ss]^-1 * Y[])) = 0
@@ -147,34 +147,33 @@ Steady state equations (27):
  (20)  -nu_p[ss] + (1 - xi_p) * pi_star[ss]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[ss] * (pi[ss]^-1 * pi[ss]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
  (21)  I[ss] - K_s[ss] + K_s[ss] * (1 - delta) = 0
  (22)  U[ss] - beta * U[ss] - (1 - eta)^-1 * (C[ss]^mu * (1 - L_s[ss])^(1 - mu))^(1 - eta) = 0
- (23)  -log(pi_obj[ss]) + rho_pi_bar * log(pi_obj[ss]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+ (23)  -log(pi_obj[ss]) + rho_pi_bar * log(pi_obj[ss]) + log(pi_target) * (1 - rho_pi_bar) = 0
  (24)  -Div[ss] + Y[ss] - r[ss] * K_s[ss] - L_s[ss] * W[ss] = 0
  (25)  -G[ss] + T[ss] - pi[ss]^-1 * B[ss] + B[ss] * R[ss]^-1 = 0
  (26)  -calibr_pi + (1 - rho) * (log(pi_obj[ss]) - r_pi * log(pi_obj[ss])) = 0
  (27)  -C[ss] + Div[ss] - I[ss] - T[ss] + pi[ss]^-1 * B[ss] + r[ss] * K_s[ss] - B[ss] * R[ss]^-1 + L_s[ss] * W[ss] = 0
 
-Calibrating equations (3):
- (1)  -1 + pi_obj[ss] = 0
- (2)  -0.18 + G[ss] * Y[ss]^-1 = 0
- (3)  pi[ss] - pi_obj[ss] = 0
+Calibrating equations (1):
+ (1)  -0.18 + G[ss] * Y[ss]^-1 = 0
 
-Parameter settings (14):
+Parameter settings (16):
  (1)  alpha = 0.3
  (2)  beta = 0.99
- (3)  delta = 0.025
- (4)  eta = 2
- (5)  gamma_p = 0.469
- (6)  lambda_p = 0.5
- (7)  mu = 0.3
- (8)  r_pi = 1.684
- (9)  r_Y = 0.099
- (10)  rho = 0.961
- (11)  rho_pi_bar = 0.924
- (12)  rho_G = 0.949
- (13)  rho_a = 0.823
- (14)  xi_p = 0.908
+ (3)  calibr_pi = 1
+ (4)  delta = 0.025
+ (5)  eta = 2
+ (6)  gamma_p = 0.469
+ (7)  lambda_p = 0.5
+ (8)  mu = 0.3
+ (9)  pi_target = 1
+ (10)  r_pi = 1.684
+ (11)  r_Y = 0.099
+ (12)  rho = 0.961
+ (13)  rho_pi_bar = 0.924
+ (14)  rho_G = 0.949
+ (15)  rho_a = 0.823
+ (16)  xi_p = 0.908
 
 
-2 WARNINGS
-(gEcon model warning 1): variable "pi[]" selected for reduction appears in calibrating equation "pi[ss] - pi_obj[ss] = 0"
-(gEcon model warning 2): the following variable(s) selected for reduction could not be symbolically reduced in the model: "pi[]"
+1 WARNING
+(gEcon model warning 1): the following variable(s) selected for reduction could not be symbolically reduced in the model: "pi[]"
