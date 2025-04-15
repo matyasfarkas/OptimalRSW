@@ -1,0 +1,193 @@
+# ############################################################################
+# (c) Baseline 3Eq NK model                                                  #   
+#                                                                            #
+# Authors:  Matyas Farkas, IMF, April 2025                                   #
+# ############################################################################
+options
+{
+    output LaTeX = TRUE; 
+    output LaTeX landscape = TRUE;
+    output logfile = TRUE;
+    verbose = TRUE;
+};
+
+tryreduce
+{
+    pi[], K_d[],tc_j[], L_d[];
+};
+
+block CONSUMER
+{
+    definitions
+    {
+        u[] = (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta) / (1 - eta);
+    };
+    controls
+    {
+        C[],  K_s[], I[], B[], L_s[] ;
+    };
+    objective
+    {
+        U[] = u[] + beta * E[][U[1]];
+    };
+    constraints
+    {
+        I[] + C[] + B[] / R[]  = Div[] + r[] * K_s[-1] + W[] * L_s[] + B[-1] / pi[] - T[] : lambda[];
+        K_s[] = (1 - delta) * K_s[-1] + I[] : q[];
+    };
+    identities
+    {
+       Q[] = q[] / lambda[];
+    };
+    calibration
+    {
+        delta = 0.025;
+        beta = 0.99;
+        eta = 2;
+        mu = 0.3;
+    };
+};
+
+block FIRM
+{
+    controls
+    {
+        K_d[], L_d[];
+    };
+    objective
+    {
+        tc_j[] = - L_d[] * W[] - r[] * K_d[];
+    };
+    constraints
+    {
+        Y_j[] = Z[] * K_d[]^alpha * L_d[]^(1 - alpha)  :       mc[];
+    };
+    calibration
+    {
+        alpha = 0.3;                                # Capital share in output
+     };
+};
+
+block PRICE_SETTING_PROBLEM
+{
+    identities
+    {
+        g_1[] = (1 + lambda_p) * g_2[] + eta_p[];
+        g_1[] = lambda[] * pi_star[] * Y[] + beta * xi_p *
+                E[][(pi[] ^ gamma_p / pi[1]) ^ (-1 / lambda_p) *
+                    (pi_star[] / pi_star[1]) * g_1[1]];
+        g_2[] = lambda[] * mc[] * Y[] + beta * xi_p *
+                E[][(pi[] ^ gamma_p / pi[1]) ^ (-((1 + lambda_p) / lambda_p)) * g_2[1]];
+    };
+    shocks
+    {
+        eta_p[];                # Price mark-up shock
+    };
+    calibration
+    {   
+        lambda_p = 0.5;          # Price mark-up
+        xi_p = 0.908;           # Probability of not receiving the ``price-change signal''
+        gamma_p = 0.469;        # Indexation parameter for non-optimising firms
+    };
+};
+block PRICE_EVOLUTION
+{
+    identities
+    {
+        1 = xi_p * (pi[-1] ^ gamma_p / pi[]) ^ (-1 / lambda_p) +
+           (1 - xi_p) * pi_star[] ^ (-1 / lambda_p);
+    };
+};
+block PRODUCT_AGGREGATION
+{
+    identities
+    {
+        Y_s[] = Y_j[];
+        nu_p[] = (1 - xi_p) * pi_star[] ^ (-((1 + lambda_p) / lambda_p))
+                 + xi_p * (pi[-1] ^ gamma_p / pi[]) ^
+                 (-((1 + lambda_p) / lambda_p)) * nu_p[-1];
+        Y[] * nu_p[] = Y_s[];
+    };
+};
+
+block EQUILIBRIUM
+{
+    identities
+    {
+        K_d[] = K_s[-1];
+        L_d[] = L_s[];
+        B[] = 0;
+        Div[] = Y[] - L_d[] * W[] - K_d[] * r[];
+    };
+};
+block MONETARY_POLICY_AUTHORITY
+{
+    identities
+    {
+        log(R[] / R[ss]) + calibr_pi = rho * log(R[-1] / R[ss]) +
+                                     (1 - rho) * (log(pi_obj[]) +
+                                     r_pi * (log(pi[-1] / pi[ss]) - log(pi_obj[])) +
+                                     r_Y * (log(Y[]/ Y[ss]) )) +
+                                     eta_R[];
+        log(pi_obj[]) = (1 - rho_pi_bar) * log(calibr_pi_obj) +
+                        rho_pi_bar * log(pi_obj[-1]) + eta_pi[];
+    };
+    shocks
+    {
+        eta_R[],    # Interest rate shock
+        eta_pi[];   # Inflation objective shock
+    };
+    calibration
+    {
+        rho = 0.961;                              # Interest rate smoothing parameter
+        r_Y = 0.099;                              # Weight on the output gap
+        r_pi = 1.684;                             # Weight on the inflation gap
+        pi_obj[ss] = 1      -> calibr_pi_obj;     # Calibration of the inflation objective
+        pi[ss] = pi_obj[ss] -> calibr_pi;         # Calibration of the inflation
+        rho_pi_bar = 0.924;                       # AR parameter for the inflation objective
+    };
+};
+block GOVERNMENT
+{
+    identities
+    {
+        G[] = G_bar * epsilon_G[];
+        G[] + B[-1] / pi[] = T[] + B[] / R[];
+    };
+    calibration
+    {
+        G[ss] / Y[ss] = 0.18  -> G_bar; # Calibration of the steady state government expenditures
+    };
+};
+
+block GOVERNMENT_SPENDING_SHOCK
+{
+    identities
+    {
+        log(epsilon_G[]) = rho_G * log(epsilon_G[-1]) + eta_G[];
+    };
+    shocks
+    {
+        eta_G[];    # Government spending shock
+    };
+    calibration
+    {
+        rho_G = 0.949;
+    };
+};
+
+block TECHNOLOGY 
+{
+    identities
+    {
+        Z[] = exp(rho_a * log(Z[-1]) + epsilon_Z[]);
+    };
+    shocks
+    {
+        epsilon_Z[];
+    };
+    calibration
+    {
+        rho_a = 0.823;
+    };
+};

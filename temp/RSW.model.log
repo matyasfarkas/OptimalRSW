@@ -1,0 +1,1259 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.15)  7 FEB 2025 10:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./RSW.model.tex
+(RSW.model.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-09-28>
+! Undefined control sequence.
+l.6 \section
+            {HIGHREGIME}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \section{H
+              IGHREGIME}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no H in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no E in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
+[] 
+ []
+
+! Undefined control sequence.
+l.8 \subsection
+               {Optimisation problem}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \subsection{O
+                 ptimisation problem}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no O in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--9
+[]
+ []
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{align}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.11 &
+      \max_{{p\!i\!H}_{t}, {y\!H}_{t}, {i\!H}_{t}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.11 &\max
+          _{{p\!i\!H}_{t}, {y\!H}_{t}, {i\!H}_{t}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 &\max
+          _{{p\!i\!H}_{t}, {y\!H}_{t}, {i\!H}_{t}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 11.
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.13 &
+      \mathrm{s.t.:}\nonumber\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.14 &
+       {p\!i\!H}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} \left({{p\!H}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.15 &
+       {y\!H}_{t-1} = \log{{e\!t\!a\!g}_{t-1}} + {{p\!H}} {{y\!H}_{t}} - {\s...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \end{align}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.16 \end{align}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (114.81438pt too wide) in paragraph at lines 11--17
+[]$[][] [][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (122.08006pt too wide) in paragraph at lines 11--17
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] +
+
+ []
+
+
+Overfull \hbox (178.09651pt too wide) in paragraph at lines 11--17
+\OML/cmm/m/it/10 ^^L [] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (54.97469pt too wide) in paragraph at lines 11--17
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ^^T^^R[][]
+[][] 
+ []
+
+
+Overfull \hbox (18.94441pt too wide) in paragraph at lines 11--17
+[][] 
+ []
+
+
+Overfull \hbox (38.5806pt too wide) in paragraph at lines 11--17
+[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (51.48125pt too wide) in paragraph at lines 11--17
+[] [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (120.53264pt too wide) in paragraph at lines 11--17
+\OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (111.46103pt too wide) in paragraph at lines 11--17
+\OML/cmm/m/it/10 ^^T[]  [] [] 
+ []
+
+
+Overfull \hbox (37.03244pt too wide) in paragraph at lines 11--17
+[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (49.79996pt too wide) in paragraph at lines 11--17
+[] [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (36.50818pt too wide) in paragraph at lines 11--17
+[][] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (157.30412pt too wide) in paragraph at lines 11--17
+\OML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (130.63345pt too wide) in paragraph at lines 11--17
+[] []  []$ 
+ []
+
+! Undefined control sequence.
+l.19 \subsection
+                {First order conditions}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \subsection{F
+                  irst order conditions}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 19--20
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--21
+[] 
+ []
+
+
+Overfull \hbox (416.78688pt too wide) detected at line 24
+\OMS/cmsy/m/n/10 ^^@[] \OT1/cmr/m/n/10 + [] \OMS/cmsy/m/n/10 ^^@ [][] \OT1/cmr/
+m/n/10 + \OML/cmm/m/it/10 ^^L[][] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L[][]
+ \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 0  []
+ []
+
+
+Overfull \hbox (394.75223pt too wide) detected at line 28
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0  []
+ []
+
+
+Overfull \hbox (160.10861pt too wide) detected at line 32
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0  []
+ []
+
+! Undefined control sequence.
+l.37 \section
+             {LOWREGIME}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \section{L
+               OWREGIME}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no L in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no E in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--38
+[] 
+ []
+
+! Undefined control sequence.
+l.39 \subsection
+                {Optimisation problem}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 \subsection{O
+                  ptimisation problem}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no O in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 39--40
+[]
+ []
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \begin{align}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.42 &
+      \max_{{p\!i\!L}_{t}, {y\!L}_{t}, {i\!L}_{t}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.42 &\max
+          _{{p\!i\!L}_{t}, {y\!L}_{t}, {i\!L}_{t}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 &\max
+          _{{p\!i\!L}_{t}, {y\!L}_{t}, {i\!L}_{t}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.44 &
+      \mathrm{s.t.:}\nonumber\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.45 &
+       {p\!i\!L}_{t-1} = \log{{e\!t\!a\!p\!i}_{t-1}} + {\beta} \left({{p\!L}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.46 &
+       {y\!L}_{t-1} = \log{{e\!t\!a\!g}_{t-1}} + {{p\!L}} {{y\!L}_{t}} - {\s...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.47 \end{align}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.47 \end{align}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (107.69922pt too wide) in paragraph at lines 42--48
+[]$[][] [][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (125.21907pt too wide) in paragraph at lines 42--48
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] +
+
+ []
+
+
+Overfull \hbox (173.45772pt too wide) in paragraph at lines 42--48
+\OML/cmm/m/it/10 ^^L [] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (52.65529pt too wide) in paragraph at lines 42--48
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ^^T^^R[][]
+[][] 
+ []
+
+
+Overfull \hbox (18.94441pt too wide) in paragraph at lines 42--48
+[][] 
+ []
+
+
+Overfull \hbox (36.2612pt too wide) in paragraph at lines 42--48
+[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (51.48125pt too wide) in paragraph at lines 42--48
+[] [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (115.89384pt too wide) in paragraph at lines 42--48
+\OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (107.18324pt too wide) in paragraph at lines 42--48
+\OML/cmm/m/it/10 ^^T[]  [] [] 
+ []
+
+
+Overfull \hbox (34.71304pt too wide) in paragraph at lines 42--48
+[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (49.79996pt too wide) in paragraph at lines 42--48
+[] [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (31.86938pt too wide) in paragraph at lines 42--48
+[][] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (150.34593pt too wide) in paragraph at lines 42--48
+\OML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (128.67506pt too wide) in paragraph at lines 42--48
+[] []  []$ 
+ []
+
+! Undefined control sequence.
+l.50 \subsection
+                {First order conditions}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \subsection{F
+                  irst order conditions}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--51
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 52--52
+[] 
+ []
+
+
+Overfull \hbox (389.21753pt too wide) detected at line 55
+[] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[][] 
+\OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L[][] \OT1/cmr/m/n/10 + []\OML/cmm/m/it
+/10 ^^[[] \OT1/cmr/m/n/10 = 0  []
+ []
+
+
+Overfull \hbox (379.59947pt too wide) detected at line 59
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0  []
+ []
+
+
+Overfull \hbox (153.51143pt too wide) detected at line 63
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0  []
+ []
+
+! Undefined control sequence.
+l.68 \section
+             {EXOG}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \section{E
+               XOG}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no E in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no G in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 68--69
+[] 
+ []
+
+! Undefined control sequence.
+l.70 \subsection
+                {Identities}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 \subsection{I
+                  dentities}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no I in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 70--71
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 72--72
+[] 
+ []
+
+
+Overfull \hbox (92.97751pt too wide) detected at line 74
+[][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[]
+ []
+
+
+Overfull \hbox (95.89758pt too wide) detected at line 77
+[][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[]
+ []
+
+! Undefined control sequence.
+l.82 \section
+             {Equilibrium relationships (after reduction)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 \section{E
+               quilibrium relationships (after reduction)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no E in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 82--83
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 84--84
+[] 
+ []
+
+
+Overfull \hbox (113.53313pt too wide) detected at line 86
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10
+ = 0
+ []
+
+
+Overfull \hbox (116.4532pt too wide) detected at line 89
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10
+ = 0
+ []
+
+
+Overfull \hbox (369.06702pt too wide) detected at line 92
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (356.23366pt too wide) detected at line 95
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (266.16632pt too wide) detected at line 98
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + \OML/cmm/m/it/10 ^^L [] \OT1
+/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (256.88873pt too wide) detected at line 101
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + \OML/cmm/m/it/10 ^^L [] \OT1
+/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (392.38171pt too wide) detected at line 104
+[][] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] \OMS/cmsy/m/n/
+10 ^^@ \OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 5\OML/cmm/m/it/10 ^^T^^R[][][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (386.24313pt too wide) detected at line 107
+[][] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] \OMS/cmsy/m/n/
+10 ^^@ \OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 5\OML/cmm/m/it/10 ^^T^^R[][][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (357.05559pt too wide) detected at line 110
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + [][] \OMS/cmsy/m/n/10 ^^@ \O
+ML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 + [] [] = 0
+ []
+
+
+Overfull \hbox (343.1392pt too wide) detected at line 113
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + [][] \OMS/cmsy/m/n/10 ^^@ \O
+ML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 + [] [] = 0
+ []
+
+
+Overfull \hbox (389.55351pt too wide) detected at line 116
+\OMS/cmsy/m/n/10 ^^@[] \OT1/cmr/m/n/10 + [] \OMS/cmsy/m/n/10 ^^@ [][] \OT1/cmr/
+m/n/10 + \OML/cmm/m/it/10 ^^L[][] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L[][]
+ \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (364.30356pt too wide) detected at line 119
+[] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[][] 
+\OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L[][] \OT1/cmr/m/n/10 + []\OML/cmm/m/it
+/10 ^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (136.23987pt too wide) detected at line 122
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (131.96208pt too wide) detected at line 125
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+! Undefined control sequence.
+l.129 \section
+              {Steady state relationships (after reduction)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 \section{S
+                teady state relationships (after reduction)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no S in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 129--130
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 \begin{equation}
+                      
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 131--131
+[] 
+ []
+
+
+Overfull \hbox (96.38971pt too wide) detected at line 133
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10
+ = 0
+ []
+
+
+Overfull \hbox (100.15526pt too wide) detected at line 136
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10
+ = 0
+ []
+
+
+Overfull \hbox (337.28513pt too wide) detected at line 139
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (324.45177pt too wide) detected at line 142
+[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^L[] [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 ^^T^^R[][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (252.03442pt too wide) detected at line 145
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + \OML/cmm/m/it/10 ^^L [] \OT1
+/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 \end{equation}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1{C:/Users/fm007/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (242.75684pt too wide) detected at line 148
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + \OML/cmm/m/it/10 ^^L [] \OT1
+/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (353.61093pt too wide) detected at line 151
+[][] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] \OMS/cmsy/m/n/
+10 ^^@ \OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 5\OML/cmm/m/it/10 ^^T^^R[][][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (347.47235pt too wide) detected at line 154
+[][] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5 [][] \OMS/cmsy/m/n/
+10 ^^@ \OML/cmm/m/it/10 ^^L [] \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 5\OML/cmm/m/it/10 ^^T^^R[][][] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (349.5543pt too wide) detected at line 157
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + [][] \OMS/cmsy/m/n/10 ^^@ \O
+ML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 + [] [] = 0
+ []
+
+
+Overfull \hbox (335.63792pt too wide) detected at line 160
+\OMS/cmsy/m/n/10 ^^@[][] \OT1/cmr/m/n/10 + [] [] + [][] \OMS/cmsy/m/n/10 ^^@ \O
+ML/cmm/m/it/10 ^^[ [] \OT1/cmr/m/n/10 + [] [] = 0
+ []
+
+
+Overfull \hbox (190.63887pt too wide) detected at line 163
+\OMS/cmsy/m/n/10 ^^@[] \OT1/cmr/m/n/10 + [] \OMS/cmsy/m/n/10 ^^@ [][] \OT1/cmr/
+m/n/10 + []\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (173.94449pt too wide) detected at line 166
+[] \OMS/cmsy/m/n/10 ^^@ [] ^^@ [][] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 ^^[[] 
+\OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (114.80237pt too wide) detected at line 169
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (110.52458pt too wide) detected at line 172
+\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^[[] \OT1/cmr/m/n/10 = 0
+ []
+
+! Undefined control sequence.
+l.179 \section
+              {Parameter settings}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179 \section{P
+                arameter settings}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 179--180
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 \begin{equation}
+                      
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 181--181
+[] 
+ []
+
+
+Overfull \hbox (37.29507pt too wide) detected at line 183
+\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99
+ []
+
+
+Overfull \hbox (46.87267pt too wide) detected at line 186
+\OML/cmm/m/it/10 ^^T \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2465
+ []
+
+
+Overfull \hbox (37.0694pt too wide) detected at line 189
+\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 95
+ []
+
+
+Overfull \hbox (45.4776pt too wide) detected at line 192
+[] \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99
+ []
+
+
+Overfull \hbox (34.54582pt too wide) detected at line 195
+[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (39.70352pt too wide) detected at line 198
+[] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (32.22643pt too wide) detected at line 201
+[] \OT1/cmr/m/n/10 = 2
+ []
+
+
+Overfull \hbox (43.60065pt too wide) detected at line 204
+[] \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99
+ []
+
+
+Overfull \hbox (41.28125pt too wide) detected at line 207
+[] \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99
+ []
+
+
+Overfull \hbox (24.40614pt too wide) detected at line 210
+\OML/cmm/m/it/10 ^^[ \OT1/cmr/m/n/10 = 1
+ []
+
+
+Overfull \hbox (23.30547pt too wide) detected at line 213
+\OML/cmm/m/it/10 ^^R \OT1/cmr/m/n/10 = 6
+ []
+
+)
+! Emergency stop.
+<*> ./RSW.model.tex
+                   
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 24 strings out of 475385
+ 509 string characters out of 2776907
+ 375893 words of memory out of 3000000
+ 21503 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 28i,6n,24p,320b,111s stack positions out of 10000i,1000n,20000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

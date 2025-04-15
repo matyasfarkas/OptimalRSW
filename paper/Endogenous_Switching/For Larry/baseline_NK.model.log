@@ -1,0 +1,180 @@
+Generated on 2025-04-15 00:13:35 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: baseline_NK
+
+2 WARNINGS, see bottom of this logfile
+
+
+Variables selected for reduction:
+    pi[], K_d[], tc_j[], L_d[]
+
+Block: CONSUMER
+ Definitions:
+    u[] = (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta)
+ Controls:
+    C[], K_s[], I[], B[], L_s[]
+ Objective:
+    U[] = beta * E[][U[1]] + (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta)
+ Constraints:
+    -C[] + Div[] - I[] - T[] + B[-1] * pi[]^-1 + K_s[-1] * r[] - B[] * R[]^-1 + L_s[] * W[] = 0    (lambda[])
+    I[] - K_s[] + K_s[-1] * (1 - delta) = 0    (q[])
+ Identities:
+    -Q[] + lambda[]^-1 * q[] = 0
+ First order conditions:
+    -lambda[] + mu * C[]^(-1 + mu) * (1 - L_s[])^(1 - mu) * (C[]^mu * (1 - L_s[])^(1 - mu))^(-eta) = 0    (C[])
+    -q[] + beta * ((1 - delta) * E[][q[1]] + E[][lambda[1] * r[1]]) = 0    (K_s[])
+    -lambda[] + q[] = 0    (I[])
+    beta * E[][lambda[1] * pi[1]^-1] - lambda[] * R[]^-1 = 0    (B[])
+    lambda[] * W[] + (-1 + mu) * C[]^mu * (1 - L_s[])^(-mu) * (C[]^mu * (1 - L_s[])^(1 - mu))^(-eta) = 0    (L_s[])
+
+Block: FIRM
+ Controls:
+    K_d[], L_d[]
+ Objective:
+    tc_j[] = -r[] * K_d[] - L_d[] * W[]
+ Constraints:
+    -Y_j[] + Z[] * K_d[]^alpha * L_d[]^(1 - alpha) = 0    (mc[])
+ First order conditions:
+    -r[] + alpha * mc[] * Z[] * K_d[]^(-1 + alpha) * L_d[]^(1 - alpha) = 0    (K_d[])
+    -W[] + mc[] * Z[] * (1 - alpha) * K_d[]^alpha * L_d[]^(-alpha) = 0    (L_d[])
+
+Block: PRICE_SETTING_PROBLEM
+ Identities:
+    eta_p[] - g_1[] + g_2[] * (1 + lambda_p) = 0
+    -g_1[] + lambda[] * pi_star[] * Y[] + beta * xi_p * pi_star[] * E[][g_1[1] * pi_star[1]^-1 * (pi[1]^-1 * pi[]^gamma_p)^(-lambda_p^-1)] = 0
+    -g_2[] + beta * xi_p * E[][g_2[1] * (pi[1]^-1 * pi[]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p))] + lambda[] * mc[] * Y[] = 0
+
+Block: PRICE_EVOLUTION
+ Identities:
+    -1 + xi_p * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1) + (1 - xi_p) * pi_star[]^(-lambda_p^-1) = 0
+
+Block: PRODUCT_AGGREGATION
+ Identities:
+    Y_j[] - Y_s[] = 0
+    -nu_p[] + (1 - xi_p) * pi_star[]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[-1] * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
+    Y_s[] - nu_p[] * Y[] = 0
+
+Block: EQUILIBRIUM
+ Identities:
+    K_s[-1] - K_d[] = 0
+    -L_d[] + L_s[] = 0
+    -B[] = 0
+    -Div[] + Y[] - r[] * K_d[] - L_d[] * W[] = 0
+
+Block: MONETARY_POLICY_AUTHORITY
+ Identities:
+    -calibr_pi + eta_R[] - log(R[ss]^-1 * R[]) + rho * log(R[ss]^-1 * R[-1]) + (1 - rho) * (log(pi_obj[]) + r_pi * (-log(pi_obj[]) + log(pi[ss]^-1 * pi[-1])) + r_Y * log(Y[ss]^-1 * Y[])) = 0
+    eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+
+Block: GOVERNMENT
+ Identities:
+    -G[] + G_bar * epsilon_G[] = 0
+    -G[] + T[] - B[-1] * pi[]^-1 + B[] * R[]^-1 = 0
+
+Block: GOVERNMENT_SPENDING_SHOCK
+ Identities:
+    eta_G[] - log(epsilon_G[]) + rho_G * log(epsilon_G[-1]) = 0
+
+Block: TECHNOLOGY
+ Identities:
+    -Z[] + exp(epsilon_Z[] + rho_a * log(Z[-1])) = 0
+
+Variables (27):
+    epsilon_G[], g_1[], g_2[], lambda[], mc[], nu_p[], pi[], pi_star[], pi_obj[], q[], r[], B[], C[], Div[], G[], I[], K_s[], L_s[], Q[], R[], T[], U[], W[], Y[], Y_j[], Y_s[], Z[]
+
+Shocks (5):
+    epsilon_Z[], eta_p[], eta_R[], eta_pi[], eta_G[]
+
+Parameters (17):
+    alpha, beta, calibr_pi, calibr_pi_obj, delta, eta, gamma_p, lambda_p, mu, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p, G_bar
+
+Free parameters (14):
+    alpha, beta, delta, eta, gamma_p, lambda_p, mu, r_pi, r_Y, rho, rho_pi_bar, rho_G, rho_a, xi_p
+
+Calibrated parameters (3):
+    calibr_pi, calibr_pi_obj, G_bar
+
+Equations (27):
+ (1)  -B[] = 0
+ (2)  -lambda[] + q[] = 0
+ (3)  -lambda[] + mu * C[]^(-1 + mu) * (1 - L_s[])^(1 - mu) * (C[]^mu * (1 - L_s[])^(1 - mu))^(-eta) = 0
+ (4)  -q[] + beta * ((1 - delta) * E[][q[1]] + E[][lambda[1] * r[1]]) = 0
+ (5)  -r[] + alpha * mc[] * Z[] * K_s[-1]^(-1 + alpha) * L_s[]^(1 - alpha) = 0
+ (6)  -G[] + G_bar * epsilon_G[] = 0
+ (7)  -Q[] + lambda[]^-1 * q[] = 0
+ (8)  -W[] + mc[] * Z[] * (1 - alpha) * K_s[-1]^alpha * L_s[]^(-alpha) = 0
+ (9)  -Y_j[] + Z[] * K_s[-1]^alpha * L_s[]^(1 - alpha) = 0
+ (10)  Y_j[] - Y_s[] = 0
+ (11)  Y_s[] - nu_p[] * Y[] = 0
+ (12)  -Z[] + exp(epsilon_Z[] + rho_a * log(Z[-1])) = 0
+ (13)  beta * E[][lambda[1] * pi[1]^-1] - lambda[] * R[]^-1 = 0
+ (14)  lambda[] * W[] + (-1 + mu) * C[]^mu * (1 - L_s[])^(-mu) * (C[]^mu * (1 - L_s[])^(1 - mu))^(-eta) = 0
+ (15)  -1 + xi_p * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1) + (1 - xi_p) * pi_star[]^(-lambda_p^-1) = 0
+ (16)  eta_p[] - g_1[] + g_2[] * (1 + lambda_p) = 0
+ (17)  eta_G[] - log(epsilon_G[]) + rho_G * log(epsilon_G[-1]) = 0
+ (18)  -g_1[] + lambda[] * pi_star[] * Y[] + beta * xi_p * pi_star[] * E[][g_1[1] * pi_star[1]^-1 * (pi[1]^-1 * pi[]^gamma_p)^(-lambda_p^-1)] = 0
+ (19)  -g_2[] + beta * xi_p * E[][g_2[1] * (pi[1]^-1 * pi[]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p))] + lambda[] * mc[] * Y[] = 0
+ (20)  -nu_p[] + (1 - xi_p) * pi_star[]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[-1] * (pi[]^-1 * pi[-1]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
+ (21)  I[] - K_s[] + K_s[-1] * (1 - delta) = 0
+ (22)  U[] - beta * E[][U[1]] - (1 - eta)^-1 * (C[]^mu * (1 - L_s[])^(1 - mu))^(1 - eta) = 0
+ (23)  eta_pi[] - log(pi_obj[]) + rho_pi_bar * log(pi_obj[-1]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+ (24)  -Div[] + Y[] - K_s[-1] * r[] - L_s[] * W[] = 0
+ (25)  -G[] + T[] - B[-1] * pi[]^-1 + B[] * R[]^-1 = 0
+ (26)  -calibr_pi + eta_R[] - log(R[ss]^-1 * R[]) + rho * log(R[ss]^-1 * R[-1]) + (1 - rho) * (log(pi_obj[]) + r_pi * (-log(pi_obj[]) + log(pi[ss]^-1 * pi[-1])) + r_Y * log(Y[ss]^-1 * Y[])) = 0
+ (27)  -C[] + Div[] - I[] - T[] + B[-1] * pi[]^-1 + K_s[-1] * r[] - B[] * R[]^-1 + L_s[] * W[] = 0
+
+Steady state equations (27):
+ (1)  -B[ss] = 0
+ (2)  -lambda[ss] + q[ss] = 0
+ (3)  -lambda[ss] + mu * C[ss]^(-1 + mu) * (1 - L_s[ss])^(1 - mu) * (C[ss]^mu * (1 - L_s[ss])^(1 - mu))^(-eta) = 0
+ (4)  -q[ss] + beta * (lambda[ss] * r[ss] + q[ss] * (1 - delta)) = 0
+ (5)  -r[ss] + alpha * mc[ss] * Z[ss] * K_s[ss]^(-1 + alpha) * L_s[ss]^(1 - alpha) = 0
+ (6)  -G[ss] + G_bar * epsilon_G[ss] = 0
+ (7)  -Q[ss] + lambda[ss]^-1 * q[ss] = 0
+ (8)  -W[ss] + mc[ss] * Z[ss] * (1 - alpha) * K_s[ss]^alpha * L_s[ss]^(-alpha) = 0
+ (9)  -Y_j[ss] + Z[ss] * K_s[ss]^alpha * L_s[ss]^(1 - alpha) = 0
+ (10)  Y_j[ss] - Y_s[ss] = 0
+ (11)  Y_s[ss] - nu_p[ss] * Y[ss] = 0
+ (12)  -Z[ss] + exp(rho_a * log(Z[ss])) = 0
+ (13)  -lambda[ss] * R[ss]^-1 + beta * lambda[ss] * pi[ss]^-1 = 0
+ (14)  lambda[ss] * W[ss] + (-1 + mu) * C[ss]^mu * (1 - L_s[ss])^(-mu) * (C[ss]^mu * (1 - L_s[ss])^(1 - mu))^(-eta) = 0
+ (15)  -1 + xi_p * (pi[ss]^-1 * pi[ss]^gamma_p)^(-lambda_p^-1) + (1 - xi_p) * pi_star[ss]^(-lambda_p^-1) = 0
+ (16)  -g_1[ss] + g_2[ss] * (1 + lambda_p) = 0
+ (17)  -log(epsilon_G[ss]) + rho_G * log(epsilon_G[ss]) = 0
+ (18)  -g_1[ss] + lambda[ss] * pi_star[ss] * Y[ss] + beta * xi_p * g_1[ss] * (pi[ss]^-1 * pi[ss]^gamma_p)^(-lambda_p^-1) = 0
+ (19)  -g_2[ss] + lambda[ss] * mc[ss] * Y[ss] + beta * xi_p * g_2[ss] * (pi[ss]^-1 * pi[ss]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
+ (20)  -nu_p[ss] + (1 - xi_p) * pi_star[ss]^(-lambda_p^-1 * (1 + lambda_p)) + xi_p * nu_p[ss] * (pi[ss]^-1 * pi[ss]^gamma_p)^(-lambda_p^-1 * (1 + lambda_p)) = 0
+ (21)  I[ss] - K_s[ss] + K_s[ss] * (1 - delta) = 0
+ (22)  U[ss] - beta * U[ss] - (1 - eta)^-1 * (C[ss]^mu * (1 - L_s[ss])^(1 - mu))^(1 - eta) = 0
+ (23)  -log(pi_obj[ss]) + rho_pi_bar * log(pi_obj[ss]) + log(calibr_pi_obj) * (1 - rho_pi_bar) = 0
+ (24)  -Div[ss] + Y[ss] - r[ss] * K_s[ss] - L_s[ss] * W[ss] = 0
+ (25)  -G[ss] + T[ss] - pi[ss]^-1 * B[ss] + B[ss] * R[ss]^-1 = 0
+ (26)  -calibr_pi + (1 - rho) * (log(pi_obj[ss]) - r_pi * log(pi_obj[ss])) = 0
+ (27)  -C[ss] + Div[ss] - I[ss] - T[ss] + pi[ss]^-1 * B[ss] + r[ss] * K_s[ss] - B[ss] * R[ss]^-1 + L_s[ss] * W[ss] = 0
+
+Calibrating equations (3):
+ (1)  -1 + pi_obj[ss] = 0
+ (2)  -0.18 + G[ss] * Y[ss]^-1 = 0
+ (3)  pi[ss] - pi_obj[ss] = 0
+
+Parameter settings (14):
+ (1)  alpha = 0.3
+ (2)  beta = 0.99
+ (3)  delta = 0.025
+ (4)  eta = 2
+ (5)  gamma_p = 0.469
+ (6)  lambda_p = 0.5
+ (7)  mu = 0.3
+ (8)  r_pi = 1.684
+ (9)  r_Y = 0.099
+ (10)  rho = 0.961
+ (11)  rho_pi_bar = 0.924
+ (12)  rho_G = 0.949
+ (13)  rho_a = 0.823
+ (14)  xi_p = 0.908
+
+
+2 WARNINGS
+(gEcon model warning 1): variable "pi[]" selected for reduction appears in calibrating equation "pi[ss] - pi_obj[ss] = 0"
+(gEcon model warning 2): the following variable(s) selected for reduction could not be symbolically reduced in the model: "pi[]"

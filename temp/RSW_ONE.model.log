@@ -1,0 +1,30 @@
+Generated on 2025-02-07 10:57:58 by gEcon ver. 1.2.1 (2023-01-18)
+http://gecon.r-forge.r-project.org/
+
+Model name: RSW_ONE
+
+1 ERROR, see bottom of this logfile
+
+
+Block: HIGHREGIME
+ Definitions:
+    uH[] = -0.5 * (pitH - pitCB + piH[])^2 - 0.5 * kappa * theta^-1 * yH[]^2
+    uL[] = -0.5 * (-pitCB + pitL + piL[])^2 - 0.5 * kappa * theta^-1 * yL[]^2
+ Controls:
+    piH[], yH[], iH[], piL[], yL[], iL[], L[]
+ Objective:
+    UH[] = -0.5 * (pitH - pitCB + piH[])^2 + beta * (pH * E[][UH[1]] + (1 - pH) * E[][UL[1]]) - 0.5 * kappa * theta^-1 * yH[]^2    (lambda__HIGHREGIME_UH[])
+ Constraints:
+    -piH[-1] + log(etapi[-1]) + beta * (pH * piH[] + piL[] * (1 - pH)) + kappa * yH[-1] = 0    (lambda__HIGHREGIME_1[])
+    -yH[-1] + log(etag[-1]) + pH * yH[] - sigma * (iH[-1] - pH * piH[] - piL[] * (1 - pH)) + yL[] * (1 - pH) = 0    (lambda__HIGHREGIME_2[])
+    -piL[-1] + log(etapi[-1]) + beta * (pL * piL[] + piH[] * (1 - pL)) + kappa * yL[-1] = 0    (lambda__HIGHREGIME_3[])
+    -yL[-1] + log(etag[-1]) + pL * yL[] - sigma * (iL[-1] - pL * piL[] - piH[] * (1 - pL)) + yH[] * (1 - pL) = 0    (lambda__HIGHREGIME_4[])
+
+Block: EXOG
+ Identities:
+    -etapi[] + exp(epsilon_pi[] + phi * log(etapi[-1])) = 0
+    -etag[] + exp(epsilon_g[] + phig * log(etag[-1])) = 0
+
+
+1 ERROR
+(gEcon model error 1): control variable "L[]" in HIGHREGIME's problem does not appear in objective nor in any constraint; error near line 30

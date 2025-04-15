@@ -1,0 +1,474 @@
+% Generated on 2025-04-15 00:08:20 by gEcon ver. 1.2.1 (2023-01-18)
+% http://gecon.r-forge.r-project.org/
+
+% Model name: NK_RS
+
+\section{CONSUMER}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{C_{t}, K^{\mathrm{s}}_{t}, I_{t}, B_{t}, L^{\mathrm{s}}_{t}
+} U_{t} = {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} + \left(1 - \eta\right)^{-1} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{1 - \eta}}\\
+&\mathrm{s.t.:}\nonumber\\
+& C_{t} + I_{t} + {B_{t}} {R_{t}}^{-1} = {D\!i\!v}_{t} - T_{t} + {B_{t-1}} {\pi_{t}}^{-1} + {K^{\mathrm{s}}_{t-1}} {r_{t}} + {L^{\mathrm{s}}_{t}} {W_{t}} \quad \left(\lambda_{t}\right)\\
+& K^{\mathrm{s}}_{t} = I_{t} + {K^{\mathrm{s}}_{t-1}} \left(1 - \delta\right) \quad \left(q_{t}\right)
+\end{align}
+
+
+\subsection{Identities}
+
+\begin{equation}
+Q_{t} = {\lambda_{t}}^{-1} {q_{t}}
+\end{equation}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+-\lambda_{t} + {\mu} {{C_{t}}^{-1 + \mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+ \quad \left(C_{t}\right)
+\end{equation}
+\begin{equation}
+-q_{t} + {\beta} \left(\left(1 - \delta\right) {\mathrm{E}_{t}\left[q_{t+1}\right]} + \mathrm{E}_{t}\left[{\lambda_{t+1}} {r_{t+1}}\right]\right) = 0
+ \quad \left(K^{\mathrm{s}}_{t}\right)
+\end{equation}
+\begin{equation}
+-\lambda_{t} + q_{t} = 0
+ \quad \left(I_{t}\right)
+\end{equation}
+\begin{equation}
+{\beta} {\mathrm{E}_{t}\left[{\lambda_{t+1}} {\pi_{t+1}}^{-1}\right]} - {\lambda_{t}} {R_{t}}^{-1} = 0
+ \quad \left(B_{t}\right)
+\end{equation}
+\begin{equation}
+{\lambda_{t}} {W_{t}} + \left(-1 + \mu\right) {{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{-\mu}} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+ \quad \left(L^{\mathrm{s}}_{t}\right)
+\end{equation}
+
+
+
+
+\section{FIRM}
+
+\subsection{Optimisation problem}
+
+\begin{align}
+&\max_{K^{\mathrm{d}}_{t}, L^{\mathrm{d}}_{t}
+} {t\!c}^{\mathrm{j}}_{t} = -{r_{t}} {K^{\mathrm{d}}_{t}} - {L^{\mathrm{d}}_{t}} {W_{t}}\\
+&\mathrm{s.t.:}\nonumber\\
+& Y^{\mathrm{j}}_{t} = {Z_{t}} {{K^{\mathrm{d}}_{t}}^{\alpha}} {{L^{\mathrm{d}}_{t}}^{1 - \alpha}} \quad \left({m\!c}_{t}\right)
+\end{align}
+
+
+\subsection{First order conditions}
+
+\begin{equation}
+-r_{t} + {\alpha} {{m\!c}_{t}} {Z_{t}} {{K^{\mathrm{d}}_{t}}^{-1 + \alpha}} {{L^{\mathrm{d}}_{t}}^{1 - \alpha}} = 0
+ \quad \left(K^{\mathrm{d}}_{t}\right)
+\end{equation}
+\begin{equation}
+-W_{t} + {{m\!c}_{t}} {Z_{t}} \left(1 - \alpha\right) {{K^{\mathrm{d}}_{t}}^{\alpha}} {{L^{\mathrm{d}}_{t}}^{-\alpha}} = 0
+ \quad \left(L^{\mathrm{d}}_{t}\right)
+\end{equation}
+
+
+
+
+\section{PRICE SETTING PROBLEM}
+
+\subsection{Identities}
+
+\begin{equation}
+g^{\mathrm{1}}_{t} = \eta^{\mathrm{p}}_{t} + {g^{\mathrm{2}}_{t}} \left(1 + \lambda^{\mathrm{p}}\right)
+\end{equation}
+\begin{equation}
+g^{\mathrm{1}}_{t} = {\lambda_{t}} {\pi^{\star}_{t}} {Y_{t}} + {\beta} {\xi^{\mathrm{p}}} {\pi^{\star}_{t}} {\mathrm{E}_{t}\left[{g^{\mathrm{1}}_{t+1}} {\pi^{\star}_{t+1}}^{-1} {\left({\pi_{t+1}}^{-1} {{\pi_{t}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}}\right]}
+\end{equation}
+\begin{equation}
+g^{\mathrm{2}}_{t} = {\beta} {\xi^{\mathrm{p}}} {\mathrm{E}_{t}\left[{g^{\mathrm{2}}_{t+1}} {\left({\pi_{t+1}}^{-1} {{\pi_{t}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}}\right]} + {\lambda_{t}} {{m\!c}_{t}} {Y_{t}}
+\end{equation}
+
+
+
+
+\section{PRICE EVOLUTION}
+
+\subsection{Identities}
+
+\begin{equation}
+1 = {\xi^{\mathrm{p}}} {\left({\pi_{t}}^{-1} {{\pi_{t-1}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}} + \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_{t}}^{-{\lambda^{\mathrm{p}}}^{-1}}}
+\end{equation}
+
+
+
+
+\section{PRODUCT AGGREGATION}
+
+\subsection{Identities}
+
+\begin{equation}
+Y^{\mathrm{s}}_{t} = Y^{\mathrm{j}}_{t}
+\end{equation}
+\begin{equation}
+\nu^{\mathrm{p}}_{t} = \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_{t}}^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} + {\xi^{\mathrm{p}}} {\nu^{\mathrm{p}}_{t-1}} {\left({\pi_{t}}^{-1} {{\pi_{t-1}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}}
+\end{equation}
+\begin{equation}
+{\nu^{\mathrm{p}}_{t}} {Y_{t}} = Y^{\mathrm{s}}_{t}
+\end{equation}
+
+
+
+
+\section{EQUILIBRIUM}
+
+\subsection{Identities}
+
+\begin{equation}
+K^{\mathrm{d}}_{t} = K^{\mathrm{s}}_{t-1}
+\end{equation}
+\begin{equation}
+L^{\mathrm{d}}_{t} = L^{\mathrm{s}}_{t}
+\end{equation}
+\begin{equation}
+B_{t} = 0
+\end{equation}
+\begin{equation}
+{D\!i\!v}_{t} = Y_{t} - {L^{\mathrm{d}}_{t}} {W_{t}} - {r_{t}} {K^{\mathrm{d}}_{t}}
+\end{equation}
+
+
+
+
+\section{MONETARY POLICY AUTHORITY}
+
+\subsection{Identities}
+
+\begin{equation}
+{c\!a\!l\!i\!b\!r}^{\pi} + \log\left({R_\mathrm{ss}}^{-1} {R_{t}}\right) = \eta^{\mathrm{R}}_{t} + {\rho} {\log\left({R_\mathrm{ss}}^{-1} {R_{t-1}}\right)} + \left(1 - \rho\right) \left(\log{\pi^{\mathrm{obj}}_{t}} + {r^{\pi}} \left(-\log{\pi^{\mathrm{obj}}_{t}} + \log\left({\pi_\mathrm{ss}}^{-1} {\pi_{t-1}}\right)\right) + {r^{\mathrm{Y}}} {\log\left({Y_\mathrm{ss}}^{-1} {Y_{t}}\right)}\right)
+\end{equation}
+\begin{equation}
+\log{\pi^{\mathrm{obj}}_{t}} = \eta^{\pi}_{t} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right)
+\end{equation}
+
+
+
+
+\section{ENDOGENOUS REGIME PROB}
+
+\subsection{Identities}
+
+\begin{equation}
+\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}} = -\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + \log{\pi_{t}}
+\end{equation}
+\begin{equation}
+{p\!L}_{t} = \left(1 + e^{{p\!L\!s\!s} - {\kappa} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}}}}\right)^{-1}
+\end{equation}
+\begin{equation}
+{p\!H}_{t} = 1 - {p\!L}_{t}
+\end{equation}
+\begin{equation}
+\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} = {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} {\log{\pi_{t}}}
+\end{equation}
+
+
+
+
+\section{GOVERNMENT}
+
+\subsection{Identities}
+
+\begin{equation}
+G_{t} = {G^{\mathrm{bar}}} {\epsilon^{\mathrm{G}}_{t}}
+\end{equation}
+\begin{equation}
+G_{t} + {B_{t-1}} {\pi_{t}}^{-1} = T_{t} + {B_{t}} {R_{t}}^{-1}
+\end{equation}
+
+
+
+
+\section{GOVERNMENT SPENDING SHOCK}
+
+\subsection{Identities}
+
+\begin{equation}
+\log{\epsilon^{\mathrm{G}}_{t}} = \eta^{\mathrm{G}}_{t} + {\rho^{\mathrm{G}}} {\log{\epsilon^{\mathrm{G}}_{t-1}}}
+\end{equation}
+
+
+
+
+\section{TECHNOLOGY}
+
+\subsection{Identities}
+
+\begin{equation}
+Z_{t} = e^{\epsilon^{\mathrm{Z}}_{t} + {\rho^{\mathrm{a}}} {\log{Z_{t-1}}}}
+\end{equation}
+
+
+
+
+\section{Equilibrium relationships (after reduction)}
+
+\begin{equation}
+-B_{t} = 0
+\end{equation}
+\begin{equation}
+-\lambda_{t} + q_{t} = 0
+\end{equation}
+\begin{equation}
+-\lambda_{t} + {\mu} {{C_{t}}^{-1 + \mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+\end{equation}
+\begin{equation}
+-{p\!L}_{t} + \left(1 + e^{{p\!L\!s\!s} - {\kappa} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}}}}\right)^{-1} = 0
+\end{equation}
+\begin{equation}
+-q_{t} + {\beta} \left(\left(1 - \delta\right) {\mathrm{E}_{t}\left[q_{t+1}\right]} + \mathrm{E}_{t}\left[{\lambda_{t+1}} {r_{t+1}}\right]\right) = 0
+\end{equation}
+\begin{equation}
+-r_{t} + {\alpha} {{m\!c}_{t}} {Z_{t}} {{K^{\mathrm{s}}_{t-1}}^{-1 + \alpha}} {{L^{\mathrm{s}}_{t}}^{1 - \alpha}} = 0
+\end{equation}
+\begin{equation}
+-G_{t} + {G^{\mathrm{bar}}} {\epsilon^{\mathrm{G}}_{t}} = 0
+\end{equation}
+\begin{equation}
+-Q_{t} + {\lambda_{t}}^{-1} {q_{t}} = 0
+\end{equation}
+\begin{equation}
+-W_{t} + {{m\!c}_{t}} {Z_{t}} \left(1 - \alpha\right) {{K^{\mathrm{s}}_{t-1}}^{\alpha}} {{L^{\mathrm{s}}_{t}}^{-\alpha}} = 0
+\end{equation}
+\begin{equation}
+-Y^{\mathrm{j}}_{t} + {Z_{t}} {{K^{\mathrm{s}}_{t-1}}^{\alpha}} {{L^{\mathrm{s}}_{t}}^{1 - \alpha}} = 0
+\end{equation}
+\begin{equation}
+Y^{\mathrm{j}}_{t} - Y^{\mathrm{s}}_{t} = 0
+\end{equation}
+\begin{equation}
+Y^{\mathrm{s}}_{t} - {\nu^{\mathrm{p}}_{t}} {Y_{t}} = 0
+\end{equation}
+\begin{equation}
+-Z_{t} + e^{\epsilon^{\mathrm{Z}}_{t} + {\rho^{\mathrm{a}}} {\log{Z_{t-1}}}} = 0
+\end{equation}
+\begin{equation}
+{\beta} {\mathrm{E}_{t}\left[{\lambda_{t+1}} {\pi_{t+1}}^{-1}\right]} - {\lambda_{t}} {R_{t}}^{-1} = 0
+\end{equation}
+\begin{equation}
+{\lambda_{t}} {W_{t}} + \left(-1 + \mu\right) {{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{-\mu}} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+\end{equation}
+\begin{equation}
+-1 + {\xi^{\mathrm{p}}} {\left({\pi_{t}}^{-1} {{\pi_{t-1}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}} + \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_{t}}^{-{\lambda^{\mathrm{p}}}^{-1}}} = 0
+\end{equation}
+\begin{equation}
+1 - {p\!H}_{t} - {p\!L}_{t} = 0
+\end{equation}
+\begin{equation}
+\eta^{\mathrm{p}}_{t} - g^{\mathrm{1}}_{t} + {g^{\mathrm{2}}_{t}} \left(1 + \lambda^{\mathrm{p}}\right) = 0
+\end{equation}
+\begin{equation}
+\eta^{\mathrm{G}}_{t} - \log{\epsilon^{\mathrm{G}}_{t}} + {\rho^{\mathrm{G}}} {\log{\epsilon^{\mathrm{G}}_{t-1}}} = 0
+\end{equation}
+\begin{equation}
+-g^{\mathrm{1}}_{t} + {\lambda_{t}} {\pi^{\star}_{t}} {Y_{t}} + {\beta} {\xi^{\mathrm{p}}} {\pi^{\star}_{t}} {\mathrm{E}_{t}\left[{g^{\mathrm{1}}_{t+1}} {\pi^{\star}_{t+1}}^{-1} {\left({\pi_{t+1}}^{-1} {{\pi_{t}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}}\right]} = 0
+\end{equation}
+\begin{equation}
+-g^{\mathrm{2}}_{t} + {\beta} {\xi^{\mathrm{p}}} {\mathrm{E}_{t}\left[{g^{\mathrm{2}}_{t+1}} {\left({\pi_{t+1}}^{-1} {{\pi_{t}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}}\right]} + {\lambda_{t}} {{m\!c}_{t}} {Y_{t}} = 0
+\end{equation}
+\begin{equation}
+-\nu^{\mathrm{p}}_{t} + \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_{t}}^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} + {\xi^{\mathrm{p}}} {\nu^{\mathrm{p}}_{t-1}} {\left({\pi_{t}}^{-1} {{\pi_{t-1}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} = 0
+\end{equation}
+\begin{equation}
+I_{t} - K^{\mathrm{s}}_{t} + {K^{\mathrm{s}}_{t-1}} \left(1 - \delta\right) = 0
+\end{equation}
+\begin{equation}
+U_{t} - {\beta} {\mathrm{E}_{t}\left[U_{t+1}\right]} - \left(1 - \eta\right)^{-1} {\left({{C_{t}}^{\mu}} {\left(1 - L^{\mathrm{s}}_{t}\right)^{1 - \mu}}\right)^{1 - \eta}} = 0
+\end{equation}
+\begin{equation}
+-\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_{t}} - \log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + \log{\pi_{t}} = 0
+\end{equation}
+\begin{equation}
+-\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}} + {{p\!H}_{t}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_{t}} {\log{\pi_{t}}} = 0
+\end{equation}
+\begin{equation}
+\eta^{\pi}_{t} - \log{\pi^{\mathrm{obj}}_{t}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_{t-1}}} + {\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_{t}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
+\end{equation}
+\begin{equation}
+-{D\!i\!v}_{t} + Y_{t} - {K^{\mathrm{s}}_{t-1}} {r_{t}} - {L^{\mathrm{s}}_{t}} {W_{t}} = 0
+\end{equation}
+\begin{equation}
+-G_{t} + T_{t} - {B_{t-1}} {\pi_{t}}^{-1} + {B_{t}} {R_{t}}^{-1} = 0
+\end{equation}
+\begin{equation}
+-{c\!a\!l\!i\!b\!r}^{\pi} + \eta^{\mathrm{R}}_{t} - \log\left({R_\mathrm{ss}}^{-1} {R_{t}}\right) + {\rho} {\log\left({R_\mathrm{ss}}^{-1} {R_{t-1}}\right)} + \left(1 - \rho\right) \left(\log{\pi^{\mathrm{obj}}_{t}} + {r^{\pi}} \left(-\log{\pi^{\mathrm{obj}}_{t}} + \log\left({\pi_\mathrm{ss}}^{-1} {\pi_{t-1}}\right)\right) + {r^{\mathrm{Y}}} {\log\left({Y_\mathrm{ss}}^{-1} {Y_{t}}\right)}\right) = 0
+\end{equation}
+\begin{equation}
+-C_{t} + {D\!i\!v}_{t} - I_{t} - T_{t} + {B_{t-1}} {\pi_{t}}^{-1} + {K^{\mathrm{s}}_{t-1}} {r_{t}} - {B_{t}} {R_{t}}^{-1} + {L^{\mathrm{s}}_{t}} {W_{t}} = 0
+\end{equation}
+
+
+
+\section{Steady state relationships (after reduction)}
+
+\begin{equation}
+-B_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+-\lambda_\mathrm{ss} + q_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+-\lambda_\mathrm{ss} + {\mu} {{C_\mathrm{ss}}^{-1 + \mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{1 - \mu}} {\left({{C_\mathrm{ss}}^{\mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+\end{equation}
+\begin{equation}
+-{p\!L}_\mathrm{ss} + \left(1 + e^{{p\!L\!s\!s} - {\kappa} {\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_\mathrm{ss}}}}\right)^{-1} = 0
+\end{equation}
+\begin{equation}
+-q_\mathrm{ss} + {\beta} \left({\lambda_\mathrm{ss}} {r_\mathrm{ss}} + {q_\mathrm{ss}} \left(1 - \delta\right)\right) = 0
+\end{equation}
+\begin{equation}
+-r_\mathrm{ss} + {\alpha} {{m\!c}_\mathrm{ss}} {Z_\mathrm{ss}} {{K^{\mathrm{s}}_\mathrm{ss}}^{-1 + \alpha}} {{L^{\mathrm{s}}_\mathrm{ss}}^{1 - \alpha}} = 0
+\end{equation}
+\begin{equation}
+-G_\mathrm{ss} + {G^{\mathrm{bar}}} {\epsilon^{\mathrm{G}}_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-Q_\mathrm{ss} + {\lambda_\mathrm{ss}}^{-1} {q_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-W_\mathrm{ss} + {{m\!c}_\mathrm{ss}} {Z_\mathrm{ss}} \left(1 - \alpha\right) {{K^{\mathrm{s}}_\mathrm{ss}}^{\alpha}} {{L^{\mathrm{s}}_\mathrm{ss}}^{-\alpha}} = 0
+\end{equation}
+\begin{equation}
+-Y^{\mathrm{j}}_\mathrm{ss} + {Z_\mathrm{ss}} {{K^{\mathrm{s}}_\mathrm{ss}}^{\alpha}} {{L^{\mathrm{s}}_\mathrm{ss}}^{1 - \alpha}} = 0
+\end{equation}
+\begin{equation}
+Y^{\mathrm{j}}_\mathrm{ss} - Y^{\mathrm{s}}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+Y^{\mathrm{s}}_\mathrm{ss} - {\nu^{\mathrm{p}}_\mathrm{ss}} {Y_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-Z_\mathrm{ss} + e^{{\rho^{\mathrm{a}}} {\log{Z_\mathrm{ss}}}} = 0
+\end{equation}
+\begin{equation}
+-{\lambda_\mathrm{ss}} {R_\mathrm{ss}}^{-1} + {\beta} {\lambda_\mathrm{ss}} {\pi_\mathrm{ss}}^{-1} = 0
+\end{equation}
+\begin{equation}
+{\lambda_\mathrm{ss}} {W_\mathrm{ss}} + \left(-1 + \mu\right) {{C_\mathrm{ss}}^{\mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{-\mu}} {\left({{C_\mathrm{ss}}^{\mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{1 - \mu}}\right)^{-\eta}} = 0
+\end{equation}
+\begin{equation}
+-1 + {\xi^{\mathrm{p}}} {\left({\pi_\mathrm{ss}}^{-1} {{\pi_\mathrm{ss}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}} + \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_\mathrm{ss}}^{-{\lambda^{\mathrm{p}}}^{-1}}} = 0
+\end{equation}
+\begin{equation}
+1 - {p\!H}_\mathrm{ss} - {p\!L}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+-g^{\mathrm{1}}_\mathrm{ss} + {g^{\mathrm{2}}_\mathrm{ss}} \left(1 + \lambda^{\mathrm{p}}\right) = 0
+\end{equation}
+\begin{equation}
+-\log{\epsilon^{\mathrm{G}}_\mathrm{ss}} + {\rho^{\mathrm{G}}} {\log{\epsilon^{\mathrm{G}}_\mathrm{ss}}} = 0
+\end{equation}
+\begin{equation}
+-g^{\mathrm{1}}_\mathrm{ss} + {\lambda_\mathrm{ss}} {\pi^{\star}_\mathrm{ss}} {Y_\mathrm{ss}} + {\beta} {\xi^{\mathrm{p}}} {g^{\mathrm{1}}_\mathrm{ss}} {\left({\pi_\mathrm{ss}}^{-1} {{\pi_\mathrm{ss}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1}}} = 0
+\end{equation}
+\begin{equation}
+-g^{\mathrm{2}}_\mathrm{ss} + {\lambda_\mathrm{ss}} {{m\!c}_\mathrm{ss}} {Y_\mathrm{ss}} + {\beta} {\xi^{\mathrm{p}}} {g^{\mathrm{2}}_\mathrm{ss}} {\left({\pi_\mathrm{ss}}^{-1} {{\pi_\mathrm{ss}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} = 0
+\end{equation}
+\begin{equation}
+-\nu^{\mathrm{p}}_\mathrm{ss} + \left(1 - \xi^{\mathrm{p}}\right) {{\pi^{\star}_\mathrm{ss}}^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} + {\xi^{\mathrm{p}}} {\nu^{\mathrm{p}}_\mathrm{ss}} {\left({\pi_\mathrm{ss}}^{-1} {{\pi_\mathrm{ss}}^{\gamma^{\mathrm{p}}}}\right)^{-{\lambda^{\mathrm{p}}}^{-1} \left(1 + \lambda^{\mathrm{p}}\right)}} = 0
+\end{equation}
+\begin{equation}
+I_\mathrm{ss} - K^{\mathrm{s}}_\mathrm{ss} + {K^{\mathrm{s}}_\mathrm{ss}} \left(1 - \delta\right) = 0
+\end{equation}
+\begin{equation}
+U_\mathrm{ss} - {\beta} {U_\mathrm{ss}} - \left(1 - \eta\right)^{-1} {\left({{C_\mathrm{ss}}^{\mu}} {\left(1 - L^{\mathrm{s}}_\mathrm{ss}\right)^{1 - \mu}}\right)^{1 - \eta}} = 0
+\end{equation}
+\begin{equation}
+-\log{{i\!n\!f\!l\!a\!t\!i\!o\!n}^{\mathrm{gap}}_\mathrm{ss}} - \log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + \log{\pi_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}} + {{p\!H}_\mathrm{ss}} {\log{\pi^{\mathrm{H}}}} + {{p\!L}_\mathrm{ss}} {\log{\pi_\mathrm{ss}}} = 0
+\end{equation}
+\begin{equation}
+-\log{\pi^{\mathrm{obj}}_\mathrm{ss}} + {\rho^{\pi^{\mathrm{bar}}}} {\log{\pi^{\mathrm{obj}}_\mathrm{ss}}} + {\log{{p\!e\!r\!c\!i\!e\!v\!e\!d}^{\pi^{\mathrm{obj}}}_\mathrm{ss}}} \left(1 - \rho^{\pi^{\mathrm{bar}}}\right) = 0
+\end{equation}
+\begin{equation}
+-{D\!i\!v}_\mathrm{ss} + Y_\mathrm{ss} - {r_\mathrm{ss}} {K^{\mathrm{s}}_\mathrm{ss}} - {L^{\mathrm{s}}_\mathrm{ss}} {W_\mathrm{ss}} = 0
+\end{equation}
+\begin{equation}
+-G_\mathrm{ss} + T_\mathrm{ss} - {\pi_\mathrm{ss}}^{-1} {B_\mathrm{ss}} + {B_\mathrm{ss}} {R_\mathrm{ss}}^{-1} = 0
+\end{equation}
+\begin{equation}
+-{c\!a\!l\!i\!b\!r}^{\pi} + \left(1 - \rho\right) \left(\log{\pi^{\mathrm{obj}}_\mathrm{ss}} - {r^{\pi}} {\log{\pi^{\mathrm{obj}}_\mathrm{ss}}}\right) = 0
+\end{equation}
+\begin{equation}
+-C_\mathrm{ss} + {D\!i\!v}_\mathrm{ss} - I_\mathrm{ss} - T_\mathrm{ss} + {\pi_\mathrm{ss}}^{-1} {B_\mathrm{ss}} + {r_\mathrm{ss}} {K^{\mathrm{s}}_\mathrm{ss}} - {B_\mathrm{ss}} {R_\mathrm{ss}}^{-1} + {L^{\mathrm{s}}_\mathrm{ss}} {W_\mathrm{ss}} = 0
+\end{equation}
+
+
+
+\section{Calibrating equations}
+
+\begin{equation}
+-0.18 + {G_\mathrm{ss}} {Y_\mathrm{ss}}^{-1} = 0
+\end{equation}
+\begin{equation}
+-0.05 + {p\!L}_\mathrm{ss} = 0
+\end{equation}
+\begin{equation}
+\pi_\mathrm{ss} - \pi^{\mathrm{obj}}_\mathrm{ss} = 0
+\end{equation}
+
+
+
+\section{Parameter settings}
+
+\begin{equation}
+\alpha = 0.3
+\end{equation}
+\begin{equation}
+\beta = 0.99
+\end{equation}
+\begin{equation}
+\delta = 0.025
+\end{equation}
+\begin{equation}
+\eta = 2
+\end{equation}
+\begin{equation}
+\gamma^{\mathrm{p}} = 0.469
+\end{equation}
+\begin{equation}
+\kappa = 0.001
+\end{equation}
+\begin{equation}
+\lambda^{\mathrm{p}} = 0.5
+\end{equation}
+\begin{equation}
+\mu = 0.3
+\end{equation}
+\begin{equation}
+\pi^{\mathrm{H}} = 1
+\end{equation}
+\begin{equation}
+r^{\pi} = 1.684
+\end{equation}
+\begin{equation}
+r^{\mathrm{Y}} = 0.099
+\end{equation}
+\begin{equation}
+\rho = 0.961
+\end{equation}
+\begin{equation}
+\rho^{\pi^{\mathrm{bar}}} = 0.99999
+\end{equation}
+\begin{equation}
+\rho^{\mathrm{G}} = 0.949
+\end{equation}
+\begin{equation}
+\rho^{\mathrm{a}} = 0.823
+\end{equation}
+\begin{equation}
+\xi^{\mathrm{p}} = 0.908
+\end{equation}
+
+
