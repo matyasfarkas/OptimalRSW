@@ -145,7 +145,7 @@ block MONETARY_POLICY_AUTHORITY
         r_Y = 0.099;                              # Weight on the output gap
         r_pi = 1.684;                             # Weight on the inflation gap
         pi[ss] = pi_obj[ss] -> calibr_pi;         # Calibration of the inflation
-        rho_pi_bar = 0.924;                       # AR parameter for the inflation objective
+        rho_pi_bar = 0.9999;                       # AR parameter for the inflation objective
     };
 };
 
@@ -167,7 +167,7 @@ block ENDOGENOUS_REGIME_PROB
     {
         tau = 0.085;
         pL[ss] =0.05 -> pLss; 
-        kappa = 1;  # sensitivity to inflation gap
+        kappa = 10;  # sensitivity to inflation gap
         pi_H = 1;  # High credibility inflation target
     };
 };

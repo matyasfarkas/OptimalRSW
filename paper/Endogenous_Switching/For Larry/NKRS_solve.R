@@ -10,7 +10,44 @@ library(gEcon)
 # make and load the model
 nkrs <- make_model("NK_RS.gcn")
 # find and print steady-state values
+
+steady_state_values <- c(
+  epsilon_G = 1,
+  g_1 = 7.3514,
+  g_2 = 4.9009,
+  inflation_gap = 1,
+  lambda = 1.5467,
+  mc = 0.6667,
+  nu_p = 1,
+  perceived_pi_obj = 1,
+  pi = 1,
+  pi_star = 1,
+  pi_obj = 1,
+  pH = 0.95,
+  pL = 0.05,
+  q = 1.5467,
+  r = 0.0351,
+  B = 0,
+  C = 0.3255,
+  Div = 0.1601,
+  G = 0.0865,
+  I = 0.0684,
+  K_s = 2.7374,
+  L_s = 0.2279,
+  Q = 1,
+  R = 1.0101,
+  T = 0.0865,
+  U = -167.8256,
+  W = 0.9837,
+  Y = 0.4804,
+  Y_j = 0.4804,
+  Y_s = 0.4804,
+  Z = 1
+)
+nkrs <- initval_var(nkrs, steady_state_values)
+
 nkrs <- steady_state(nkrs)
+
 get_residuals(nkrs)
 get_ss_values(nkrs, to_tex = TRUE)
 
@@ -32,7 +69,7 @@ get_model_stats(model = nkrs,
                 basic_stats = TRUE, 
                 corr = TRUE, 
                 autocorr = TRUE, 
-                var_dec = FALSE,
+                var_dec = TRUE,
                 to_tex = TRUE)
 
 # compute and print the IRFs
@@ -42,3 +79,4 @@ plot_simulation(nkrs_irf, to_eps = TRUE)
 
 # print summary of the model results
 summary(nkrs)
+

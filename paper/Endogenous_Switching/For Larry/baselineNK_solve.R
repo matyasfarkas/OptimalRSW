@@ -62,7 +62,7 @@ get_model_stats(model = nk,
                 basic_stats = TRUE, 
                 corr = TRUE, 
                 autocorr = TRUE, 
-                var_dec = FALSE,
+                var_dec = TRUE,
                 to_tex = TRUE)
 
 # compute and print the IRFs

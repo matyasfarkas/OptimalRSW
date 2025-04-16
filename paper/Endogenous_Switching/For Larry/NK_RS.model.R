@@ -1,10 +1,10 @@
-# Generated on 2025-04-15 16:08:03 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2025-04-15 18:16:55 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: NK_RS
 
 # info
-info__ <- c("NK_RS", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/NK_RS.gcn", "2025-04-15 16:08:03", "false")
+info__ <- c("NK_RS", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/NK_RS.gcn", "2025-04-15 18:16:55", "false")
 
 # index sets
 index_sets__ <- list()
@@ -155,14 +155,14 @@ parameters_free_val__ <- c(0.3,
                            0.025,
                            2,
                            0.469,
-                           1,
+                           10,
                            0.5,
                            0.3,
                            1,
                            1.684,
                            0.099,
                            0.961,
-                           0.924,
+                           0.9999,
                            0.949,
                            0.823,
                            0.085,

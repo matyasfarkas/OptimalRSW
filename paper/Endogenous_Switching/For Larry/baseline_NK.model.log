@@ -1,4 +1,4 @@
-Generated on 2025-04-15 17:48:01 by gEcon ver. 1.2.1 (2023-01-18)
+Generated on 2025-04-15 18:23:10 by gEcon ver. 1.2.1 (2023-01-18)
 http://gecon.r-forge.r-project.org/
 
 Model name: baseline_NK
@@ -169,7 +169,7 @@ Parameter settings (14):
  (8)  r_pi = 1.684
  (9)  r_Y = 0.099
  (10)  rho = 0.961
- (11)  rho_pi_bar = 0.924
+ (11)  rho_pi_bar = 0.9999
  (12)  rho_G = 0.949
  (13)  rho_a = 0.823
  (14)  xi_p = 0.908

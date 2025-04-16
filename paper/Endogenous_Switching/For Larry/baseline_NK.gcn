@@ -144,7 +144,7 @@ block MONETARY_POLICY_AUTHORITY
         rho = 0.961;                              # Interest rate smoothing parameter
         r_Y = 0.099;                              # Weight on the output gap
         r_pi = 1.684;                             # Weight on the inflation gap
-        rho_pi_bar = 0.924;                       # AR parameter for the inflation objective
+        rho_pi_bar = 0.9999;                       # AR parameter for the inflation objective
         pi_obj[ss] = 1      -> calibr_pi_obj;     # Calibration of the inflation objective
         pi[ss] = pi_obj[ss] -> calibr_pi;         # Calibration of the inflation
     };
