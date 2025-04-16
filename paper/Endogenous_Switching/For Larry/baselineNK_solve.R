@@ -66,7 +66,7 @@ get_model_stats(model = nk,
                 to_tex = TRUE)
 
 # compute and print the IRFs
-nk_irf <- compute_irf(nk,variables = c("pi","C","R"))
+nk_irf <- compute_irf(nk,variables = c("pi","R"))
 plot_simulation(nk_irf, to_eps = TRUE)
 
 # print summary of the model results

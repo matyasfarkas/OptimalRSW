@@ -1,10 +1,10 @@
-# Generated on 2025-04-15 18:20:59 by gEcon ver. 1.2.1 (2023-01-18)
+# Generated on 2025-04-15 22:47:12 by gEcon ver. 1.2.1 (2023-01-18)
 # http://gecon.r-forge.r-project.org/
 
 # Model name: baseline_NK
 
 # info
-info__ <- c("baseline_NK", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/baseline_NK.gcn", "2025-04-15 18:20:59", "false")
+info__ <- c("baseline_NK", "C:/Users/fm007/Documents/GitHub/OptimalRSW/paper/Endogenous_Switching/For Larry/baseline_NK.gcn", "2025-04-15 22:47:12", "false")
 
 # index sets
 index_sets__ <- list()
